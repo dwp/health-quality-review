@@ -20,11 +20,11 @@
 <form class="form" action="/country-answer" method="post">
 
 {{ govukRadios({
-  name: "PrimaryConditions",
+  name: "country",
   value: data['country'],
   fieldset: {
     legend: {
-      text: "Primary Conditions",
+      text: "Where do you live?",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--l"
     }
@@ -32,79 +32,22 @@
   items: [
     {
       value: "England",
-      text: "Cancer"
+      text: "England"
     },
     {
       value: "Scotland",
-      text: "Cardiovascular"
+      text: "Scotland"
     },
     {
       value: "Wales",
-      text: "Central Nervious System"
+      text: "Wales"
     },
     {
-      value: "Wales",
-      text: "Dermatological"
-    },
-    {
-      value: "Wales",
-      text: "Endocrine"
-    },
-    {
-      value: "Wales",
-      text: "Gastrointestinal"
-    },
-    {
-      value: "Wales",
-      text: "Gynaecological"
-    },
-    {
-      value: "Wales",
-      text: "Immune"
-    },
-    {
-      value: "Wales",
-      text: "Mental Health"
-    },
-    {
-      value: "Wales",
-      text: "Miscellaneous"
-    },
-    {
-      value: "Wales",
-      text: "Musculoskeletal"
-    },
-    {
-      value: "Wales",
-      text: "Respiratory"
-    },
-    {
-      value: "Wales",
-      text: "Special Senses"
-    },
-    {
-      value: "Wales",
-      text: "Urogenital"
+      value: "Northern Ireland",
+      text: "Northern Ireland"
     }
   ]
 }) }}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 {{ govukButton({
   text: "Continue"
