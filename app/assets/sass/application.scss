@@ -4,3 +4,270 @@
 // 
 
 // Add extra styles here
+
+
+
+// Nav styling
+  
+@media (min-width: 72.5em) {
+    .app-pane__body {
+        width: 100%;
+      }
+    }
+    @media (min-width: 670px) {
+    .app-pane__body {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        flex-wrap: wrap;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: row;
+        position: relative;
+        min-height: 0;
+        overflow: inherit;
+      }
+    }
+    
+    .app-subnav {
+        margin-bottom: 100px;
+        padding: 6px 15px 0 0;
+        font-family: arial,sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 1.14286;
+        position: sticky;
+        top: 0;
+    }
+    
+    .app-subnav__section {
+        margin: 0 0 20px;
+        padding: 0;
+        list-style-type: none;
+    }
+    
+    .app-subnav__section-item {
+        margin-bottom: 5px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        padding-left: 10px;
+    }
+    
+    .app-subnav__section-item--current {
+        border-left: 3px solid #1d70b8;
+        background-color: #f3f2f1;
+        padding-left: 10px;
+        padding-top: 10px;
+    }
+  
+  
+    .app-subnav__section--nested .app-subnav__section-item:before {
+      content: "—";
+      margin-left: -20px;
+      color: #1d70b8;
+      font-weight: 700;
+      margin-right:10px;
+  }
+  
+    .app-subnav__section-item--current {
+      border-left: 3px solid #1d70b8;
+  }
+    
+    .govuk-link--no-underline:not(:hover):not(:active) {
+        text-decoration: none;
+    }
+    .app-subnav__section-item--current .app-subnav__link {
+        font-weight: bold;
+    }
+    
+    .govuk-link--no-visited-state:link {
+        color: #1d70b8;
+    }
+    .govuk-link:link, .app-prose-scope a:link {
+        color: #1d70b8;
+    }
+    .app-subnav__link {
+        padding: 2px 0;
+        text-underline-offset: 0.4em;
+        line-height: 1.5;
+    }
+    
+    
+    .app-subnav__section--nested {
+        margin-top: 10px;
+        margin-bottom: 0;
+        padding-left: 20px;
+        margin-right: 15px;
+    }
+    
+    .app-subnav__section--nested .app-subnav__section-item::before {
+        // content: "—";
+        margin-left: -20px;
+        // color: #505a5f;
+    }
+    
+    .app-subnav__section--nested .app-subnav__link {
+        padding-left: 0;
+        font-weight: normal;
+    }
+    
+    
+    @media (min-width: 670px) {
+    .app-pane__subnav {
+        width: 260px;
+      }
+    }
+    
+    @media (min-width: 670px) {
+    .app-pane__subnav {
+        width: 23%;
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 auto;
+        flex: 0 0 auto;
+      }
+    }
+    
+    @media (min-width: 670px) {
+    .app-subnav {
+        font-size: 16px;
+        font-size: 1rem;
+        line-height: 1.25;
+      }
+    }
+
+
+    .govuk-header__navigation-item--active a:link, .govuk-header__navigation-item--active a:hover, .govuk-header__navigation-item--active a:visited  {
+        color: #fff!important;
+        font-weight: 600!important;
+        text-decoration: underline;
+        text-decoration-thickness: 2px;
+        text-underline-offset: 0.6em!important;
+      }
+      
+      .govuk-header__link:link, .govuk-header__link:visited {
+        font-weight: 200;
+      }
+      
+      .govuk-header__link--homepage {
+        font-weight: 700!important;
+      }
+      
+      .govuk-header__link:hover {
+        text-underline-offset: 0.6em!important;
+        text-decoration-thickness: 2px;
+      }
+    
+      .overview {
+        -webkit-box-flex: 1;
+        -ms-flex: 0 0 auto;
+        flex: 0 0 auto;
+        width:73%;
+        padding-left: 10px;
+      }
+    
+      //new links forever
+      .govuk-link:visited, a:visited, .app-step-nav-header__title:visited, .app-step-nav-related__link:visited {
+        color: #1d70b8;
+    }
+    
+    
+    .app-pane__subnav-create {
+      width: 20%;
+      -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+      flex: 0 0 auto;
+      margin-right: 25px;
+    }
+    
+    .create-view {
+      -webkit-box-flex: 1;
+      -ms-flex: 0 0 auto;
+      flex: 0 0 auto;
+      width: 80%;
+    }
+    
+    
+    .loglog{
+      display:none;
+    }
+    
+    .hide {
+      display: none;
+    }
+    
+    .hidden-radio-post {
+      display: none;
+    }
+    
+    .chevron {
+      position: relative;
+      display: block;
+      height: 24px; /*height should be double border*/
+      float: right;
+      margin-right: 40px;
+        margin-top: 5px;
+        
+    }
+    
+    .chevron::before,
+    .chevron::after {
+      position: absolute;
+      display: block;
+      content: "";
+      border: 10px solid transparent; /*adjust size*/
+    }
+    
+    /* Replace all text `top` below with left/right/bottom to rotate the chevron */
+    
+    .chevron::before {
+      top: 0;
+      border-top-color: #1d70b8; /*Chevron Color*/
+    }
+    
+    .chevron::after {
+      top: -3px; /*adjust thickness*/
+      border-top-color: #f3f2f1; /*Match background colour*/
+    }
+    
+    
+    .chevron2 {
+      position: relative;
+      display: block;
+      height: 24px; /*height should be double border*/
+      float: right;
+      margin-right: 40px;
+        margin-top: 5px;
+        
+    }
+    
+    .chevron2::before,
+    .chevron2::after {
+      position: absolute;
+      display: block;
+      content: "";
+      border: 10px solid transparent; /*adjust size*/
+    }
+    
+    /* Replace all text `top` below with left/right/bottom to rotate the chevron */
+    
+    .chevron2::before {
+      top: 0;
+      border-top-color: #1d70b8; /*Chevron Color*/
+    }
+    
+    .chevron2::after {
+      top: -3px; /*adjust thickness*/
+      border-top-color: #fff; /*Match background colour*/
+    }
+    
+    
+    // table hack active measures
+    
+    .govuk-summary-list__key .active-measures {
+      width: 10%;
+      
+    }
+    

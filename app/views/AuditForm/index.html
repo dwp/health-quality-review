@@ -1,0 +1,55 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  GOV.UK page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{% block beforeContent %}
+
+{% endblock %}
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+<form class="form" action="/country-answer" method="post">
+
+    <h1 class="govuk-heading-l">Report</h1>
+
+    <p class="govuk-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis feugiat, purus et condimentum pulvinar, felis eros pharetra odio, vitae fermentum lectus odio sed dolor. </p>
+
+    <h2 class="govuk-heading-m">Evidence</h2>
+    <p class="govuk-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis feugiat, purus et condimentum pulvinar, felis eros pharetra odio, vitae fermentum lectus odio sed dolor. </p>
+
+
+    <h2 class="govuk-heading-m">Conditions</h2>
+    <p class="govuk-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis feugiat, purus et condimentum pulvinar, felis eros pharetra odio, vitae fermentum lectus odio sed dolor. </p>
+
+
+    <h2 class="govuk-heading-m">Medications</h2>
+    <p class="govuk-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis feugiat, purus et condimentum pulvinar, felis eros pharetra odio, vitae fermentum lectus odio sed dolor. </p>
+
+    <p class="govuk-body">
+        <a href="auditForm/infoGather.html" class="govuk-link govuk-link--no-visited-state">Provide feedback on Gathering of information</a>
+      </p>
+
+
+      <h2 class="govuk-heading-l">Activities</h2>
+      <h2 class="govuk-heading-m">Preparing food</h2>
+      <p class="govuk-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis feugiat, purus et condimentum pulvinar, felis eros pharetra odio, vitae fermentum lectus odio sed dolor. </p>
+  
+
+<!-- {{ govukButton({
+  text: "Continue"
+}) }} -->
+
+</form>
+    </div>
+  </div>
+{% endblock %}
+

@@ -1,0 +1,146 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  GOV.UK page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{% block beforeContent %}
+
+{% endblock %}
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+<form class="form" action="/country-answer" method="post">
+
+    <h1 class="govuk-heading-l">Quality review</h1>
+
+    <p class="govuk-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis feugiat, purus et condimentum pulvinar, felis eros pharetra odio, vitae fermentum lectus odio sed dolor. </p>
+
+    <h2 class="govuk-heading-s">Assessment audit</h2>
+    <ul class="govuk-list">
+      <li>
+        <a href="primaryConditions" class="govuk-link">Primary condition</a>
+      </li>
+     
+    </ul>
+
+
+    <h2 class="govuk-heading-s">Further evidence</h2>
+    <ul class="govuk-list">
+      <li>
+        <a href="/AuditForm" class="govuk-link">All relevant stages</a>
+      </li>
+     
+    </ul>
+
+    <h2 class="govuk-heading-s">Information gathering</h2>
+    <ul class="govuk-list">
+      <li>
+        <a href="/AuditForm" class="govuk-link">History (including variability)</a>
+      </li>
+      <li>
+        <a href="#" class="govuk-link">History (including variability)</a>
+      </li>
+      <li>
+        <a href="#" class="govuk-link">Examination</a>
+      </li>
+      <li>
+        <a href="#" class="govuk-link">Observations</a>
+      </li>
+     
+    </ul>
+
+
+    <h2 class="govuk-heading-s">Daily living</h2>
+    <ul class="govuk-list">
+      <li>
+        <a href="preparingFood.html" class="govuk-link">Preparing food</a>
+      </li>
+      <li>
+        <a href="#" class="govuk-link">Taking nutrition</a>
+      </li>
+      <li>
+        <a href="#" class="govuk-link">Managing therapy</a>
+      </li>
+      <li>
+        <a href="#" class="govuk-link">Washing and bathing</a>
+      </li>
+      <li>
+        <a href="#" class="govuk-link">Managing toilet needs</a>
+      </li>
+      <li>
+        <a href="#" class="govuk-link">Dressing and undressing</a>
+      </li>
+      <li>
+        <a href="#" class="govuk-link">Communication verbally</a>
+      </li>
+      <li>
+        <a href="#" class="govuk-link">Reading and understanding</a>
+      </li>
+      <li>
+        <a href="#" class="govuk-link">Engaging with others</a>
+      </li>
+     
+     
+    </ul>
+
+    <h2 class="govuk-heading-s">Mobility</h2>
+    <ul class="govuk-list">
+      <li>
+        <a href="/AuditForm" class="govuk-link">Planning and following journeys</a>
+      </li>
+      <li>
+        <a href="#" class="govuk-link">Moving around</a>
+      </li>
+    </ul>
+
+
+    <h2 class="govuk-heading-s">Opinion</h2>
+    <ul class="govuk-list">
+      <li>
+        <a href="/AuditForm" class="govuk-link">Prognosis</a>
+      </li>
+      <li>
+        <a href="#" class="govuk-link">QP/PT Recommendation</a>
+      </li>
+      <li>
+        <a href="#" class="govuk-link">Terminal illness opinion</a>
+      </li>
+      <li>
+        <a href="#" class="govuk-link">Reliability criteria</a>
+      </li>
+      <li>
+        <a href="#" class="govuk-link">Justification</a>
+      </li>
+    </ul>
+
+    <h2 class="govuk-heading-s">Process</h2>
+    <ul class="govuk-list">
+      <li>
+        <a href="/AuditForm" class="govuk-link">Case handling</a>
+      </li>
+      <li>
+        <a href="#" class="govuk-link">Usability</a>
+      </li>
+      <li>
+        <a href="#" class="govuk-link">General comments</a>
+      </li>
+    </ul>
+
+
+<!-- {{ govukButton({
+  text: "Continue"
+}) }} -->
+
+</form>
+    </div>
+  </div>
+{% endblock %}
+
