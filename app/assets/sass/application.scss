@@ -7,6 +7,61 @@
 
 
 
+
+// Add extra styles here
+
+
+.govuk-width-container {
+    min-width: 1100px;
+    }
+
+
+// DWP header
+
+.dwp-header {
+    background-color: #0b0c0c;
+    border-bottom: 0;
+    width: 100%;
+    }
+    
+    .dwp-header__container {
+    border-bottom: 0;
+    padding: 10px 30px 0;
+    display: flex;
+    }
+    
+    @media (max-width: 40.0525em) {
+    .dwp-header__container {
+    padding: 10px 15px 0;
+    }
+    }
+    
+    .dwp-header__container--service-name {
+    width: 66.66%;
+    }
+    
+    .dwp-header__container--action {
+    width: 33.33%;
+    }
+    
+    .dwp-header__container--action .action {
+    float: right;
+    font-weight: 700;
+    margin-top: 2px;
+    }
+    
+    @media (min-width: 40.0625em) {
+    .dwp-header__container--action .action {
+    margin-top: 5px;
+    }
+    } 
+
+
+
+
+
+
+
 // Nav styling
   
 @media (min-width: 72.5em) {
@@ -270,4 +325,9 @@
       width: 10%;
       
     }
+
+
+
+
+
     
