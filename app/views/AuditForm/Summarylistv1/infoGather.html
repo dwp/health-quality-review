@@ -17,33 +17,66 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-<form class="form" action="/country-answer" method="post">
+<form class="form" action="auditBasicLandingPage#infoGather-{{ query.infoGather }}" method="post">
 
 {{ govukRadios({
-  name: "country",
-  value: data['country'],
+  name: "grade-" + query.infoGather,
+  value: data['grade-' + query.infoGather],
   fieldset: {
     legend: {
-      text: "Feed back on information gather",
+      text: infoGather[query.infoGather],
       isPageHeading: true,
       classes: "govuk-fieldset__legend--l"
     }
   },
   items: [
     {
-      value: "England",
-      text: "AA"
+
+      
+      
+      
+      
+      
+
+      value: "A - Sufficient information gathered to support robust advice",
+      text: "A - Sufficient information gathered to support robust advice"
     },
     {
-      value: "Scotland",
-      text: "AF"
+      value: "AF - Information gathered lacks detail but unlikely to have an adverse effect on advice",
+      text: "AF - Information gathered lacks detail but unlikely to have an adverse effect on advice"
     },
     {
-      value: "Wales",
-      text: "U"
+      value: "AA - Omission that has limited potential to change advice",
+      text: "AA - Omission that has limited potential to change advice"
+    },
+    {
+      value: "U - Major omissions such that advice cannot be relied on and correct award cannot be reasonably determined",
+      text: "U - Major omissions such that advice cannot be relied on and correct award cannot be reasonably determined"
+    },
+    {
+      value: "N/A - not applicable",
+      text: "N/A - not applicable"
     }
+   
   ]
 }) }}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 {{ govukButton({
   text: "Continue"
