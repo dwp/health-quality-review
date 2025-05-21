@@ -1,0 +1,164 @@
+{% extends "layout.html" %}
+{% set bodyAttributes = { id: "assess" } %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block main %}
+
+{% include "includes/assessment-status-neutral.html" %}
+
+  <div class="govuk-width-container {{ containerClasses }}">
+
+    <!-- {{ govukBackLink({
+      text: "Back",
+      href: "assessment-status"
+    }) }} -->
+
+    {{ govukBackLink({
+      text: "Back",
+      href: "javascript:history.back()"
+    }) }}
+    
+    <main class="govuk-main-wrapper {{ mainClasses }}" id="main-content" role="main"{% if mainLang %} lang="{{ mainLang }}"{% endif %}>
+        <div class="govuk-grid-row">
+
+            <div class="govuk-grid-column-two-thirds">
+
+
+                <h1 class="govuk-heading-l">Budgeting</h1>
+
+                </div>
+          </div>
+
+          <div class="govuk-grid-row">
+
+            <div class="govuk-grid-column-two-thirds">
+
+            <form action="assessment-status" method="post">
+
+              {% if data['assessmenttype'] !== "Paper" %}
+
+              {{ govukTextarea({
+                name: "budgetingNotes",
+                id: "budgetingNotes",
+                rows: "8",
+                classes: "govuk-!-margin-bottom-9",
+                label: {
+                  text: "Functional history for budgeting",
+                  classes: "govuk-label--s",
+                  isPageHeading: false
+                },
+                value: data['budgetingNotes']
+              }) }}
+
+
+              {{ govukRadios({
+                name: "budgetingSelect",
+                fieldset: {
+                  legend: {
+                    text: "Which of these describes how well the claimant can budget?",
+                    isPageHeading: false,
+                    classes: "govuk-fieldset__legend--s"
+                  }
+                },
+                items: [
+                  {
+                    value: "(10a) Can manage complex budgeting decisions unaided",
+                    text: "(10a) Can manage complex budgeting decisions unaided",
+                    checked: (data['budgetingSelect'] == "(10a) Can manage complex budgeting decisions unaided")
+                  },
+                  {
+                    value: "(10b) Needs prompting or assistance to be able to make complex budgeting decisions",
+                    text: "(10b) Needs prompting or assistance to be able to make complex budgeting decisions",
+                    checked: (data['budgetingSelect'] == "(10b) Needs prompting or assistance to be able to make complex budgeting decisions")
+                  },
+                  {
+                    value: "(10c) Needs prompting or assistance to be able to make simple budgeting decisions",
+                    text: "(10c) Needs prompting or assistance to be able to make simple budgeting decisions",
+                    checked: (data['budgetingSelect'] == "(10c) Needs prompting or assistance to be able to make simple budgeting decisions")
+                  },
+                  {
+                    value: "(10d) Cannot make any budgeting decisions at all",
+                    text: "(10d) Cannot make any budgeting decisions at all",
+                    checked: (data['budgetingSelect'] == "(10d) Cannot make any budgeting decisions at all")
+                  }
+                ]
+              }) }}
+
+
+                    {{ govukTextarea({
+                      name: "budgetingReason",
+                      id: "budgetingReason",
+                      label: {
+                        text: "What is the reason for this answer?",
+                        classes: "govuk-label--s",
+                        isPageHeading: false
+                      },
+                      value: data['budgetingReason']
+                    }) }}
+
+      {% else %}
+
+                    {{ govukRadios({
+                      name: "budgetingSelectpbr",
+                      fieldset: {
+                        legend: {
+                          text: "Which of these describes how well the claimant can budget?",
+                          isPageHeading: false,
+                          classes: "govuk-fieldset__legend--s"
+                        }
+                      },
+                      items: [
+                      {
+                        value: "(10a) Can manage complex budgeting decisions unaided",
+                        text: "(10a) Can manage complex budgeting decisions unaided",
+                        checked: (data['budgetingSelectpbr'] == "(10a) Can manage complex budgeting decisions unaided")
+                      },
+                      {
+                        value: "(10b) Needs prompting or assistance to be able to make complex budgeting decisions",
+                        text: "(10b) Needs prompting or assistance to be able to make complex budgeting decisions",
+                        checked: (data['budgetingSelectpbr'] == "(10b) Needs prompting or assistance to be able to make complex budgeting decisions")
+                      },
+                      {
+                        value: "(10c) Needs prompting or assistance to be able to make simple budgeting decisions",
+                        text: "(10c) Needs prompting or assistance to be able to make simple budgeting decisions",
+                        checked: (data['budgetingSelectpbr'] == "(10c) Needs prompting or assistance to be able to make simple budgeting decisions")
+                      },
+                      {
+                        value: "(10d) Cannot make any budgeting decisions at all",
+                        text: "(10d) Cannot make any budgeting decisions at all",
+                        checked: (data['budgetingSelectpbr'] == "(10d) Cannot make any budgeting decisions at all")
+                      }
+                    ]
+                  }) }}
+     {% endif %}
+
+
+                    {{ govukButton({
+                      text: "Save and continue"
+                    }) }}
+                </ul>
+
+
+
+            </form>
+
+
+
+
+
+            </div>
+
+            <div class="govuk-grid-column-one-third">
+
+
+
+            </div>
+
+        </div>
+
+    </main>
+  </div>
+{% endblock %}

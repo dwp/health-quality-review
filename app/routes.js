@@ -77,4 +77,16 @@ router.use('/', (req, res, next) => {
 
 
 
+
+
+// Supporting docs
+
+
+
+const versions = [
+   'Summarylistv1'
+
+]
+
+
   // Add your routes here
