@@ -42,59 +42,178 @@
 
     <h2 class="govuk-heading-s">Information gathering</h2>
     <ul class="govuk-list">
-      <li>
-        <a href="#" class="govuk-link">History (including variability)</a>
+
+
+      <li id="infoGather-history" class="infoGather-list">
+        <a href="infoGather?infoGather=history" class="govuk-link infoGather-link">{{ infoGather.history }}</a>
+        <span class="infoGather-grade">
+          {% if data['grade-history'] %}
+          <strong class="govuk-tag govuk-tag--yellow">
+            {{ data['grade-history'].split('-')[0] }}
+          </strong>
+          {% endif %}
+        </span>
+        <p class="infoGather-description">{% if data['grade-history'] %}{{ data['grade-history'].split('-')[1] }}{% endif %}</p>
       </li>
-      <li>
-        <a href="#" class="govuk-link">Examination</a>
+
+      <li id="infoGather-exam" class="infoGather-list">
+        <a href="infoGather?infoGather=exam" class="govuk-link infoGather-link">{{ infoGather.exam }}</a>
+        <span class="infoGather-grade">
+          {% if data['grade-exam'] %}
+          <strong class="govuk-tag govuk-tag--yellow">
+            {{ data['grade-exam'].split('-')[0] }}
+          </strong>
+          {% endif %}
+        </span>
+        <p class="infoGather-description">{% if data['grade-exam'] %}{{ data['grade-exam'].split('-')[1] }}{% endif %}</p>
       </li>
-      <li>
-        <a href="#" class="govuk-link">Observations</a>
+
+      <li id="infoGather-observation" class="infoGather-list">
+        <a href="infoGather?infoGather=observation" class="govuk-link infoGather-link">{{ infoGather.observation }}</a>
+        <span class="infoGather-grade">
+          {% if data['grade-observation'] %}
+          <strong class="govuk-tag govuk-tag--yellow">
+            {{ data['grade-observation'].split('-')[0] }}
+          </strong>
+          {% endif %}
+        </span>
+        <p class="infoGather-description">{% if data['grade-observation'] %}{{ data['grade-observation'].split('-')[1] }}{% endif %}</p>
       </li>
+
+    
      
     </ul>
 
 
     <h2 class="govuk-heading-s">Daily living</h2>
     <ul class="govuk-list">
-      <li>
-        <a href="preparingFood.html" class="govuk-link">Preparing food</a>
+      <li id="activity-food" class="activity-list">
+        <a href="activity?activity=food" class="govuk-link activity-link">{{ activities.food }}</a>
+        <span class="activity-grade">
+          {% if data['grade-food'] %}
+          <strong class="govuk-tag govuk-tag--yellow">
+            {{ data['grade-food'].split('-')[0] }}
+          </strong>
+          {% endif %}
+        </span>
+        <p class="activity-description">{% if data['grade-food'] %}{{ data['grade-food'].split('-')[1] }}{% endif %}</p>
       </li>
-      <li>
-        <a href="#" class="govuk-link">Taking nutrition</a>
+      <li id="activity-nutrition" class="activity-list">
+        <a href="activity?activity=nutrition" class="govuk-link activity-link">{{ activities.nutrition }}</a>
+        <span class="activity-grade">
+          {% if data['grade-nutrition'] %}
+          <strong class="govuk-tag govuk-tag--yellow">
+            {{ data['grade-nutrition'].split('-')[0]}}
+          </strong>
+          {% endif %}
+        </span>
+        <p class="activity-description">{% if data['grade-nutrition'] %}{{ data['grade-nutrition'].split('-')[1]}}{% endif %}</p>
       </li>
-      <li>
-        <a href="#" class="govuk-link">Managing therapy</a>
+      <li id="activity-therapy" class="activity-list">
+        <a href="activity?activity=therapy" class="govuk-link activity-link">{{ activities.therapy }}</a>
+        <span class="activity-grade">
+          {% if data['grade-therapy'] %}
+          <strong class="govuk-tag govuk-tag--yellow">
+            {{ data['grade-therapy'].split('-')[0]}}
+          </strong>
+          {% endif %}
+        </span>
+        <p class="activity-description">{% if data['grade-therapy'] %}{{ data['grade-therapy'].split('-')[1]}}{% endif %}</p>
       </li>
-      <li>
-        <a href="#" class="govuk-link">Washing and bathing</a>
+      <li id="activity-washing" class="activity-list">
+        <a href="activity?activity=washing" class="govuk-link activity-link">{{ activities.washing }}</a>
+        <span class="activity-grade">
+          {% if data['grade-washing'] %}
+          <strong class="govuk-tag govuk-tag--yellow">
+            {{ data['grade-washing'].split('-')[0]}}
+          </strong>
+          {% endif %}
+        </span>
+        <p class="activity-description">{% if data['grade-washing'] %}{{ data['grade-washing'].split('-')[1]}}{% endif %}</p>
       </li>
-      <li>
-        <a href="#" class="govuk-link">Managing toilet needs</a>
+      <li id="activity-toilet" class="activity-list">
+        <a href="activity?activity=toilet" class="govuk-link activity-link">{{ activities.toilet }}</a>
+        <span class="activity-grade">
+          {% if data['grade-toilet'] %}
+          <strong class="govuk-tag govuk-tag--yellow">
+            {{ data['grade-toilet'].split('-')[0]}}
+          </strong>
+          {% endif %}
+        </span>
+        <p class="activity-description">{% if data['grade-toilet'] %}{{ data['grade-toilet'].split('-')[1]}}{% endif %}</p>
       </li>
-      <li>
-        <a href="#" class="govuk-link">Dressing and undressing</a>
+      <li id="activity-dressing" class="activity-list">
+        <a href="activity?activity=dressing" class="govuk-link activity-link">{{ activities.dressing }}</a>
+        <span class="activity-grade">
+          {% if data['grade-dressing'] %}
+          <strong class="govuk-tag govuk-tag--yellow">
+            {{ data['grade-dressing'].split('-')[0]}}
+          </strong>
+          {% endif %}
+        </span>
+        <p class="activity-description">{% if data['grade-dressing'] %}{{ data['grade-dressing'].split('-')[1]}}{% endif %}</p>
       </li>
-      <li>
-        <a href="#" class="govuk-link">Communication verbally</a>
+      <li id="activity-communicating" class="activity-list">
+        <a href="activity?activity=communicating" class="govuk-link activity-link">{{ activities.communicating }}</a>
+        <span class="activity-grade">
+          {% if data['grade-communicating'] %}
+          <strong class="govuk-tag govuk-tag--yellow">
+            {{ data['grade-communicating'].split('-')[0]}}
+          </strong>
+          {% endif %}
+        </span>
+        <p class="activity-description">{% if data['grade-communicating'] %}{{ data['grade-communicating'].split('-')[1]}}{% endif %}</p>
       </li>
-      <li>
-        <a href="#" class="govuk-link">Reading and understanding</a>
+      <li id="activity-reading" class="activity-list">
+        <a href="activity?activity=reading" class="govuk-link activity-link">{{ activities.reading }}</a>
+        <span class="activity-grade">
+          {% if data['grade-reading'] %}
+          <strong class="govuk-tag govuk-tag--yellow">
+            {{ data['grade-reading'].split('-')[0]}}
+          </strong>
+          {% endif %}
+        </span>
+        <p class="activity-description">{% if data['grade-reading'] %}{{ data['grade-reading'].split('-')[1]}}{% endif %}</p>
       </li>
-      <li>
-        <a href="#" class="govuk-link">Engaging with others</a>
+      <li id="activity-engaging" class="activity-list">
+        <a href="activity?activity=engaging" class="govuk-link activity-link">{{ activities.engaging }}</a>
+        <span class="activity-grade">
+          {% if data['grade-engaging'] %}
+          <strong class="govuk-tag govuk-tag--yellow">
+            {{ data['grade-engaging'].split('-')[0]}}
+          </strong>
+          {% endif %}
+        </span>
+        <p class="activity-description">{% if data['grade-engaging'] %}{{ data['grade-engaging'].split('-')[1]}}{% endif %}</p>
       </li>
+
      
      
     </ul>
 
     <h2 class="govuk-heading-s">Mobility</h2>
     <ul class="govuk-list">
-      <li>
-        <a href="/AuditForm" class="govuk-link">Planning and following journeys</a>
+      <li id="activity-journeys" class="activity-list">
+        <a href="activity?activity=journeys" class="govuk-link activity-link">{{ activities.journeys }}</a>
+        <span class="activity-grade">
+          {% if data['grade-journeys'] %}
+          <strong class="govuk-tag govuk-tag--yellow">
+            {{ data['grade-journeys'].split('-')[0]}}
+          </strong>
+          {% endif %}
+        </span>
+        <p class="activity-description">{% if data['grade-journeys'] %}{{ data['grade-journeys'].split('-')[1]}}{% endif %}</p>
       </li>
-      <li>
-        <a href="#" class="govuk-link">Moving around</a>
+      <li id="activity-moving" class="activity-list">
+        <a href="activity?activity=moving" class="govuk-link activity-link">{{ activities.moving }}</a>
+        <span class="activity-grade">
+          {% if data['grade-moving'] %}
+          <strong class="govuk-tag govuk-tag--yellow">
+            {{ data['grade-moving'].split('-')[0]}}
+          </strong>
+          {% endif %}
+        </span>
+        <p class="activity-description">{% if data['grade-moving'] %}{{ data['grade-moving'].split('-')[1]}}{% endif %}</p>
       </li>
     </ul>
 
