@@ -1,3 +1,26 @@
+
+const infoGather = {
+  history: "History (including variability)",
+  exam: "Examination",
+  observation: "Observations"
+}
+
+
+
+
+const activities = {
+  food: "Preparing Food",
+  nutrition: "Taking nutrution",
+  therapy: "Managing therapy",
+  washing: "Washing and bathing",
+  toilet: "Managing toilet needs",
+  dressing: "Dressing and undressing",
+  communicating: "Communication verbally",
+  reading: "Reading and understanding",
+  engaging: "Engaging with others",
+  journeys: "Planning and following journeys",
+  moving: "Moving around"
+}
 //
 // For guidance on how to create routes see:
 // https://prototype-kit.service.gov.uk/docs/create-routes
@@ -10,6 +33,13 @@ const router = govukPrototypeKit.requests.setupRouter()
 const findAddressPlugin = require("find-an-address-plugin");
 
 findAddressPlugin(router);
+
+router.get("*", (req, res, next) => {
+  res.locals.query = req.query;
+  res.locals.activities = activities;
+  res.locals.infoGather = infoGather;
+  return next();
+})
 
 // Logging session data  
 // This code shows in the terminal what session data has been saved.
@@ -44,6 +74,7 @@ router.use('/', (req, res, next) => {
         response.redirect("example/ineligible")
     }
 })
+
 
 
   // Add your routes here
