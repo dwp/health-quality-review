@@ -17,7 +17,7 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-<form class="form" action="auditBasicLandingPage#infoGather-{{ query.infoGather }}" method="post">
+<form class="form" action="auditBasicLandingPage-summary#infoGather-{{ query.infoGather }}" method="post">
 
 {{ govukRadios({
   name: "grade-" + query.infoGather,
@@ -31,13 +31,6 @@
   },
   items: [
     {
-
-      
-      
-      
-      
-      
-
       value: "A - Sufficient information gathered to support robust advice",
       text: "A - Sufficient information gathered to support robust advice"
     },
@@ -62,20 +55,14 @@
 }) }}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+{{ govukTextarea({
+  name: "comment-" + query.infoGather,
+  id: "comment-" + query.infoGather,
+  value: data['comment-' + query.infoGather],
+  label: {
+    text: "Comment"
+  }
+}) }}
 
 
 {{ govukButton({
@@ -86,4 +73,3 @@
     </div>
   </div>
 {% endblock %}
-

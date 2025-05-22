@@ -82,11 +82,23 @@ router.use('/', (req, res, next) => {
 // Supporting docs
 
 
-
+// const govukPrototypeKit = require('govuk-prototype-kit')
+// const router = govukPrototypeKit.requests.setupRouter()
 const versions = [
    'Summarylistv1'
 
 ]
 
 
-  // Add your routes here
+console.log('Setting up main router. Locating sub routers');
+versions.forEach((version) => require(`${__dirname}/views/${version}/routes/routes.js`));
+
+router.all('*', (req, res, next) => {
+    res.locals.params = req.params;
+    res.locals.query = req.query;
+    return next();
+});
+
+
+
+
