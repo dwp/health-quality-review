@@ -7,7 +7,7 @@
  
 {% block main %}
  
-{% include currentVersionPath + "/partials/key-details.html" %} 
+{% include "includes/assessment-status-neutral-pip.html" %}
  
 <div class="govuk-width-container">
   <form action="/{{ currentVersionPath }}/update-document/{{ document.id }}{% if query.ncat %}?ncat=true{% endif %}{% if query.irrelevant %}?irrelevant=true{% endif %}" method="POST">
