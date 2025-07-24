@@ -1,0 +1,120 @@
+{% extends "layouts/main.html" %}
+ 
+{% block pageTitle %}
+  Evidence
+{% endblock %}
+ 
+{% block beforeContent %}
+ 
+{% include "includes/assessment-status-neutral-pip.html" %}
+  <div class="govuk-width-container {{ containerClasses }}"></div>
+  <!-- <a href="" class="govuk-back-link">Back</a> -->
+{% endblock %}
+ 
+{% block content %}
+ 
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" action="auditBasicLandingPage-summary?checkAnswers=true" method="post">
+
+     
+
+      
+          <h1 class="govuk-heading-l">Quality review completed </h1>
+  
+
+          <!-- <h2 class="govuk-heading-m">Activity</h2> -->
+        <!-- <div class="dwp-timeline">
+          <ol class="dwp-timeline__items"> -->
+  
+            <!-- <li class="dwp-timeline__item">
+              <p class="dwp-timeline__datetime">15 March 2024</p>
+              <h2 class="dwp-timeline__heading"> <a class="govuk-link" href="auditBasicLandingPage-report?checkAnswers=true">Additional quality review feedback</a></h2>
+              
+              <p class="dwp-timeline__by-line">By John Smith</p>
+             
+            </li>
+
+
+            <li class="dwp-timeline__item">
+              <p class="dwp-timeline__datetime">12 March 2024</p>
+              <h2 class="dwp-timeline__heading"> <a class="govuk-link" href="auditBasicLandingPage-report?checkAnswers=true">HCP response</a></h2>
+              
+              <p class="dwp-timeline__by-line">By Janye Doe</p>
+             
+            </li> -->
+
+
+            <!-- <li class="dwp-timeline__item">
+              <p class="dwp-timeline__datetime">10 March 2024</p>
+              <h2 class="dwp-timeline__heading"> <a class="govuk-link" href="auditBasicLandingPage-summary?checkAnswers=true">Quality review feedback</a></h2>
+              
+              <p class="dwp-timeline__by-line">By John Smith</p>
+             
+            </li> -->
+  
+
+
+            {{ govukSummaryList({
+              rows: [
+                {
+                  key: {
+                    text: "HCP name"
+                  },
+                  value: {
+                    text: "Aldo Raine"
+                  }
+                },
+                {
+                  key: {
+                    text: "Auditor name"
+                  },
+                  value: {
+                    text: "John Smith"
+                  }
+                },
+                {
+                  key: {
+                    text: "Date quality review completed"
+                  },
+                  value: {
+                    text: "27 June 2025"
+                  }
+                },
+                {
+                  key: {
+                    text: "Grade"
+                  },
+                  value: {
+                    html: "AA - Acceptable with ammendments"
+                  }
+                
+                },
+                {
+                  key: {
+                    text: "Overall comment"
+                  },
+                  value: {
+                    html: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
+                  }
+                
+                }
+              ]
+            }) }}
+  
+  
+          <!-- </ol> -->
+
+          <p class="govuk-body">
+            Goto <a href="claimant-details.html" class="govuk-link">Referral overview</a>.
+          </p>
+          
+        </div>
+      
+  </div>
+{% endblock %}

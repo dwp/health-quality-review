@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+{% set bodyAttributes = { id: "assess" } %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block main %}
+
+{% include "includes/assessment-status-neutral.html" %}
+
+  <div class="govuk-width-container {{ containerClasses }}">
+
+
+    
+
+    <main class="govuk-main-wrapper {{ mainClasses }}" id="main-content" role="main"{% if mainLang %} lang="{{ mainLang }}"{% endif %}>
+        <div class="govuk-grid-row">
+
+            <div class="govuk-grid-column-two-thirds">
+
+                
+                    <h1 class="govuk-heading-l">
+                     Assessment history
+                    </h1>
+                    <p class="govuk-body">There are no changes in the asssessment history yet.</p>
+
+                    <p class="govuk-body">
+                       Go to the <a class="govuk-link" href="#">last page you viewed</a>
+                    </p>
+        </div>
+</div>
+
+
+    </main>
+  </div>
+{% endblock %}

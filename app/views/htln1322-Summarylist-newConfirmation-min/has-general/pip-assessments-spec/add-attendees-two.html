@@ -1,0 +1,94 @@
+{% extends "layout.html" %}
+{% set bodyAttributes = { id: "assess" } %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block main %}
+
+{% include "includes/assessment-status-neutral.html" %}
+
+  <div class="govuk-width-container {{ containerClasses }}">
+
+      <!-- {{ govukBackLink({
+        text: "Back",
+        href: "assessment-status"
+      }) }} -->
+
+      {{ govukBackLink({
+        text: "Back",
+        href: "javascript:history.back()"
+      }) }}
+
+    <main class="govuk-main-wrapper {{ mainClasses }}" id="main-content" role="main"{% if mainLang %} lang="{{ mainLang }}"{% endif %}>
+        <div class="govuk-grid-row">
+
+            <div class="govuk-grid-column-two-thirds">
+
+
+
+            <form action="assessment-overview" method="post">
+
+
+              <h1 class="govuk-heading-l">Additional attendees</h1>
+
+              <h2 class="govuk-heading-m">Attendee 1 <a href="#" class="govuk-link govuk-!-font-size-19 app-task-list__tag govuk-!-font-weight-regular" id="list-convictions-status">Remove</a></h2>
+
+              {{ govukInput({
+                label: {
+                  text: "Name"
+                },
+                id: "attendeenamepip",
+                name: "attendeenamepip",
+                value: data['attendeenamepip']
+              }) }}
+
+              {{ govukInput({
+                label: {
+                  text: "Relationship to claimant"
+                },
+                id: "attendeerelationshippip",
+                name: "attendeerelationshippip",
+                value: data['attendeerelationshippip']
+              }) }}
+
+              <hr class="govuk-!-margin-bottom-5">
+
+              <h2 class="govuk-heading-m">Attendee 2 <a href="#" class="govuk-link govuk-!-font-size-19 app-task-list__tag govuk-!-font-weight-regular" id="list-convictions-status">Remove</a></h2>
+
+              {{ govukInput({
+                label: {
+                  text: "Name"
+                },
+                id: "attendeename-2pip",
+                name: "attendeename-2pip"
+              }) }}
+
+              {{ govukInput({
+                label: {
+                  text: "Relationship to claimant"
+                },
+                id: "attendee-relationship-2pip",
+                name: "attendee-relationship-2pip"
+              }) }}
+
+              <hr class="govuk-!-margin-bottom-5">
+
+              <p><a class="govuk-link" href="#">Add another attendee</a></p>
+
+
+              {{ govukButton({
+                text: "Save and continue"
+              }) }}
+
+
+            </form>
+
+
+            </div>
+        </div>
+
+    </main>
+  </div>
+{% endblock %}

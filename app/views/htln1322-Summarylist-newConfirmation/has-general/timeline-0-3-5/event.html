@@ -1,0 +1,260 @@
+{% extends "layout.html" %}
+{% set bodyAttributes = { id: "assess" } %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block main %}
+
+{% include "includes/assessment-status-neutral.html" %}
+
+
+  <div class="govuk-width-container {{ containerClasses }}">
+    <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+    <!-- <div class="navigation-header">
+        <ul class="govuk-list">
+          <li class="govuk-!-margin-bottom-2"><a href="#" class="govuk-link--no-visited-state govuk-link--no-underline">Referrals</a></li>
+          <li class="govuk-!-margin-bottom-2"><a href="#" class="govuk-link--no-visited-state govuk-link--no-underline">Claimant details</a></li>
+          <li class="govuk-!-margin-bottom-2"><a href="#" class="govuk-link--no-visited-state govuk-link--no-underline">Appointments</a></li>
+          <li class="govuk-!-margin-bottom-2"><a href="#" class="govuk-link--no-visited-state govuk-link--no-underline">Evidence</a></li>
+          <li class="govuk-!-margin-bottom-2 active">Claimant log</li>
+        </ul>
+      </div>--> 
+
+    <main class="govuk-main-wrapper {{ mainClasses }}" id="main-content" role="main"{% if mainLang %} lang="{{ mainLang }}"{% endif %}>
+
+      
+
+      <div class="govuk-grid-row">
+
+          
+
+        <div class="govuk-grid-column-two-thirds">
+
+
+        <!-- hidden for booking details removed for mvp  <form action="event-contact" method="post" class="form"> -->
+            <form action="index" method="post" class="form">
+
+          <h1 class="govuk-heading-l">
+            What has been updated?
+
+          </h1>
+  
+        
+             
+
+              <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+               
+                <div class="govuk-radios govuk-radios">
+                 
+
+                  <div class="govuk-radios__item" data-module="govuk-radios">
+                    <input class="govuk-radios__input" id="action-1" name="action" type="radio"  aria-controls="conditional-action-1" aria-expanded="false" value="Initial or further evidence reviewed" {{ checked("action", "Initial or further evidence reviewed") }}>
+                    <label class="govuk-label govuk-radios__label" for="action-1">
+                      Initial or further evidence reviewed
+                </label>                      
+              </div>
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-action-1" style=display:none;>
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="action-1">
+                    Add brief details about the review
+                  </label>      
+                       
+                <input class="govuk-input govuk-!-width-full-width" id="action-1" name="review-box-details" type="text" value="{{ data['review-box-details'] }}" autocomplete="off">
+                </div></div>
+          
+
+              
+                <div class="govuk-radios__item" data-module="govuk-radios">
+                  <input class="govuk-radios__input" id="action-2" name="action" type="radio"  aria-controls="conditional-action-2" aria-expanded="false" value="Paper based review booked" {{ checked("action", "Paper based review booked") }}>
+                  <label class="govuk-label govuk-radios__label" for="action-2">
+                    Paper based review booked
+              </label>                      
+            </div>
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-action-2" style=display:none;>
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="action-2">
+                  Add brief details about the assessment
+                </label>      
+                     
+              <input class="govuk-input govuk-!-width-full-width" id="action-2" name="pbr-booking-box-details" type="text" value="{{ data['pbr-booking-box-details'] }}" autocomplete="off">
+              </div>
+            </div> 
+            
+
+
+              <div class="govuk-radios__item" data-module="govuk-radios">
+                <input class="govuk-radios__input" id="action-3" name="action" type="radio"  aria-controls="conditional-action-3" aria-expanded="false" value="Failed to attend assessment" {{ checked("action", "Failed to attend assessment") }}>
+                <label class="govuk-label govuk-radios__label" for="action-3">
+                  Failed to attend assessment
+            </label>                      
+          </div>
+          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-action-3" style=display:none;>
+            <div class="govuk-form-group">
+
+              <label class="govuk-label" for="action-3">
+                Add brief details 
+              </label>      
+                   
+            <input class="govuk-input govuk-!-width-full-width" id="action-3" name="failed-box-details" type="text" value="{{ data['failed-box-details'] }}" autocomplete="off">
+            
+
+            </div></div>
+
+
+
+            <div class="govuk-radios__item" data-module="govuk-radios">
+              <input class="govuk-radios__input" id="action-4" name="action" type="radio"  aria-controls="conditional-action-4" aria-expanded="false" value="Assessment abandoned" {{ checked("action", "Assessment abandoned") }}>
+              <label class="govuk-label govuk-radios__label" for="action-4">
+                Assessment abandoned
+          </label>                      
+        </div>
+        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-action-4" style=display:none;>
+          <div class="govuk-form-group"></div></div>
+
+
+
+                 
+          {% if  (data['claim']   != 'PIP' and (data['claim'])   != 'UC') %}
+                  <div class="govuk-radios__item" data-module="govuk-radios">
+                    <input class="govuk-radios__input" id="action-5" name="action" type="radio"  aria-controls="conditional-action-5" aria-expanded="false" value="  HCP advice complete" {{ checked("action", "  HCP advice complete") }}>
+                    <label class="govuk-label govuk-radios__label" for="action-5">
+                      HCP advice complete
+                </label>                      
+              </div>
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-action-5" style=display:none;>
+                <div class="govuk-form-group"></div></div>
+                {% endif %} 
+
+
+
+
+
+                <div class="govuk-radios__item" data-module="govuk-radios">
+                  <input class="govuk-radios__input" id="action-6" name="action" type="radio"  aria-controls="conditional-action-6" aria-expanded="false" value="Report completed" {{ checked("action", "Report completed") }}>
+                  <label class="govuk-label govuk-radios__label" for="action-6">
+                    Report completed
+              </label>                      
+            </div>
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-action-6" style=display:none;>
+              <div class="govuk-form-group"></div></div>
+
+
+              <div class="govuk-radios__item" data-module="govuk-radios">
+                <input class="govuk-radios__input" id="action-7" name="action" type="radio"   aria-controls="conditional-action-7" aria-expanded="false" value="Report audited" {{ checked("action", "Report audited") }}>
+                <label class="govuk-label govuk-radios__label" for="action-7">
+                  Report audited
+            </label>                      
+          </div>
+          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-action-7" style=display:none;>
+            <div class="govuk-form-group"></div></div>
+            
+
+               
+                
+            {% if  (data['claim']   != 'PIP' and (data['claim'])   != 'UC') %}
+                  <div class="govuk-radios__item" data-module="govuk-radios">
+                    <input class="govuk-radios__input" id="action-8" name="action" type="radio"  aria-controls="conditional-action-8" aria-expanded="false" value="Summary decision made" {{ checked("action", "Summary decision made") }}>
+                    <label class="govuk-label govuk-radios__label" for="action-8">
+                      Summary decision made
+                </label>                      
+              </div>
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-action-8" style=display:none;>
+                <div class="govuk-form-group"></div></div>
+                {% endif %} 
+                  
+                {% if  (data['claim']   != 'PIP' and (data['claim'])   != 'UC') %}
+                <div class="govuk-radios__item" data-module="govuk-radios">
+                  <input class="govuk-radios__input" id="action-9" name="action" type="radio"  aria-controls="conditional-action-9" aria-expanded="false" value="Decision made" {{ checked("action", " Decision made") }}>
+                  <label class="govuk-label govuk-radios__label" for="action-9">
+                    Decision made
+              </label>                      
+            </div>
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-action-9" style=display:none;>
+              <div class="govuk-form-group"></div></div>
+              {% endif %} 
+
+              {% if  (data['claim']   != 'PIP' and (data['claim'])   != 'UC') %}
+              <div class="govuk-radios__item" data-module="govuk-radios">
+                <input class="govuk-radios__input" id="action-10" name="action" type="radio"   aria-controls="conditional-action-10" aria-expanded="false" value="PIPCS Updated" {{ checked("action", "PIPCS Updated") }}>
+                <label class="govuk-label govuk-radios__label" for="action-10">
+                  PIPCS updated
+            </label>                      
+          </div>
+          {% endif %} 
+
+          {% if  data['claim']   != 'PIP' %}
+          <div class="govuk-radios__item" data-module="govuk-radios">
+            <input class="govuk-radios__input" id="action-11" name="action" type="radio"   aria-controls="conditional-action-11" aria-expanded="false" value="File returned to BAU" {{ checked("action", "File returned to BAU") }}>
+            <label class="govuk-label govuk-radios__label" for="action-11">
+              File returned to BAU
+        </label>                      
+      </div>
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-action-11" style=display:none;>
+                </div>
+                {% endif %} 
+                
+                    
+                  <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="action-12" name="action" type="radio" value="" aria-controls="conditional-action-12" aria-expanded="false" value="Other"  {{ checked("action", "Other") }}>
+                      <label class="govuk-label govuk-radios__label" for="action-12">
+                    Other
+                  </label>
+                      
+                    </div>
+                    
+                      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-action-12">
+                        <div class="govuk-form-group">
+                          <label class="govuk-label" for="action-12">
+                            Add a title
+                          </label>   
+                           
+                    <input class="govuk-input govuk-!-width-one-half" id="action-12" name="action-details" type="text" value="{{ data['action-details'] }}" autocomplete="off">
+                    </div>
+                  </div>
+
+                </div>
+                <h3 class="govuk-heading-m" style="padding-top:30px;">Further information</h3>
+
+                <div class="govuk-form-group">
+                  <label class="govuk-label"> 
+                    Add brief details of any additional information (optional)
+                  </label>      
+                       
+                  <textarea class="govuk-textarea" id="action-1" name="additional-details" type="text" value="{{ data['additional-details'] }}" autocomplete="off" rows="4" > </textarea>
+                </div>
+               
+            
+      </div>
+
+       <br>
+             
+
+
+         <!-- <div class="hidden-radio-post">
+                <div class="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="contact-claim-change" name="contact-method" type="radio" value="The claim has changed" {{ checked("contact-method", "The claim has changed") }}checked>
+                    <label class="govuk-label govuk-radios__label" for="log-show">
+                   Hidden radio = The claim has changed
+                    </label>
+                  </div>
+                </div>
+              </div>-->  
+          
+
+              {{ govukButton({
+                text: "Continue"
+              }) }}
+
+            </form>
+ 
+            </div>
+        </div>
+
+    </main>
+  </div>
+{% endblock %}

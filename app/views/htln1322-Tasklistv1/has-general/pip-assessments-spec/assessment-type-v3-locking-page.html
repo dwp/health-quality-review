@@ -1,0 +1,62 @@
+{% extends "layout-assessment-history.html" %}
+{% set bodyAttributes = { id: "assess" } %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block main %}
+
+{% include "includes/assessment-status-neutral.html" %}
+
+
+
+
+  <div class="govuk-width-container {{ containerClasses }}">
+
+    {{ govukBackLink({
+      text: "Back",
+      href: "javascript:history.back()"
+    }) }}
+    <main class="govuk-main-wrapper {{ mainClasses }}" id="main-content" role="main"{% if mainLang %} lang="{{ mainLang }}"{% endif %}>
+    
+        <div class="govuk-grid-row">
+
+
+            <div class="govuk-grid-column-two-thirds">
+              <h1 class="govuk-heading-l">Assessment in progress</h1>
+
+
+  <form action="assessment-status" method="post" id="question-form" novalidate>
+
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Type of assessment
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Telephone
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="assessment-type-v3-locking-page-edit.html">
+            Change<span class="govuk-visually-hidden"> name</span>
+          </a>
+        </dd>
+      </div>
+  
+    </dl>
+
+</div>
+</div>
+
+<button class="govuk-button" data-module="govuk-button">
+  Save and continue
+</button>
+
+</main>
+</div>
+
+
+
+
+{% endblock %}

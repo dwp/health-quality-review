@@ -1,0 +1,185 @@
+{% extends "layout.html" %}
+{% set bodyAttributes = { id: "assess" } %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block main %}
+
+{% include "includes/assessment-status-neutral.html" %}
+
+  <div class="govuk-width-container {{ containerClasses }}">
+
+    <!-- {{ govukBackLink({
+      text: "Back",
+      href: "assessment-status"
+    }) }} -->
+
+    {{ govukBackLink({
+      text: "Back",
+      href: "javascript:history.back()"
+    }) }}
+
+    <main class="govuk-main-wrapper {{ mainClasses }}" id="main-content" role="main"{% if mainLang %} lang="{{ mainLang }}"{% endif %}>
+        <div class="govuk-grid-row">
+
+            <div class="govuk-grid-column-two-thirds">
+
+
+                <h1 class="govuk-heading-l">Managing toilet needs</h1>
+
+                </div>
+          </div>
+
+          <div class="govuk-grid-row">
+
+            <div class="govuk-grid-column-two-thirds">
+
+            <form action="assessment-status" method="post">
+
+              {% if data['assessmenttype'] !== "Paper" %}
+
+              {{ govukTextarea({
+                name: "toiletneedsNotes",
+                id: "toiletneedsNotes",
+                rows: "8",
+                classes: "govuk-!-margin-bottom-9",
+                label: {
+                  text: "Functional history for managing toilet needs",
+                  classes: "govuk-label--s",
+                  isPageHeading: false
+                },
+                value: data['toiletneedsNotes']
+              }) }}
+
+
+
+              {{ govukRadios({
+                name: "toiletneedsSelect",
+                fieldset: {
+                  classes: "govuk-!-margin-bottom-9",
+                  legend: {
+                    text: "Which of these describes how well the claimant can manage toilet needs?",
+                    isPageHeading: false,
+                    classes: "govuk-fieldset__legend--s"
+                  }
+                },
+                items: [
+                  {
+                    value: "(5a) Can manage toilet needs or incontinence unaided",
+                    text: "(5a) Can manage toilet needs or incontinence unaided",
+                    checked: (data['toiletneedsSelect'] == "(5a) Can manage toilet needs or incontinence unaided")
+                  },
+                  {
+                    value: "(5b) Needs to use an aid or appliance to be able to manage toilet needs or incontinence",
+                    text: "(5b) Needs to use an aid or appliance to be able to manage toilet needs or incontinence",
+                    checked: (data['toiletneedsSelect'] == "(5b) Needs to use an aid or appliance to be able to manage toilet needs or incontinence")
+                  },
+                  {
+                    value: "(5c) Needs supervision or prompting to be able to manage toilet needs",
+                    text: "(5c) Needs supervision or prompting to be able to manage toilet needs",
+                    checked: (data['toiletneedsSelect'] == "(5c) Needs supervision or prompting to be able to manage toilet needs")
+                  },
+                  {
+                    value: "(5d) Needs assistance to be able to manage toilet needs",
+                    text: "(5d) Needs assistance to be able to manage toilet needs",
+                    checked: (data['toiletneedsSelect'] == "(5d) Needs assistance to be able to manage toilet needs")
+                  },
+                  {
+                    value: "(5e) Needs assistance to be able to manage incontinence of either bladder or bowel",
+                    text: "(5e) Needs assistance to be able to manage incontinence of either bladder or bowel",
+                    checked: (data['toiletneedsSelect'] == "(5e) Needs assistance to be able to manage incontinence of either bladder or bowel")
+                  },
+                  {
+                    value: "(5f) Needs assistance to be able to manage incontinence of both bladder and bowel",
+                    text: "(5f) Needs assistance to be able to manage incontinence of both bladder and bowel",
+                    checked: (data['toiletneedsSelect'] == "(5f) Needs assistance to be able to manage incontinence of both bladder and bowel")
+                  }
+                ]
+              }) }}
+
+
+
+                    {{ govukTextarea({
+                      name: "toiletneedsReason",
+                      id: "toiletneedsReason",
+                      label: {
+                        text: "What is the reason for this answer?",
+                        classes: "govuk-label--s",
+                        isPageHeading: false
+                      },
+                      value: data['toiletneedsReason']
+                    }) }}
+
+                    {% else %}
+                    {{ govukRadios({
+                      name: "toiletneedsSelectpbr",
+                      fieldset: {
+                        classes: "govuk-!-margin-bottom-9",
+                        legend: {
+                          text: "Which of these describes how well the claimant can manage toilet needs?",
+                          isPageHeading: false,
+                          classes: "govuk-fieldset__legend--s"
+                        }
+                      },
+                      items: [
+                      {
+                        value: "(5a) Can manage toilet needs or incontinence unaided",
+                        text: "(5a) Can manage toilet needs or incontinence unaided",
+                        checked: (data['toiletneedsSelectpbr'] == "(5a) Can manage toilet needs or incontinence unaided")
+                      },
+                      {
+                        value: "(5b) Needs to use an aid or appliance to be able to manage toilet needs or incontinence",
+                        text: "(5b) Needs to use an aid or appliance to be able to manage toilet needs or incontinence",
+                        checked: (data['toiletneedsSelectpbr'] == "(5b) Needs to use an aid or appliance to be able to manage toilet needs or incontinence")
+                      },
+                      {
+                        value: "(5c) Needs supervision or prompting to be able to manage toilet needs",
+                        text: "(5c) Needs supervision or prompting to be able to manage toilet needs",
+                        checked: (data['toiletneedsSelectpbr'] == "(5c) Needs supervision or prompting to be able to manage toilet needs")
+                      },
+                      {
+                        value: "(5d) Needs assistance to be able to manage toilet needs",
+                        text: "(5d) Needs assistance to be able to manage toilet needs",
+                        checked: (data['toiletneedsSelectpbr'] == "(5d) Needs assistance to be able to manage toilet needs")
+                      },
+                      {
+                        value: "(5e) Needs assistance to be able to manage incontinence of either bladder or bowel",
+                        text: "(5e) Needs assistance to be able to manage incontinence of either bladder or bowel",
+                        checked: (data['toiletneedsSelectpbr'] == "(5e) Needs assistance to be able to manage incontinence of either bladder or bowel")
+                      },
+                      {
+                        value: "(5f) Needs assistance to be able to manage incontinence of both bladder and bowel",
+                        text: "(5f) Needs assistance to be able to manage incontinence of both bladder and bowel",
+                        checked: (data['toiletneedsSelectpbr'] == "(5f) Needs assistance to be able to manage incontinence of both bladder and bowel")
+                      }
+                    ]
+                  }) }}
+
+
+                    {% endif %}
+
+                    {{ govukButton({
+                      text: "Save and continue"
+                    }) }}
+                </ul>
+
+
+
+            </form>
+
+
+
+            </div>
+
+            <div class="govuk-grid-column-one-third">
+
+
+            </div>
+
+        </div>
+
+    </main>
+  </div>
+{% endblock %}

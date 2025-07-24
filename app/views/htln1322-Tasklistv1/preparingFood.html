@@ -1,0 +1,98 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  GOV.UK page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{% block beforeContent %}
+
+{% endblock %}
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+<form class="form" action="/country-answer" method="post">
+
+{{ govukRadios({
+  name: "PrimaryConditions",
+  value: data['country'],
+  fieldset: {
+    legend: {
+      text: "Primary Conditions",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  items: [
+    {
+      value: "England",
+      text: "A - Clinically probable opinion based on all the available evidence and adequately justified"
+    },
+    {
+      value: "Scotland",
+      text: "AF - Clinically possible advice but evidence supports consideration of an alternative opinion or descriptor choice"
+    },
+    {
+      value: "Wales",
+      text: "AF - Justification which supports but doesn’t fully explain the advice or the descriptor choice"
+    },
+    {
+      value: "Wales",
+      text: "AA - Clinically improbable advice such that the descriptor choice is highly unlikely but would not lead to a wrong award or major error in duration if left unchanged"
+    },
+    {
+      value: "Wales",
+      text: "AA - Clinically improbable prognosis advice – award duration recommended considered to be too long/too short"
+    },
+    {
+      value: "Wales",
+      text: "AA - Justification which fails to support the advice or the descriptor choice but doesn’t suggest an alternative award"
+    },
+    {
+      value: "Wales",
+      text: "U - Clinically improbable advice such that the descriptor choice is highly unlikely and would lead to a wrong award if not changed."
+    },
+    {
+      value: "Wales",
+      text: "U - Justification which fails to support the advice, or the descriptor chosen and would suggest an alternative award"
+    },
+    {
+      value: "Wales",
+      text: "N/A - Not Applicable"
+    }
+   
+  ]
+}) }}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{{ govukButton({
+  text: "Continue"
+}) }}
+
+</form>
+    </div>
+  </div>
+{% endblock %}
+

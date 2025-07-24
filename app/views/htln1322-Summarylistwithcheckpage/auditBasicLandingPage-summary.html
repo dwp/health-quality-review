@@ -1,0 +1,351 @@
+{% extends "layouts/main.html" %}
+ 
+{% block pageTitle %}
+  Evidence
+{% endblock %}
+ 
+{% block beforeContent %}
+ 
+{% include "includes/assessment-status-neutral-pip.html" %}
+  <div class="govuk-width-container {{ containerClasses }}"></div>
+
+  {% if not query.checkAnswers %}
+  <a href="claimant-details.html" class="govuk-back-link">Back</a>
+  {% endif %}
+  {% if query.checkAnswers %}
+  <a href="auditBasicLandingPage-summary.html" class="govuk-back-link">Back</a>
+  {% endif %}
+{% endblock %}
+ 
+{% block content %}
+ 
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {% if not query.checkAnswers %}
+      <form class="form" action="auditBasicLandingPage-summary?checkAnswers=true" method="post">
+        <h1 class="{% if query.checkAnswers %}govuk-heading-xl{% else %}govuk-heading-l{% endif %}">Quality review</h1>
+        {% endif %}
+
+        {% if query.checkAnswers %}
+        <form class="form" action="auditBasicLandingPage-confirmation" method="post">
+          <h1 class="{% if query.checkAnswers %}govuk-heading-xl{% else %}govuk-heading-l{% endif %}">Check your answers</h1>
+          {% endif %}
+
+      {% for section in reviewSections %}
+
+    {% if not query.checkAnswers %}
+      {% if loop.index === 1 %}
+      <!-- <h2 class="govuk-heading-m">Assessment Audit</h2> -->
+      {% endif %}
+    {% else %}
+      <h2 class="govuk-heading-l">{{ section }}</h2>
+    {% endif %}
+
+    {% if not query.checkAnswers and loop.index === 2 %}
+    {% else %}
+
+    {% if (query.checkAnswers and ((section === "Feedback" and "evidence" in groupsWithFeedback) or (section === "Amendments" and "evidence" in groupsToAmend))) or not query.checkAnswers %}
+    
+      <h2 class="govuk-heading-m">Evidence</h2>
+      <dl class="govuk-summary-list">
+        {% for key, value in evidence %}
+        {% if not query.checkAnswers or ((section === "Feedback" and "grade-" + key in hasFeedback) or (section === "Amendments" and "grade-" + key in requiresAmendment)) %}
+        <div id="infoGather-{{ key }}" class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            {{ value }}
+          </dt>
+ 
+          <dd class="govuk-summary-list__value">
+            {% if data["grade-" + key] %}
+              <p class="govuk-body">
+                {{ data["grade-" + key] }}
+              </p>
+              <p class="govuk-body">Comment:</p>
+              <p class="govuk-body">
+                {{ data["comment-" + key] }}
+              </p>
+            {% else %}
+              <!-- No feedback -->
+            {% endif %}
+          </dd>
+         
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="evidence?evidence={{ key }}">{% if data["grade-" + key] %}Change{% else %}Add{% endif %}<span class="govuk-visually-hidden"> address</span></a>
+          </dd>
+         
+        </div>
+        {% endif %}
+        {% endfor %}
+    </dl>
+
+    {% endif %}
+
+    {% if (query.checkAnswers and ((section === "Feedback" and "infoGather" in groupsWithFeedback) or (section === "Amendments" and "infoGather" in groupsToAmend))) or not query.checkAnswers %}
+ 
+      <h2 class="govuk-heading-m">Information gathering</h2>
+      <dl class="govuk-summary-list">
+        {% for key, value in infoGather %}
+        {% if not query.checkAnswers or ((section === "Feedback" and "grade-" + key in hasFeedback) or (section === "Amendments" and "grade-" + key in requiresAmendment)) %}
+        <div id="infoGather-{{ key }}" class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            {{ value }}
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% if data["grade-" + key] %}
+              <p class="govuk-body">
+                {{ data["grade-" + key] }}
+              </p>
+              <p class="govuk-body">Comment: </p>
+              <p class="govuk-body">
+                {{ data["comment-" + key] }}
+              </p>
+            {% else %}
+              <!-- No feedback -->
+            {% endif %}
+          </dd>
+         
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="infoGather?infoGather={{ key }}">{% if data["grade-" + key] %}Change{% else %}Add{% endif %}<span class="govuk-visually-hidden"> address</span></a>
+          </dd>
+       
+        </div>
+        {% endif %}
+        {% endfor %}
+    </dl>
+
+    {% endif %}
+
+
+
+    {% if (query.checkAnswers and ((section === "Feedback" and "activities" in groupsWithFeedback) or (section === "Amendments" and "activities" in groupsToAmend))) or not query.checkAnswers %}
+
+    <h2 class="govuk-heading-m">Daily living</h2>
+    <dl class="govuk-summary-list">
+      {% for key, value in activities %}
+        {% if loop.index !== 11 and loop.index !== 12 %}
+        {% if not query.checkAnswers or ((section === "Feedback" and "grade-" + key in hasFeedback) or (section === "Amendments" and "grade-" + key in requiresAmendment)) %}
+        <div id="activity-{{ key }}" class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            {{ value }}
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% if data["grade-" + key] %}
+              <p class="govuk-body">
+                {{ data["grade-" + key] }}
+              </p>
+              <p class="govuk-body">Comment: </p>
+              <p class="govuk-body">
+                {{ data["comment-" + key] }}
+              </p>
+            {% else %}
+              <!-- No feedback -->
+            {% endif %}
+          </dd>
+         
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="activity?activity={{ key }}">{% if data["grade-" + key] %}Change{% else %}Add{% endif %}<span class="govuk-visually-hidden"> address</span></a>
+          </dd>
+       
+        </div>
+        {% endif %}
+        {% endif %}
+      {% endfor %}
+    </dl>
+ 
+    {% endif %}
+
+
+    {% if (query.checkAnswers and ((section === "Feedback" and "mobility" in groupsWithFeedback) or (section === "Amendments" and "mobility" in groupsToAmend))) or not query.checkAnswers %}
+
+    <h2 class="govuk-heading-m">Mobility</h2>
+    <dl class="govuk-summary-list">
+      {% for key, value in mobility %}
+        {% if loop.index !== 10 and loop.index !== 11 %}
+        {% if not query.checkAnswers or ((section === "Feedback" and "grade-" + key in hasFeedback) or (section === "Amendments" and "grade-" + key in requiresAmendment)) %}
+        <div id="activity-{{ key }}" class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            {{ value }}
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% if data["grade-" + key] %}
+              <p class="govuk-body">
+                {{ data["grade-" + key] }}
+              </p>
+              <p class="govuk-body">Comment: </p>
+              <p class="govuk-body">
+                {{ data["comment-" + key] }}
+              </p>
+            {% else %}
+              <!-- No feedback -->
+            {% endif %}
+          </dd>
+         
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="mobility?mobility={{ key }}">{% if data["grade-" + key] %}Change{% else %}Add{% endif %}<span class="govuk-visually-hidden"> address</span></a>
+          </dd>
+         
+        </div>
+        {% endif %}
+        {% endif %}
+      {% endfor %}
+    </dl>
+ 
+    {% endif %}
+
+
+
+    {% if (query.checkAnswers and ((section === "Feedback" and "opinion" in groupsWithFeedback) or (section === "Amendments" and "opinion" in groupsToAmend))) or not query.checkAnswers %}
+
+    <h2 class="govuk-heading-m">Opinion</h2>
+    <dl class="govuk-summary-list">
+      {% for key, value in opinion %}
+      {% if not query.checkAnswers or ((section === "Feedback" and "grade-" + key in hasFeedback) or (section === "Amendments" and "grade-" + key in requiresAmendment)) %}
+      <div id="opinion-{{ key }}" class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            {{ value }}
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% if data["grade-" + key] %}
+              <p class="govuk-body">
+                {{ data["grade-" + key] }}
+              </p>
+              <p class="govuk-body">Comment: </p>
+              <p class="govuk-body">
+                {{ data["comment-" + key] }}
+              </p>
+            {% else %}
+              <!-- No feedback -->
+            {% endif %}
+          </dd>
+        
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="opinion?opinion={{ key }}">{% if data["grade-" + key] %}Change{% else %}Add{% endif %}<span class="govuk-visually-hidden"> address</span></a>
+          </dd>
+         
+        </div>
+        {% endif %}
+      {% endfor %}
+    </dl>
+
+    {% endif %}
+ 
+    {% if (query.checkAnswers and ((section === "Feedback" and "process" in groupsWithFeedback) or (section === "Amendments" and "process" in groupsToAmend))) or not query.checkAnswers %}
+
+    <h2 class="govuk-heading-m">Process</h2>
+    <dl class="govuk-summary-list">
+      {% for key, value in process %}
+      {% if not query.checkAnswers or ((section === "Feedback" and "grade-" + key in hasFeedback) or (section === "Amendments" and "grade-" + key in requiresAmendment)) %}
+      <div id="process-{{ key }}" class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            {{ value }}
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% if data["grade-" + key] %}
+              <p class="govuk-body">
+                {{ data["grade-" + key] }}
+              </p>
+              <p class="govuk-body">Comment: </p>
+              <p class="govuk-body">
+                {{ data["comment-" + key] }}
+              </p>
+            {% else %}
+              <!-- No feedback -->
+            {% endif %}
+          </dd>
+         
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="process?process={{ key }}">{% if data["grade-" + key] %}Change{% else %}Add{% endif %}<span class="govuk-visually-hidden"> address</span></a>
+          </dd>
+    
+        </div>
+        {% endif %}
+      {% endfor %}
+
+   
+    </dl>
+
+    {% endif %}
+
+    {% endif %}
+
+    {% endfor %}
+
+    <h2 class="{% if query.checkAnswers %}govuk-heading-l{% else %}govuk-heading-m{% endif %}">Assessment Audit</h2>
+      
+   
+    <dl class="govuk-summary-list">
+      {% for key, value in condition %}
+      <div id="process-{{ key }}" class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            {{ value }}
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% if data["grade-" + key] %}
+              <p class="govuk-body">
+                {{ data["grade-" + key] }}
+              </p>
+            {% else %}
+              <!-- No feedback -->
+            {% endif %}
+          </dd>
+         
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="condition?condition={{ key }}">{% if data["grade-" + key] %}Change{% else %}Add{% endif %}<span class="govuk-visually-hidden"> address</span></a>
+          </dd>
+        
+        </div>
+      
+      {% endfor %}
+    </dl>
+
+    <dl class="govuk-summary-list">
+      <div id="process-{{ key }}" class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Overall Comment
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data["comment-" + key] }}
+        </dd>
+       
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="Overallcomment?Overallcomment={{ key }}">{% if data["grade-" + key] %}Change{% else %}Add{% endif %}<span class="govuk-visually-hidden"> address</span></a>
+        </dd>
+    
+      </div>
+    
+
+
+  
+   
+      <div id="process-{{ key }}" class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Overall grade
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p class="govuk-body">{{ lowestGrade }}</p> 
+          </dd>
+      </div>
+    </dl>
+ 
+    {% if not query.checkAnswers %}
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+    {% endif %}
+
+
+    {% if query.checkAnswers %}
+    {{ govukButton({
+      text: "Submit"
+    }) }}
+  {% endif %}
+ 
+</form>
+    </div>
+  </div>
+{% endblock %}

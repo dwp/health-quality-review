@@ -1,0 +1,1095 @@
+
+
+
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Home – {{serviceName}} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<style type="text/css">
+  .text {
+    text-align: left;
+    display: block;
+    white-space: pre-line;
+  }
+             
+  </style>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+
+    <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+    
+    <span class="govuk-caption-xl">Personal Independence Payment</span>
+    <h1 class="govuk-heading-xl">Health assessment report</h1>
+
+    <h2 class="govuk-heading-l">Claimant details</h2>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          John Doe
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          National Insurance number
+        </dt>
+        <dd class="govuk-summary-list__value">
+          RN000123A
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+         Date of birth
+        </dt>
+        <dd class="govuk-summary-list__value">
+          31 December 1999
+        </dd>
+      </div>
+    </dl> 
+
+    <h2 class="govuk-heading-l">Assessment details</h2>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Date report was completed
+        </dt>
+        <dd class="govuk-summary-list__value">
+          06/02/2024
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Benefit
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Personal Independence Payment
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+         Assessment type
+        </dt>
+        <dd class="govuk-summary-list__value">
+            Face to face
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Healthcare professional
+        </dt>
+        <dd class="govuk-summary-list__value">
+            Aldo Raine
+        </dd>  
+      </div>
+    </dl>  
+
+
+    <h2 class="govuk-heading-l">Evidence</h2>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Evidence used
+        </dt>
+        <dd class="govuk-summary-list__value">
+          All Further Medical Evidence submitted prior to the 06/02/2024 has been reviewed and considered. The following documents have been used when assessing and justifying the current level of functional restrictions:<br>
+          PIP2 - 11/12/23<br>
+          GP record 7/12/2023<br>
+          Uc50 1/1/2024<br><br>
+          ID correctly verified by the claimant using SMQs (Name, Date of Birth, National Insurance Number) and KBVQ-s ( Benefit being assessed today -PIP ).
+          Confidentiality maintained.<br><br>
+          No further evidence presented during the telephone consultation.<br><br>
+          The following abbreviations may be used in this report: Further Evidence (FE), History of Conditions (HOC), Current Medication (CM) Social and Occupational History (SOH), Functional History (FH),Informal Observations (IO's), Musculoskeletal Overview (MSO), Mental State Examination (MSE), Overwhelming Psychological Distress (OPD) Cognitive behavioural therapy (CBT) Community mental health Team (CMHT) Community Psychiatric nurse(CPN) Child and Adolescent Mental health Service (CAMHS) Over the Counter (OTC)
+        </dd>
+     
+      </div>
+
+      <!-- <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+         Other evidence used
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Prescription letters and further evidence to support for medical conditions
+        </dd>
+        <dd class="govuk-summary-list__actions">
+       
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+         Evidence requested but not returned
+        </dt>
+        <dd class="govuk-summary-list__value">
+          GP patient form (113), <br>Factual medical report (FRR2)   </dd>
+        <dd class="govuk-summary-list__actions">
+       
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+         Other evidence requested but not returned
+        </dt>
+        <dd class="govuk-summary-list__value">
+None        </dd>
+        <dd class="govuk-summary-list__actions">
+       
+        </dd>
+      </div> -->
+    </dl>
+
+    <h2 class="govuk-heading-l">Consultation</h2>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+         Consulation date
+        </dt>
+        <dd class="govuk-summary-list__value">
+          06/02/2024
+        </dd>
+        <dd class="govuk-summary-list__actions">
+
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Was the claimant's identity confirmed?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Yes
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          How was their identity confirmed?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Passport, NINo, First line of address
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Did the claimant give consent?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Yes
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        
+        </dd>
+      </div>
+    </dl>
+
+    <h3 class="govuk-heading-l">Additional attendees</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-7">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+           Attendee 1 name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            n/a
+          </dd>
+          <dd class="govuk-summary-list__actions">
+  
+          </dd>
+        </div>
+  
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Relationship or role
+          </dt>
+          <dd class="govuk-summary-list__value">
+          
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          
+          </dd>
+        </div>
+  
+      </dl>
+<!-- 
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+           Attendee 2 name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Jeremy Usborne
+          </dd>
+          <dd class="govuk-summary-list__actions">
+  
+          </dd>
+        </div>
+  
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Relationship or role
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Musician
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          
+          </dd>
+        </div>
+  
+      </dl> -->
+
+    <h2 class="govuk-heading-l">Condition history</h2>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+         History of condition
+        </dt>
+        <dd class="govuk-summary-list__value">
+          The scope of the assessment was explained to the claimant and the claimant gave verbal consent to proceed.<br><br>
+Primary condition - Lower Back Pain -0nset 2012. 
+Scan in 2020 showed Prolapsed intervertebral L4-L5
+States has got worse over the years from his physically demanding jobs.<br>
+Under GP care - as needed. No specialist referral.
+Saw a physiotherapy around 3 years - not helpful and caused more pain.<br>
+Medication : co-codamol 30/500mg which are not effective. GP has not been prescribed other pain relief.<br>
+Symptoms : lower back pain around the top of buttock, describes sharp pain. Has numbness to the thighs of both legs.<br>
+Variability : constant pain.<br>
+worse on waking " feels like his seized up".<br>
+Lying down relieves pain slightly.<br>
+Describes numbness in his little finger and ring finger on both hands which started couple of months ago.
+GP is aware and not referred for scans or specialist input.<br>
+Affecting functions : picking up coins, walking, bending, standing.<br>
+standing duration : 15 minutes before needing to sit due to back pain.<br>
+No Hospital admissions.<br><br>
+Gout - onset 2012<br>
+Under GP care as needed.<br>
+No specialist<br>
+No medication .<br>
+Flare ups : left foot pain which increased the winter months lasting for a couple days.<br><br>
+Hypertension- onset 2010 by GP.<br>
+Has BP checked at GPs every 6 months.<br>
+Stable on medication for many years<br>
+No symptoms.<br><br>
+Has Bloods checked at GPs every 6 months. Stable on medication for many years<br>
+No symptoms.<br><br>
+Hearing problem - 1971 perforation of tympanic membrane.<br>
+infective otitis externa 5/2023<br>
+Has no hearing in the left and reduced hearing in the right.<br>
+Under GP care as needed.<br>
+Not been seen by audiologist for many years.<br>
+Has bilateral hearing aids - wears daily. Feels embarrassed when outside he has left them due to embarrassment however struggles to hear conversational voices.<br>
+With or without hearing aids is able to hear the phone, Tanoys and smoke alarms.<br>
+No pending surgeries.<br><br>
+Suspected Asthma<br>
+Following a lower respiratory tract infection 11/2023<br>
+On standard inhalers - which are effective.<br>
+Has been for an xray - due to tomorrow.<br>
+Had a short course of anti biotics following the last infection which helped. Currently has a chest
+infection and on anti biotics with a wheeze.<br>
+Symptoms : Continuous transient cough triggered by bending and walking, he states he is a smoker of 25 cigarettes a day.<br>
+No hospital admissions.<br>
+No home oxygen or nebulisations.<br><br>
+Mixed Anxiety and depression disorder - diagnosed 11/2023 following life events and losing his job as a plasterer.<br>
+FE , GP printout entry dated 4/12/2023 states improved mood, some dips but no negative or suicidal thoughts.<br>
+Input : Under GP care as needed. Last input was last week for medication review and due to chest infection.<br>
+Medication: Sertraline 50mg started last year - mostly effective.<br>
+treatment: None pending. No referrals, No CMHT or CPN.<br>
+No hospitalisations.<br>
+Symptoms : Feeling lost, poor appetite, tearful, mood swings, Hopelessness, headaches.<br>
+Has anxiety around his pain.<br>
+Variability : Has around 4 bad days which is compounded by physical pain. 3 betters is when pain is more manageable.<br><br>
+Self harm and suicidal ideations : None. He has never self harmed.<br><br>
+They deny any other health conditions.<br>
+        </dd>
+      
+      </div>
+
+    </dl>
+
+
+    <h2 class="govuk-heading-l">Medication</h2>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+        Medication
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Salbutamol 100mcg inhaler 1-2 puffs as needed<br>
+Clenil Modulite 100mcg inhaler 2 puffs twice a day<br>
+cardioplen XL 2.5mg ( for blood pressure ) once daily<br>
+Sertraline 50mg ( anti depressant) once daily<br>
+Co-codamol 30/500mg ( pain relief) 2 tablets 4 times a day<br>
+Simvastatin 20mg at night<br><br>
+They confirm the take the amounts prescribed by their Doctor.<br>
+No home therapies<br>
+No OTC medications.<br>
+        </dd>
+      
+      </div>
+
+    </dl>
+  
+    <br>
+
+    <h2 class="govuk-heading-l">Social and occupational history</h2>
+
+    <div>
+      <p class="govuk-body">
+        Dwelling<br>
+The live in a 3 bedroom maisonette.
+Has 3 flight of Stairs to the front door. He can grip the
+banister, walks up 1.5 flights of stairs. stopping for
+around 5 minutes due to leg and back pain.<br><br>
+Bathroom/toilet is located upstairs
+Which has a standard bath with shower over the tub.
+Has a rail on the side or bath and toilet he had put in
+a few years ago.<br><br>
+Aids/ adaptations : No OT input.
+Has a little table at the side of the bath - self
+purchased - put his clothes on to avoid bending.<br>
+No walking aids.<br>
+He has applied to his local council for a move on
+health grounds and additional stair rails.<br><br>
+Accidents : none in or outside the property. No falls,
+or carers.<br><br>
+He can access all areas of his home however avoids
+climbing stairs often due to back pain. He does not
+have a garden<br><br>
+He has no Caring responsibilities<br>
+He has no pets<br><br>
+Employment: They are currently not working,
+studying or volunteering<br>
+Previous role - Plasterer for over 20 years as an
+employee, worker full time.<br>
+Was laid off due to increased back pain limited him
+being able to do the physical job and having multiple
+days of sick . laid off 12/2023. Prior to leaving was
+having 2 days off a week with back pain which has
+gotten worse in the last 6 months. When at work had
+to have modified duties, sitting and extra people to
+help him.<br><br>
+Education: He attended main stream school. Left
+school at age 16 - no extra support given. He has
+poor literacy and numeracy levels. No formal
+diagnosis for dyslexia. States is able to read and
+recognise his letters and texts without big words.<br><br>
+Driving - He holds a manual licence. Last drove a
+van ( works van ) when employed. He has no current
+access to a vehicle . Struggles due to pain to get in
+and out of cars. He can put his on sear belt and
+takes a pillow for back support.<br><br>
+Mobilising: He can walk slowly around the ground
+level of his home. He walks unaided, states can walk
+around 3 meters to his kitchen slowly, has to stop
+due to back pain, stops till pain ease before
+continuing back to the living room . Last went out to
+the GP, sister took him due to pain, from his door to
+the, stairs and the car it takes 10 minutes ( previously
+would've taken 3-4 minutes) walks slowly unaided
+without 1 stop for a few minutes to ease his pain.
+Daughter drops him at the door and to GP receptions
+walks 3 minutes ( previously would've take less than
+a minute before back pain )<br><br>
+Public transport: Does not use as previously was a
+driver. Last used them 3 years ago. States physically
+could not use them.<br><br>
+Appointments - Daughter takes him to appointments
+due to his pain. He can engage with reception staff,
+other patients and various GPs.<br><br>
+Shopping- States has online shopping - which his
+sister does for him as he has never learnt to use the
+online. Previously was doing his shopping himself
+however due to his pain walking, location of his
+property he was unable to do this.<br>
+when shopping is delivered he can engaging with the
+delivery persons and puts his shopping away slowly,
+avoiding bending.<br>
+Housework : His sister comes around every 2 days to
+do the cleaning, laundry due to his back pain, He
+struggles to bend to put washing in. He can stand
+and wash up, wipe sides down along as it is at waist
+height.<br><br>
+Bills/correspondence : He states he knows when his
+bills are due out and is able to phone up and pay
+towards his bills , due to his financial situation he
+does not have much money now. After losing his job
+left demand letters to pile up as he had no money
+however has set up a payment plan with an advisor
+with council. He sister is paying for his shopping as
+he has very little money.<br><br>
+Reading : He does not enjoy reading and poor
+literacy. Can read and recognise his letters and
+reports. He can symbols. Has reading glasses. He
+prefers large print for ease. Has a cataract in the left
+eye for 6 years.<br><br>
+Mobile phone : to make and receive calls, able to
+swipe up, use key pad and send text messages.<br><br>
+Hobbies/interests
+Lye down for most of day watching TV, able to use a
+remote, watches the News or whatever is on.<br>
+      </div>
+  
+    <hr class="govuk-section-break govuk-section-break--m govuk-!-margin-bottom-7 govuk-section-break--visible">
+    <br>
+
+      <h2 class="govuk-heading-l">Daily living</h2>
+      
+      <h3 class="govuk-heading-m" style="display: inline-block;">Preparing food</h3>
+
+    <div>
+      <h3 class="govuk-heading-s" style="display: inline-block;">Functional history for preparing food</h3>
+    </div>
+
+      <p class="text">Makes a coffee, able to grip the kettle and carry the mug.<br>
+        He tends use microwave as he can not stand for more than 15 minutes or bend down to oven - no longer uses the oven. Has an air fryer , microwave and makes throw in meals everyday without prompting due to pain. Could not stand long enough to make a meal from scratch .<br>
+        He does not use fresh ingredients as he can not
+        afford too however would be able to peel and chop if seated.<br>
+        No accidents in the kitchen.</p>
+
+      <div>
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      <h3 class="govuk-heading-s" style="display: inline-block;">How well can the claimant prepare food?</h3>
+      </div>
+
+      <p>(1b) Needs to use an aid or appliance to be able to either prepare or cook a simple meal</p>
+
+      <div>
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      <h3 class="govuk-heading-s" style="display: inline-block;">Justification for preparing food</h3>
+      </div>
+
+      <p class="text">Restriction : prompting, pain standing, pain bending.
+        See FH above.<br><br>
+        1b appears probable, HOC shows disc prolapse at L4-L5, varicose veins with increasing pain over the last 6 months on the MOD, CMs shows moderate pain relief at max dose which is not effective and physiotherapy was not helpful. Gout pain is not present on the MOD. FH consistent with pain standing greater than 15 minutes making easy throw in meals due to pain. IOs heard heard groans of pain standing.<br>
+        Higher descriptors not considered as HOC shows no specialist input, SOH shows no falls or OT input. Although HOC shows numbness in both little and ring fingers he has not had any investigations and FH shows he could peel and chop when seated. FH also shows he can grip a kettle, no accidents, SOH shows he can use a mobile phone and remote supporting good manual dexterity, movement and power. No evidence of safety concerns.<br><br>
+        HOC acknowledges suspected asthma however shows no specialist input despite 2 chest infections, no hospital admissions, standard inhaler which are effective and IO's did indicate breathlessness and he spoke in full sentences.<br><br>
+        HOC acknowledges mental health condition however CMs, shows standard dose anti depressants and FE, GP printout shows improvement in mental health  since medication. FH did not indicate prompting and he is making easy meals daily. HOC shows he has  no secondary input, no cognitive impairment and the MSE was unremarkable, good level of cognition, he was alone for the assessment, he was not withdrawn and had insight.<br><br>
+        Restriction not within scope : bending to cook and affordability of ingredients.<br><br>
+        It is likely he needs to use an aid or appliance to be able to either prepare or cook a simple meal safely, timely, acceptably and repeatedly on the majority of days.</p>
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-!-margin-bottom-7  govuk-section-break--visible">
+      <br>
+
+      <h3 class="govuk-heading-m" style="display: inline-block;">Taking nutrition</h3>
+      <div>
+      <h3 class="govuk-heading-s" style="display: inline-block;">Functional history for taking nutrition</h3>
+      </div>
+
+      <p class="text">He eats around 1 meal a day. He drinks coffee.<br>
+        He states has lost weight however unsure how much, belt is on the next hole to what it was. Has poor appetite due to pain.<br>
+        Able to feed himself, uses stand standard utensils , chews and swallow.<br>
+        No dietician referrals or supplements.</p>
+      <div>
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+        
+      <h3 class="govuk-heading-s" style="display: inline-block;">How well can the claimant take nutrition?</h3>
+      </div>
+
+      <p>(2a) Can take nutrition unaided</p>
+
+      <div>
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      <h3 class="govuk-heading-s" style="display: inline-block;">Justification for taking nutrition</h3>
+      </div>
+
+      <p class="text">Restriction : reduced appetite due to pain and needs prompting.
+        See FH above.<br>
+        2a appears probable, HOC acknowledges anxiety and depression with poor appetite, however FH does not indicate prompting although reported in the CQ, he eats 1 meal a day and despite some weight loss no dietician input, CMs, shows standard dose anti depressants and FE, GP printout shows improvement in mental health since medication. HOC shows he has no secondary input, no cognitive impairment and the MSE was unremarkable, good level of cognition, he was alone for the assessment, he was not withdrawn and had insight.<br><br>
+        HOC has reported numbness in both little finger and ring fingers however no investigations and FH shows he can use standard utensils and SOH shows he can use a phone and remote supporting good manual dexterity.<br><br>
+        It is likely he can take nutrition unaided safely, timely, acceptably and repeatedly on the majority of days.
+      </p>
+        <hr class="govuk-section-break govuk-section-break--m govuk-!-margin-bottom-7  govuk-section-break--visible">
+      <br>
+
+      <h3 class="govuk-heading-m" style="display: inline-block;">Managing therapy</h3>
+      
+      <div>
+      <h3 class="govuk-heading-s" style="display: inline-block;">Functional history for managing therapy</h3>
+      </div>
+
+      <p class="text">He states able to manage the boxes and packages daily to take his medication including as needed pain relief, no prompting needed. Sometimes ( once a month) uses a dosette box which his sister gave him for ease. He can can put medication in himself dispensing from boxes.<br>
+        He takes medication as prescribed. Never taken too little or too much.<br>
+        He can manage his calling the GP as needed.
+      </p>
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+      <div>
+      <h3 class="govuk-heading-s" style="display: inline-block;">How well can the claimant manage therapy or monitor a health condition?</h3>
+      </div>
+
+      <p>(3a) Either does not receive medication or therapy or need to monitor a health condition, or can manage medication or therapy or monitor a health condition unaided 
+      </p>
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+      <div>
+      <h3 class="govuk-heading-s" style="display: inline-block;">Justification for managing therapy</h3>
+      </div>
+
+      <p class="text">Restriction: use of medication box and prompted.
+        See FH above.<br>
+        3a appears probable, HOC acknowledges anxiety and depression, however FH does not indicate prompting although reported in the CQ, he manages his medication including as needed pain relief, CMs, shows standard dose anti depressants and FE, GP printout shows improvement in mental health since medication. HOC shows he has no secondary input, no cognitive impairment and the MSE was unremarkable, good level of cognition, he was alone for the assessment, he was not withdrawn and had insight.<br><br>
+        HOC has reported numbness in both little finger and ring fingers however no investigations and FH shows he can manage medication boxes, although has a dosette box this was for ease and he does not use this on the majority of days. SOH shows he can use a phone and remote supporting good manual dexterity therefore reliably able to manage unaided.<br><br>
+        It is likely he can manage medication or therapy or monitor a health condition unaided safely, timely, acceptably and repeatedly on the majority of days.
+         </p>
+      <hr class="govuk-section-break govuk-section-break--m govuk-!-margin-bottom-7 govuk-section-break--visible">
+      <br>
+
+      <h3 class="govuk-heading-m" style="display: inline-block;">Washing and bathing</h3>
+  
+      <div>
+      <h3 class="govuk-heading-s" style="display: inline-block;">Functional history for washing and bathing</h3>
+     </div>
+     
+
+      <p class="text">
+        He holds onto the sink to steady himself to get one leg over and then the other. Has a rail on the bath to lower himself self into the bath, he can slowly wash himself in a sitting position with less bending. Spends 30 minutes in the bath as Hot water helps with pain. He can wash himself reaching to wash his head ( he is bald), bends and brings his knees up to wash his feet -Has a bath once a week due to pain, does so on a day with less pain.<br>
+        Other days washes face and hand with a chair at the sink. He can remove hearing aids to wash and is able to hear alarms.<br> 
+        No accidents in the bathroom.
+ </p>
+      <div>
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      <h3 class="govuk-heading-s" style="display: inline-block;">How well can the claimant wash and bathe?</h3>
+      </div>
+
+      <p>(4b) Needs to use an aid or appliance to be able to wash or bathe</p>
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      <div>
+      <h3 class="govuk-heading-s" style="display: inline-block;">Justification for washing and bathing</h3>
+      </div>
+
+      <p class="text">Restriction: prompted, chair by the sink - back pain.
+        See FH above.<br>
+        4b appears probable, HOC shows disc prolapse at L4-L5, varicose veins with increasing pain over the last 6 months on the MOD, CMs shows moderate pain relief at max dose which is not effective and physiotherapy was not helpful. Gout pain is not present on the MOD. FH consistent with pain affecting the lower back and legs, SOH shows he use the sink and a rail to get in and out the bath. IOs heard heard groans of pain standing.  Higher descriptors not considered as HOC shows no  specialist input, SOH shows no falls or OT input and FH does not indicate assistance. Although HOC shows numbness in both little and ring fingers he has not had any investigations and FH shows he can grip the rail and SOH shows he can use a mobile phone and remote supporting good upper limb and manual dexterity, movement and power.<br><br>
+        HOC acknowledges suspected asthma however shows no specialist input despite 2 chest infections, no hospital admissions, standard inhaler which are effective, FH does not indicate breathlessness in this activity and IO's did indicate breathlessness and he spoke in full sentences.<br><br>
+        HOC also acknowledges hearing problem, with bilateral hearing aids. Although considered, FH and HOC shows he can remove hearing aids to wash and is able to hear alarms.<br><br>
+        HOC acknowledges mental health condition however CMs, shows standard dose anti depressants and FE, GP printout shows improvement in mental health since medication. FH did not indicate prompting and although bathing once a week this is due to his pain. Daily he washes his hands and face. HOC shows he has no secondary input, no cognitive impairment and the MSE was unremarkable, good level of cognition, he was alone for the assessment, he was not  withdrawn and had insight.<br><br>
+        It is likely he needs to use an aid or appliance to be able to wash or bathe safely, timely, acceptably and repeatedly on the majority of days.</p>
+        <hr class="govuk-section-break govuk-section-break--m govuk-!-margin-bottom-7  govuk-section-break--visible">
+      <br>
+
+      <h3 class="govuk-heading-m" style="display: inline-block;">Managing toilet needs</h3>
+  
+      <div>
+      <h3 class="govuk-heading-s" style="display: inline-block;">Functional history for managing toilet needs</h3>
+      </div>
+
+      <p class="text">States toilet is far to low, he has a hand rail at the toilet, he grips the hand rail every time to leverage himself up and downs. He can manage his hygiene needs himself. No incontinence.
+       </p>
+      <div>
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      <h3 class="govuk-heading-s" style="display: inline-block;">How well can the claimant manage toilet needs?</h3>
+
+      </div>
+
+      <p>(5b) Needs to use an aid or appliance to be able to manage toilet needs or incontinence</p>
+
+      <div>
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      <h3 class="govuk-heading-s" style="display: inline-block;">Justification for managing toilet needs</h3>
+      </div>
+
+      <p class="text">Restriction : pain in legs/ back
+        See FH above.<br>
+        5b appears probable, HOC shows disc prolapse at L4-L5, varicose veins with increasing pain over the last 6 months on the MOD, CMs shows moderate pain relief at max dose which is not effective and physiotherapy was not helpful. Gout pain is not present on the MOD. FH consistent with pain affecting the lower back and legs, SOH shows he use a rail to leverage himself up and down. IOs heard heard groans of pain standing. Despite some restriction in both little and ring fingers he has not had any investigations and FH shows he  can grip the rail, SOH shows he can use a mobile phone and remote supporting good upper limb and manual dexterity, movement and power. FH show no incontinence and able to manage his own hygiene needs.<br><br>
+        HOC acknowledges suspected asthma however shows no specialist input despite 2 chest infections, no hospital admissions, standard inhaler which are effective, FH does not indicate breathlessness in this activity and IO's did indicate breathlessness and he spoke in full sentences.<br><br>
+        It is likely he to use an aid or appliance to be able to manage toilet needs or incontinence safely, timely, acceptably and repeatedly on the majority of days.</p>
+
+        <hr class="govuk-section-break govuk-section-break--m govuk-!-margin-bottom-7  govuk-section-break--visible">
+      <br>
+
+      <h3 class="govuk-heading-m" style="display: inline-block;">Dressing and undressing</h3>
+    
+     <div>
+      <h3 class="govuk-heading-s" style="display: inline-block;">Functional history for dressing and undressing</h3>
+    </div>
+
+      <p class="text">Tends to stay in lounge wear as he is staying, he changes them every 2 days without prompting from anyone. He states he will stand up puts in one leg at a time holding on to the table, by bringing one knee to his hand up to avoid bending which cause pain.<br>
+        No falls.<br>
+        He can reach up to pull on tops , tend to wear shirt as the movement to pull on jumpers pull on his lower back . He can manage zips and buttons without difficulty. Puts shoes on the same way as trousers.
+      </p>
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+        <div>
+      <h3 class="govuk-heading-s" style="display: inline-block;">How well can the claimant dress or undress?</h3>
+     </div>
+
+      <p>(6a) Can dress and undress unaided</p>
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      <div>
+      <h3 class="govuk-heading-s" style="display: inline-block;">Justification for managing dressing and undressing</h3>
+      </div>
+
+      <p class="text">Restriction : Prompted and pain bending.
+        See FH above .<br>
+        6a appears probable, although HOC acknowledges lower back problem and pain relief is no effective he doe not have any other knee or hip joint problems. FH shows is able to raise his legs to put on lower garments and although he is leaning on a table this maybe mitigated if he was to sit which is considered a reasonable adaptation. FH also shows he can reach to put on upper garment despite some restriction in both little and ring fingers he has not had any investigations and FH shows manage zips and buttons., SOH shows he can use a mobile phone and remote supporting good upper limb and manual dexterity, movement and power. SOH shows no history of falls.<br><br>
+        HOC acknowledges suspected asthma however shows no specialist input despite 2 chest infections, no hospital admissions, standard inhaler which are effective, FH did not did indicate any breathlessness in this activity and IO's shows he spoke in full sentences.<br><br>
+        HOC acknowledges mental health condition however CMs, shows standard dose anti depressants and FE, GP printout shows improvement in mental health since medication. FH shows he is wearing lounge wears and changes without prompting every 2 days. HOC shows he has no secondary input, no cognitive impairment and the MSE was unremarkable, good level of cognition, he was alone for the assessment, he was not withdrawn and had insight.<br><br>
+        It is likely he can dress and undress unaided safely, timely, acceptably and repeatedly on the majority of days.
+      </p>
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-!-margin-bottom-7 govuk-section-break--visible">
+      <br>
+
+      <h3 class="govuk-heading-m" style="display: inline-block;">Communicating verbally</h3>
+    
+      <div>
+      <h3 class="govuk-heading-s" style="display: inline-block;">Functional history for communicating verbally</h3>
+      </div>
+      
+
+      <p class="text">He has bilateral hearing aids, able to hear alarms and Tanoys without or without hearing aids.<br> Struggles to hear conversational voice without when face to face and misses parts of the conversation and he asks for it to be repeated. Today with aids able to hear and understand the assessor .
+
+      </p>
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+      <div>
+      <h3 class="govuk-heading-s" style="display: inline-block;">How well can the claimant communicate verbally?</h3>
+      </div>
+
+      <p>(7a) Can express and understand verbal information unaided</p>
+
+      <div>
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+      <h3 class="govuk-heading-s" style="display: inline-block;">Justification for communicating verbally</h3>
+      </div>
+
+      <p class="text">Restriction: anxiety and hearing aid
+        See FH above.<br>
+        7b HOC acknowledges bilateral hearing problems, confirmed by FE, GP printout, he is under GP care and has bilateral hearing aids. FH is consistent with reduced hearing without hearing aids with conversational voice face to face, missing parts of what is being said however able to hear well with hearing aids although is embarrassed. Although the CQ has indicated anxiety, HOC shows no cognitive impairment and IO's show he was able to hear and respond to all questions with aids in, engaged well and no repeated questions.<br>
+        It is likely he needs to use an aid or appliance to be able to speak or hear safely, timely, acceptably and repeatedly on the majority of days.
+      </p>
+        <hr class="govuk-section-break govuk-section-break--m govuk-!-margin-bottom-9  govuk-section-break--visible">
+
+
+      <h3 class="govuk-heading-m" style="display: inline-block;">Reading and understanding signs, symbols and words</h3>
+   
+      <div>
+      <h3 class="govuk-heading-s" style="display: inline-block;">Functional history for reading and understanding signs, symbols and words</h3>
+      </div>
+
+      <p class="text">He does not enjoy reading and has poor literacy level. Can read and recognise his letters and reports. He can read and understand symbols. Has prescribed reading glasses but no other aids. He prefers large print for ease. Has a cataract in the left eye for 6 years, no input and no surgery , right eye is unaffected. previously was driving with no restriction stopped due to pain in his back.
+
+      </p>
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+      <div>
+      <h3 class="govuk-heading-s" style="display: inline-block;">How well can the claimant read and understand signs, symbols and words?</h3>
+     </div>
+
+      <p>(8a) Can read and understand basic and complex written information either unaided or using spectacles or contact lenses 
+      </p>
+
+      <div>
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      <h3 class="govuk-heading-s" style="display: inline-block;">Justification for reading and understanding signs, symbols and words</h3>
+      </div>
+
+      <p class="text">Restriction : possible dyslexia, visual problem.
+        See FH above.<br>
+        8a appears probable, Although restriction in FH reported of a unilateral cataract, he has had no input,  his right eye is unaffected and he wears standard prescribes reading glasses. Undiagnosed dyslexia reported and poor literacy however FH shows he can read and recognise his letters, symbols and was previously driving. SOH shows he went to mainstream school with no extra support. IOs shows good levels of cognition.<br>
+        It is likely he can read and understand basic and complex written information either unaided or using spectacles or contact lenses safely, timely, acceptably and repeatedly on the majority of days.
+
+      </p>
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-!-margin-bottom-9  govuk-section-break--visible">
+
+
+      <h3 class="govuk-heading-m" style="display: inline-block;">Engaging face to face</h3>
+
+      <div>
+      <h3 class="govuk-heading-s" style="display: inline-block;">Functional history for engaging face to face</h3>
+      </div>
+
+      <p class="text">Engages with Sister every 2 days. He attends GP appointments alone, although sister drops him due to pain. He can engage with reception staff, unfamiliar and familiar GPs and other patients in the waiting room despite his mood and some embarrassment over hearing aids.<br>
+        He can open the door to delivery guys for shopping and parcels, engage in small talk.<br>
+        No panic attacks reported.
+
+      </p>
+     
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      <div>
+      <h3 class="govuk-heading-s" style="display: inline-block;">How well can the claimant engage face to face?</h3>
+      </div>
+
+      <p>(9a) Can engage with other people unaided</p>
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      <div>
+      <h3 class="govuk-heading-s" style="display: inline-block;">Justification for engaging face to face</h3>
+      </div>
+      
+
+      <p class="text">Restriction : back pain, hearing aid and MH
+        See FH above.<br>
+        9a appears probable, HOC acknowledges anxiety and depressions however FH shows he can engage alone despite hearing loss and bilateral hearing aids with familiar and unfamiliar staff, GPs, delivery persons and his sister. CMs, shows standard dose anti depressants and FE, GP printout shows improvement in mental health since medication. HOC shows he has no secondary input, no cognitive impairment and he reports no OPD/panic attacks. The MSE was unremarkable, no overt anxiety, he was alone, good rapport and insight. IO's show he
+        heard and answered all questions with hearing aids.<br>
+        Restriction not within scope : Back pain.<br>
+        It is likely he can engage with other people unaided safely, timely, acceptably and repeatedly on the majority of days.
+      </p>
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-!-margin-bottom-9  govuk-section-break--visible">
+
+
+      <h3 class="govuk-heading-m" style="display: inline-block;">Budgeting</h3>
+
+      <div>
+      <h3 class="govuk-heading-s" style="display: inline-block;">Functional history for budgeting</h3>
+      </div>
+
+      <p class="text">He states he knows when his bills are due out and is able to phone up and pay towards his bills , due to his financial situation he does not have much money now. After losing his job left demand letters to pile up as he had no money however has set up a payment plan with an advisor with council. He sister is paying for his shopping as he has very little money.
+      </p>
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      <div>
+      <h3 class="govuk-heading-s" style="display: inline-block;">How well can the claimant budget?</h3>
+      </div>
+
+      <p>(10a) Can manage complex budgeting decisions unaided</p>
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      <div>
+      <h3 class="govuk-heading-s" style="display: inline-block;">Justification for budgeting</h3>
+      </div>
+
+      <p class="text">Restriction : debt management, MH
+        See FH above.<br>
+        10a appears probable. HOC acknowledges anxiety and depressions , FH shows he is aware of when his bills are, will call up to pay. Although FH shows debts and not actioning demand letters this is due to lack of finances. CMs, shows standard dose anti depressants and FE, GP printout shows improvement in mental health since medication. HOC shows he has no secondary input, no cognitive impairment and the MSE was unremarkable, no overt anxiety, good level of cognition, he was alone for the assessment, good rapport and insight.<br>
+        It is likely he can manage complex budgeting decisions unaided safely, timely, acceptably and repeatedly on the majority of days.
+      </p>
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-!-margin-bottom-9  govuk-section-break--visible">
+
+
+
+
+
+
+
+      <h3 class="govuk-heading-m">Daily living qualifying period and prospective test</h3>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Has the claimant had the functional restriction for at least 3 months?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Yes
+          </dd>
+          <dd class="govuk-summary-list__actions">
+  
+          </dd>
+        </div>
+
+        <!-- <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Daily living qualifying period details
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          </dd>
+          <dd class="govuk-summary-list__actions">
+  
+          </dd>
+        </div> -->
+
+      
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Is the claimant likely to have the functional restriction in 9 months?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            No
+          </dd>
+          <dd class="govuk-summary-list__actions">
+        
+          </dd>
+        </div>
+
+        <!-- <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Daily living prospective test details
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          </dd>
+          <dd class="govuk-summary-list__actions">
+  
+          </dd>
+        </div> -->
+      </dl>
+
+      <h2 class="govuk-heading-l">Mobility</h2>
+
+      <h3 class="govuk-heading-m" style="display: inline-block;">Planning and following journeys</h3>
+
+      <div>
+      <h3 class="govuk-heading-s" style="display: inline-block;">Functional history for planning and following journeys</h3>
+      </div>
+
+      <p class="text">States it is his pain which stops him going out. He has no anxiety getting to unfamiliar and familiar places alone . Denies any failed journey's. Daughter drives him to appointments due to his pain mobilising.<br>
+        Previously when driving for work would go to various parts of the town using road signage. Copes with diversions.<br>
+        Would not use a bus or train due to pain levels and physical restriction.<br>
+        No OPD/panic attacks.
+      </p>
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      <div>
+      <h3 class="govuk-heading-s" style="display: inline-block;">Which of these describes how well the claimant can plan and follow journeys?</h3>
+      </div>
+
+      <p>(11a) Can plan and follow the route of a journey unaided</p>
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      <div>
+      <h3 class="govuk-heading-s" style="display: inline-block;">Justification for planning and following journeys</h3>
+      </div>
+
+      <p class="text">Restriction : MH, Pain.
+        See FH above<br>
+        11a appears probable, HOC acknowledges anxiety and depressions however FH shows restriction is around his pain and physical restriction not leaving his home and is taken to appointments. Although does not use public transport this is due to physical restriction. CMs, shows standard dose anti depressants and FE, GP printout shows improvement in mental health since medication. HOC shows he has no secondary input, , no cognitive impairment ,no self harm or suicidal ideations and he reports no OPD/panic attacks. The MSE was unremarkable, no overt anxiety, he was alone, good rapport and insight.<br>
+        It is acknowledge he has hearing loss, wearing bilateral hearing aids however HOC shows with or without hearing aids able to hear alarms and tanoys. IO's shows no difficulty hearing with aids during the assessment.<br>
+        It is likely he can plan and follow the route of a journey unaided safely, timely, acceptably and repeatedly on the majority of days.
+      </p>
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-!-margin-bottom-9  govuk-section-break--visible">
+
+
+
+      <h3 class="govuk-heading-m" style="display: inline-block;">Moving around</h3>
+
+      <div>
+      <h3 class="govuk-heading-s" style="display: inline-block;">Functional history for moving around</h3>
+      </div>
+
+      <p class="text">He can walk slowly around the ground level of his home. He walks unaided, states can walk around 3 meters to his kitchen slowly, has to stop due to back pain, stops till pain ease before continuing back to the living room . Last went out to the GP, sister took him due to pain, from his door to the, stairs and the car it takes 10 minutes ( previously would've taken 3- 4 minutes) walks slowly unaided without 1 stop for a few minutes to ease his pain. Daughter drops him at the door and to GP receptions walks 3 minutes ( previously would've take less than a minute before back pain )<br>
+        Has been out 3 times in the last 3 months due to pain. Once to shopping and GP appointments. Previously was using a scooter at shopping but had to stop due to pain and availability of the scooter.<br>
+         No falls .
+      </p>
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      <div>
+      <h3 class="govuk-heading-s" style="display: inline-block;">Which of these describes how well the claimant can move around?</h3>
+      </div>
+
+      <p>(12c) Can stand and then move unaided more than 20 metres but no more than 50 metres</p>
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      <div>
+      <h3 class="govuk-heading-s" style="display: inline-block;">Justification for planning and following journeys</h3>
+      </div>
+
+      <p class="text">Restriction : 20m, use of electric scooter at shopping and breathlessness.
+        See FH above.<br>
+        12c appears probable, HOC shows disc prolapse in L4-L5, confirmed in FE, GP printout. He also has varicose veins with pain present constantly. He is on moderate pain relief at max dose which is not effective and had physiotherapy which was not helpful. SOH shows multiple days taken off sick due to back pain prior to being laid off. FH and SOH shows he stays in his home due to pain walking and has not been out much in the last 3 months due to pain, struggles with stairs and is looking to move home with councils support. FH is consistent which shows he walks at a slow pace unaided stating walking times are taking him over double the amount of time with stopping. He relies on shopping being delivered as he can not able to walk around shopping. Previously using a mobility scooter. Although he has no significant upper limb restriction an aid is unlikely to be helpful. IO's show pain on standing .<br>
+        Higher descriptors was considered however discounted, as HOC shows no specialist input for back problem, varicose veins , or suspected asthma, despite 2 chest infections, no hospital admissions, on standard inhalers which are effective, IO's did indicate breathlessness and he spoke in full sentences. Furthermore there is no pending OT input ,no falls or balance issues.<br>
+        It is likely he can stand and then move unaided more than 20 metres but no more than 50 metres safely, timely, acceptably and repeatedly on the majority of days.
+
+      </p>
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-!-margin-bottom-9  govuk-section-break--visible">
+
+
+
+
+
+
+
+    
+
+
+      <h3 class="govuk-heading-m">Mobility qualifying period and prospective test</h3>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Has the claimant had the functional restriction for at least 3 months?
+          </dt>
+          <dd class="govuk-summary-list__value">
+              No
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          
+          </dd>
+        </div>
+
+        <!-- <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Mobility qualifying period details
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nisl metus, auctor non hendrerit in
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          
+          </dd>
+        </div> -->
+
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Is the claimant likely to have the functional restriction in 9 months?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            No
+          </dd>
+          <dd class="govuk-summary-list__actions">
+           
+          </dd>
+        </div>
+
+        <!-- <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Mobility prospective test details
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nisl metus, auctor non hendrerit in
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          
+          </dd>
+        </div> -->
+
+      </dl>
+
+      <h2 class="govuk-heading-l">Physical examination</h2>
+
+   
+    
+  
+
+    <div>
+      <h3 class="govuk-heading-m" style="display: inline-block;">Physical examination notes</h3>
+    </div>
+
+     <p class="text">A telephone assessment was conducted therefore no physical examination was completed.
+     </p>
+    
+
+     <hr class="govuk-section-break govuk-section-break--m govuk-!-margin-bottom-9  govuk-section-break--visible">
+
+
+      <h2 class="govuk-heading-l">Observations</h2>
+
+      <div>
+      <h3 class="govuk-heading-m" style="display: inline-block;">Mental state observations</h3>
+    </div>
+
+     <p class="text">Coped well at assessment.
+      Normal manner.
+      No overt signs of anxiety noted and no signs of OPD.
+      Good rapport and engaged well. Making humourous remarks
+      Speech was normal in amount, content, rate, tone and volume.
+      Behaved normally he was not withdrawn.
+      Conversation content during assessment indicated self-awareness and a good understanding of their condition.
+      No evidence of cognitive impairment. Was fully alertand orientated throughout assessment.
+      Answered all questions fully and appropriately.
+      Was able to participate in the process and engaged well without any input. No prompting required.
+      Had good insight, adequate general memory and concentration.
+      No evidence of suicidal ideation or self harm.
+     </p>
+    
+     <hr class="govuk-section-break govuk-section-break--m govuk-!-margin-bottom-7  govuk-section-break--visible">
+      <br>
+
+      <div>
+      <h3 class="govuk-heading-m" style="display: inline-block;">Informal observations</h3>
+    </div>
+
+     <p class="text">The client was able to provide all identity answers successfully without any observed difficulty pass security - stating NINO from memory and awareness of the appointment.
+
+      He was alone for the assessment. He recalled dates and events from his history . He provided history of his conditions in detail remembering medication , read out medication dose from the boxes and names.
+      
+      He was able to follow the process of the assessment, demonstrating good levels of concentration, intellect and cognition.
+      
+      He was able to speak, hear all questions with use of 2 hearing aids and understand without difficulty noted and provided appropriate answers. No questions was repeated or rephrased.
+      
+      No breathlessness evident, spoke in full sentence and coughed once. No breaks was requested. He was heard to get up from a chair and walk to get his medication, audible groans of pain heard.
+      
+     </p>
+    
+     <hr class="govuk-section-break govuk-section-break--m govuk-!-margin-bottom-9  govuk-section-break--visible">
+     
+
+
+
+
+     <div>
+      <h3 class="govuk-heading-m" style="display: inline-block;">Variability</h3>
+    </div>
+
+     <p class="text">See HOC
+     </p>
+    
+     <hr class="govuk-section-break govuk-section-break--m govuk-!-margin-bottom-9  govuk-section-break--visible">
+     <br>
+
+
+     
+
+
+      <h2 class="govuk-heading-l">Review period</h2>
+      <dl class="govuk-summary-list govuk-!-margin-bottom-1">
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Recommended future review period
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Other: Recommended review period: 5 years
+          </dd>
+        </div>
+        </dl>
+
+        <div style="margin-top: 1%;">
+          <h4 class="govuk-heading-s" style="display: inline-block;">Reason for this review period</h4>      
+          <p class="govuk-body">Claimant reports a lower back problem, anxiety, depression, hearing problem, hypertension, Gout varicose veins , suspected asthma and high cholesterol for which he is managed by his GP, he is on standard inhalers, anti hypertensives, anti depressant and ineffective pain relief at max dose.
+<br>
+            The evidence supports functional restrictions in some daily living and mobilising activities due to his physical health however not for his mental health. Due to the nature of his reported conditions please review in 5 years as they may improve or deteriorate. </p>
+          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+        </div>
+
+        <dl class="govuk-summary-list  govuk-!-margin-bottom-9" style="margin-top: -2%;">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Is it likely that the functional restriction will still be present when reviewed?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Yes
+          </dd>
+
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Do they need additional support for future claims processes?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            No
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Do they meet the criteria for special rules?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            No
+          </dd>
+        </div>
+      </dl>
+     
+      <div class="govuk-inset-text">
+        No harmful information has been included in this report.
+      </div>
+    
+<p><a href="#" class="govuk-link">Print this page</a>
+</p>
+  </div>      
+      </div>
+
+{% endblock %}

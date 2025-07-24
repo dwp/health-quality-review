@@ -1,0 +1,39 @@
+[
+    {
+        "id": "17384777-d0a5-4914-8a76-430977c3eeg8",
+        "name": "PIP2",
+        "benefitType": "PIP",
+        "dateOfDocument": "11 Dec 2023",
+        "dateDay": "11",
+        "dateMonth": "12",
+        "dateYear": "2023",
+        "dateDwpReceived": "15 Dec 2023",
+        "pathToDocument": "/public/pdfs/ur2/PIP2-Claimant4.pdf",
+        "important": false,
+        "read": false,
+        "archived": false,
+        "isActive": true,
+        "harmful": false,
+        "reviewed": false
+    },
+    {
+        "id": "17384777-d0a5-4914-8a76-430977c3eeg9",
+        "name": "Further medical evidence (1)",
+        "benefitType": "PIP",
+        "dateOfDocument": "07 Dec 2023",
+        "dateDay": "07",
+        "dateMonth": "12",
+        "dateYear": "2023",
+        "dateDwpReceived": "11 Dec 2023",
+        "pathToDocument": "/public/pdfs/ur2/FE-Claimant4.pdf",
+        "important": false,
+        "read": false,
+        "archived": false,
+        "isActive": true,
+        "harmful": false,
+        "reviewed": false
+    }
+  
+    
+    
+]

@@ -1,0 +1,164 @@
+{% extends "layout.html" %}
+{% set bodyAttributes = { id: "assess" } %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block main %}
+
+{% include "includes/assessment-status-neutral.html" %}
+
+<div class="govuk-width-container {{ containerClasses }}">
+
+  <!-- {{ govukBackLink({
+    text: "Back",
+    href: "mobility"
+  }) }} -->
+
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.back()"
+  }) }}
+
+  <main class="govuk-main-wrapper {{ mainClasses }}" id="main-content" role="main"{% if mainLang %} lang="{{ mainLang }}"{% endif %}>
+      <div class="govuk-grid-row">
+
+          <div class="govuk-grid-column-two-thirds">
+
+
+
+          <h1 class="govuk-heading-l">Review period for PIP</h1>
+
+        </div>
+      </div>
+
+      <div class="govuk-grid-row">
+
+            <div class="govuk-grid-column-two-thirds">
+
+  <form action="check" method="post" id="question-form" novalidate>
+
+
+
+    {% set reasonHtml %}
+    {{ govukInput({
+      id: "other-review",
+      name: "other-review",
+      label: {
+        text: "Recommended review period",
+        classes: "govuk-label--s",
+    isPageHeading: false
+      }
+    }) }}
+    {% endset -%}
+
+
+      {{ govukRadios({
+        idPrefix: "whenreview",
+        name: "whenreview",
+        fieldset: {
+          legend: {
+            text: "When should this claim be reviewed?",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        items: [
+          {
+            value: "18 months",
+            text: "18 months",
+            checked: (data['whenreview'] == "18 months")
+
+          },
+          {
+            value: "3 years",
+            text: "3 years",
+            checked: (data['whenreview'] == "3 years")
+          },
+          {
+            value: "5 years",
+            text: "5 years",
+            checked: (data['whenreview'] == "5 years")
+          }
+          ,
+          {
+            value: "No future assessments required",
+            text: "No future assessments required",
+            checked: (data['whenreview'] == "No future assessments required")
+          }
+          ,
+          {
+            value: "Other",
+            text: "Other",
+            checked: (data['whenreview'] == "Other"),
+            conditional: {
+              html: reasonHtml
+            }
+          }
+
+        ]
+      }) }}
+
+      {{ govukTextarea({
+        name: "reviewtimereasons",
+        id: "reviewtimereasons",
+        label: {
+          text: "Why do you recommend this review period?",
+          classes: "govuk-label--s",
+          isPageHeading: false
+        },
+          value: data['reviewtimereasons']
+
+      }) }}
+
+
+      {{ govukRadios({
+        idPrefix: "asm",
+        name: "asm",
+        fieldset: {
+          legend: {
+            text: "Is the claimant likely to need additional support for future claim processes?",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        hint: {
+          text: "This could be due to a cognitive, mental or intellectual condition affecting insight or mental capacity"
+        },
+        items: [
+          {
+            value: "Yes",
+            text: "Yes",
+            checked: (data['asm'] == "Yes")
+
+          },
+          {
+            value: "No",
+            text: "No",
+            checked: (data['asm'] == "No")
+          }
+        ]
+      }) }}
+
+
+<button class="govuk-button" data-module="govuk-button">
+  Save and continue
+</button>
+</div>
+
+
+<div class="govuk-grid-column-one-third">
+
+
+</div>
+</div>
+
+</main>
+</div>
+
+
+
+
+
+{% endblock %}

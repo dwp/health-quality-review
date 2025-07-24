@@ -1,0 +1,180 @@
+{% extends "layout.html" %}
+{% set bodyAttributes = { id: "assess" } %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block main %}
+
+{% include "includes/assessment-status-neutral.html" %}
+
+
+  <div class="govuk-width-container {{ containerClasses }}">
+    <a href="../index" class="govuk-back-link">Back</a>
+
+  <!-- <div class="navigation-header">
+      <ul class="govuk-list">
+        <li class="govuk-!-margin-bottom-2"><a href="#" class="govuk-link--no-visited-state govuk-link--no-underline">Referrals</a></li>
+        <li class="govuk-!-margin-bottom-2"><a href="#" class="govuk-link--no-visited-state govuk-link--no-underline">Claimant details</a></li>
+        <li class="govuk-!-margin-bottom-2"><a href="#" class="govuk-link--no-visited-state govuk-link--no-underline">Appointments</a></li>
+        <li class="govuk-!-margin-bottom-2"><a href="#" class="govuk-link--no-visited-state govuk-link--no-underline">Evidence</a></li>
+        <li class="govuk-!-margin-bottom-2 active">Claimant log</li>
+      </ul>
+    </div>--> 
+
+    <main class="govuk-main-wrapper {{ mainClasses }}" id="main-content" role="main"{% if mainLang %} lang="{{ mainLang }}"{% endif %}>
+
+      
+
+        <div class="govuk-grid-row">
+
+          
+
+            <div class="govuk-grid-column-two-thirds">
+            
+
+              <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" data-module="govuk-error-summary">
+                <h2 class="govuk-error-summary__title" id="error-summary-title">
+                  There is a problem
+                </h2>
+                <div class="govuk-error-summary__body">
+                  <ul class="govuk-list govuk-error-summary__list">
+                    <li>
+                      <a href="#date-contact-error">The date of contact cannot be in the future</a>
+                    </li>
+                   
+                  </ul>
+                </div>
+              </div>
+
+
+            <form action="#" method="post" class="form">
+
+              <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                    <h1 class="govuk-fieldset__heading">
+                      Why are you adding a new entry?
+                    </h1>
+                  </legend>
+
+              
+                 
+                  <fieldset class="govuk-fieldset">
+                 
+                    <div class="govuk-radios govuk-radios">
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="what-outgoing" name="what" type="radio" value="outgoing" {{ checked("what", "outgoing") }}>
+                        <label class="govuk-label govuk-radios__label" for="what-outgoing">
+                          We contacted someone about the claim
+                        </label>
+                      </div>
+    
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="what-incoming" name="what" type="radio" value="incoming" {{ checked("what", "incoming") }}>
+                        <label class="govuk-label govuk-radios__label" for="what-incoming">
+                          Someone contacted us about the claim
+                        </label>
+                      </div>
+    
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="what-event" name="what" type="radio" value="event" {{ checked("what", "event") }}  checked>
+                        <label class="govuk-label govuk-radios__label" for="what-event" >
+                          The claim has been updated
+                        </label>
+                      </div>
+    
+                     
+                      </div>
+                    </fieldset>
+               
+               
+                </fieldset>
+                </legend>
+
+          <br>
+              <!-- commenting out to accomodate unanswered call journey -->  
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                  <h1 class="govuk-fieldset__heading">
+                    Was this today?
+                  </h1>
+                </legend>
+              
+                <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="contact" name="contact" type="radio" value="Yes" aria-controls="conditional-contact" aria-expanded="false">
+                        <label class="govuk-label govuk-radios__label" for="contact">
+                      Yes
+                    </label>
+                        
+                      </div>
+                      
+                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
+                          <div class="govuk-form-group">
+                            <label class="govuk-label" for="time">
+                              Time of contact
+                            </label>      
+                            <div id="time-hint" class="govuk-hint">
+                              For example, 12:30pm
+                            </div>          
+                          <input class="govuk-input govuk-!-width-one-third" id="time" name="time" type="text" aria-describedby="time-hint" value="{{ data['time'] }}" autocomplete="off">
+                          </div>
+      
+                        </div>
+                    
+                          <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="contact-2" name="contact" type="radio" value="No" aria-controls="conditional-contact-2" aria-expanded="false"  checked>
+                            <label class="govuk-label govuk-radios__label" for="contact-2">
+                          No
+                        </label>                      
+                      </div>
+                      
+                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-2">
+              
+                          <div class="govuk-form-group">
+                            <div class="govuk-form-group govuk-form-group--error">
+                            <label class="govuk-label" for="date">
+                              Date of contact
+                            </label>
+                           
+                            <p id="date-contact-error" class="govuk-error-message">
+                             <span class="govuk-visually-hidden">Error:</span> The date of contact cannot be in the future
+                            </p>
+                          <input class="govuk-input govuk-!-width-one-third" id="date" name="date" type="date" value="{{ data['date'] }}">
+                          </div> 
+                        </div>
+                        
+                        
+                          <div class="govuk-form-group">
+                            <label class="govuk-label" for="time2">
+                              Time of contact
+                            </label>      
+                            <div id="time-hint" class="govuk-hint">
+                              For example, 12:30pm
+                            </div>          
+                          <input class="govuk-input govuk-!-width-one-third" id="time2" name="time2" type="text" aria-describedby="time-hint" value="{{ data['time2'] }}" autocomplete="off">
+                          </div>        
+                      </div>
+                </div> 
+
+<br>
+              
+                 
+                </fieldset>
+              </div>
+      
+              <button class="govuk-button" data-module="govuk-button">Continue</button>
+      
+            </form>
+
+
+
+            </div>
+        </div>
+
+    </main>
+  </div>
+
+
+{% endblock %}

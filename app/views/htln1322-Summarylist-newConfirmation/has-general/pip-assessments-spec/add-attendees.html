@@ -1,0 +1,77 @@
+{% extends "layout.html" %}
+{% set bodyAttributes = { id: "assess" } %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block main %}
+
+{% include "includes/assessment-status-neutral.html" %}
+
+  <div class="govuk-width-container {{ containerClasses }}">
+
+      <!-- {{ govukBackLink({
+        text: "Back",
+        href: "assessment-status"
+      }) }} -->
+
+      {{ govukBackLink({
+        text: "Back",
+        href: "javascript:history.back()"
+      }) }}
+
+    <main class="govuk-main-wrapper {{ mainClasses }}" id="main-content" role="main"{% if mainLang %} lang="{{ mainLang }}"{% endif %}>
+        <div class="govuk-grid-row">
+
+            <div class="govuk-grid-column-two-thirds">
+
+
+
+            <form action="assessment-status" method="post">
+
+
+              <h1 class="govuk-heading-l">Additional attendees</h1>
+
+              <h2 class="govuk-heading-m">Attendee 1</h2>
+              {{ govukInput({
+                id: "attendeenamepip",
+                name: "attendeenamepip",
+                label: {
+                  text: "Name"
+                },
+                value: data['attendeenamepip']
+              }) }}
+
+              {{ govukInput({
+                name: "attendeerelationshippip",
+                id: "attendeerelationshippip",
+                label: {
+                  text: "Relationship to claimant"
+                },
+                value: data['attendeerelationshippip']
+              }) }}
+
+      
+
+
+
+              <hr class="govuk-!-margin-bottom-5">
+
+              <p><a class="govuk-link" href="add-attendees-two">Add another attendee</a></p>
+
+
+              {{ govukButton({
+                text: "Save and continue"
+              }) }}
+
+
+            </form>
+
+
+            </div>
+        </div>
+
+    </main>
+  </div>
+{% endblock %}

@@ -1,0 +1,250 @@
+{% extends "layouts/main.html" %}
+ 
+{% block pageTitle %}
+  Evidence
+{% endblock %}
+ 
+{% block beforeContent %}
+ 
+{% include "includes/assessment-status-neutral-pip.html" %}
+  <div class="govuk-width-container {{ containerClasses }}"></div>
+  <a href="claimant-details.html" class="govuk-back-link">Back</a>
+{% endblock %}
+ 
+{% block content %}
+ 
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" action="auditBasicLandingPage-summary?checkAnswers=true" method="post">
+
+        <h1 class="{% if query.checkAnswers %}govuk-heading-xl{% else %}govuk-heading-l{% endif %}">Quality review</h1>
+
+        <h2 class="govuk-heading-m">Condition</h2>
+
+        <ul class="govuk-task-list">
+          {% for key, value in condition %}
+            <li id="activity-{{ key }}" class="govuk-task-list__item govuk-task-list__item--with-link">
+              <div class="govuk-task-list__name-and-hint">
+                <a class="govuk-link govuk-task-list__link" href="condition?condition={{ key }}" aria-describedby="before-you-start-1-status">
+                  {{ value }}
+                </a>
+              </div>
+              <div class="">
+                <p class="govuk-body">{{ data["grade-" + key] }}</p>
+              </div>
+              <div class="govuk-task-list__status" id="before-you-start-1-status">
+                {% if data["grade-" + key] %}
+                  Completed
+                {% else %}
+                <strong class="govuk-tag govuk-tag--blue">
+                  Not started
+                  </strong>
+                {% endif %}
+              </div>
+            </li>
+          {% endfor %}
+        </ul>
+
+          <h2 class="govuk-heading-m">Further evidence</h2>
+          <ul class="govuk-task-list">
+            {% for key, value in evidence %}
+              <li id="evidence-{{ key }}" class="govuk-task-list__item govuk-task-list__item--with-link">
+                <div class="govuk-task-list__name-and-hint">
+                  <a class="govuk-link govuk-task-list__link" href="evidence?evidence={{ key }}" aria-describedby="before-you-start-1-status">
+                    {{ value }}
+                  </a>
+                </div>
+                <div class="">
+                  {{ data["grade-" + key] }}
+                </div>
+                <div class="govuk-task-list__status" id="before-you-start-1-status">
+                  {% if data["grade-" + key] %}
+                    Completed
+                  {% else %}
+                    <strong class="govuk-tag govuk-tag--grey">
+                      Optional
+                    </strong>
+                  {% endif %}
+                </div>
+              </li>
+            {% endfor %}
+            </ul>
+
+            <h2 class="govuk-heading-m">Information gathering</h2>
+            <ul class="govuk-task-list">
+              {% for key, value in infoGather %}
+                <li id="infoGather-{{ key }}" class="govuk-task-list__item govuk-task-list__item--with-link">
+                  <div class="govuk-task-list__name-and-hint">
+                    <a class="govuk-link govuk-task-list__link" href="infoGather?infoGather={{ key }}" aria-describedby="before-you-start-1-status">
+                      {{ value }}
+                    </a>
+                  </div>
+                  <div class="">
+                    <p class="govuk-body">{{ data["grade-" + key] }}</p>
+                  </div>
+                  <div class="govuk-task-list__status" id="before-you-start-1-status">
+                    {% if data["grade-" + key] %}
+                      Completed
+                    {% else %}
+                      <strong class="govuk-tag govuk-tag--grey">
+                        Optional
+                      </strong>
+                    {% endif %}
+                  </div>
+                </li>
+              {% endfor %}
+              </ul>
+
+              <h2 class="govuk-heading-m">Daily living</h2>
+              <ul class="govuk-task-list">
+                {% for key, value in activities %}
+                {% if loop.index !== 10 and loop.index !== 11 %}
+                  <li id="activity-{{ key }}" class="govuk-task-list__item govuk-task-list__item--with-link">
+                    <div class="govuk-task-list__name-and-hint">
+                      <a class="govuk-link govuk-task-list__link" href="activity?activity={{ key }}" aria-describedby="before-you-start-1-status">
+                        {{ value }}
+                      </a>
+                    </div>
+                    <div class="">
+                      <p class="govuk-body">{{ data["grade-" + key] }}</p>
+                    </div>
+                    <div class="govuk-task-list__status" id="before-you-start-1-status">
+                      {% if data["grade-" + key] %}
+                        Completed
+                      {% else %}
+                      <strong class="govuk-tag govuk-tag--grey">
+                        Optional
+                        </strong>
+                      {% endif %}
+                    </div>
+                  </li>
+                {% endif %}
+                {% endfor %}
+                </ul>
+
+                <h2 class="govuk-heading-m">Mobility</h2>
+                <ul class="govuk-task-list">
+                  {% for key, value in mobility %}
+                    <li id="activity-{{ key }}" class="govuk-task-list__item govuk-task-list__item--with-link">
+                      <div class="govuk-task-list__name-and-hint">
+                        <a class="govuk-link govuk-task-list__link" href="mobility?mobility={{ key }}" aria-describedby="before-you-start-1-status">
+                          {{ value }}
+                        </a>
+                      </div>
+                      <div class="">
+                        <p class="govuk-body">{{ data["grade-" + key] }}</p>
+                      </div>
+                      <div class="govuk-task-list__status" id="before-you-start-1-status">
+                        {% if data["grade-" + key] %}
+                          Completed
+                        {% else %}
+                        <strong class="govuk-tag govuk-tag--grey">
+                          Optional
+                          </strong>
+                        {% endif %}
+                      </div>
+                    </li>
+                  {% endfor %}
+                  </ul>
+
+                  <h2 class="govuk-heading-m">Opinion</h2>
+                  <ul class="govuk-task-list">
+                    {% for key, value in opinion %}
+                      <li id="activity-{{ key }}" class="govuk-task-list__item govuk-task-list__item--with-link">
+                        <div class="govuk-task-list__name-and-hint">
+                          <a class="govuk-link govuk-task-list__link" href="opinion?opinion={{ key }}" aria-describedby="before-you-start-1-status">
+                            {{ value }}
+                          </a>
+                        </div>
+                        <div class="">
+                          <p class="govuk-body">{{ data["grade-" + key] }}</p>
+                        </div>
+                        <div class="govuk-task-list__status" id="before-you-start-1-status">
+                          {% if data["grade-" + key] %}
+                            Completed
+                          {% else %}
+                          <strong class="govuk-tag govuk-tag--grey">
+                            Optional
+                            </strong>
+                          {% endif %}
+                        </div>
+                      </li>
+                    {% endfor %}
+                    </ul>
+
+                    <h2 class="govuk-heading-m">Process</h2>
+                    <ul class="govuk-task-list">
+                      {% for key, value in process %}
+                        <li id="activity-{{ key }}" class="govuk-task-list__item govuk-task-list__item--with-link">
+                          <div class="govuk-task-list__name-and-hint">
+                            <a class="govuk-link govuk-task-list__link" href="process?process={{ key }}" aria-describedby="before-you-start-1-status">
+                              {{ value }}
+                            </a>
+                          </div>
+                          <div class="">
+                            <p class="govuk-body">{{ data["grade-" + key] }}</p>
+                          </div>
+                          <div class="govuk-task-list__status" id="before-you-start-1-status">
+                            {% if data["grade-" + key] %}
+                              Completed
+                            {% else %}
+                            <strong class="govuk-tag govuk-tag--grey">
+                              Optional
+                              </strong>
+                            {% endif %}
+                          </div>
+                        </li>
+                      {% endfor %}
+                    
+                       
+                        <li id="comment-{{ key }}" class="govuk-task-list__item govuk-task-list__item--with-link">
+                          <div class="govuk-task-list__name-and-hint">
+                            <a class="govuk-link govuk-task-list__link" href="Overallcomment?Overallcomment={{ key }}" aria-describedby="before-you-start-1-status">
+                              Overall comment
+                            </a>
+                          </div>
+                          <div class="">
+                            <p class="govuk-body">{{ data["comment-" + key] }}</p>
+                          </div>
+                          <div class="govuk-task-list__status" id="before-you-start-1-status">
+                            {% if data["comment-" + key] %}
+                              Completed
+                            {% else %}
+                            <strong class="govuk-tag govuk-tag--grey">
+                              Optional
+                              </strong>
+                            {% endif %}
+                          </div>
+                        </li>
+
+                        <li id="comment-{{ key }}" class="govuk-task-list__item govuk-task-list__item--with-link">
+                          <div class="govuk-task-list__name-and-hint">
+                            <a class="govuk-link govuk-task-list__link" href="Overallcomment?Overallcomment={{ key }}" aria-describedby="before-you-start-1-status">
+                              Overall Grade
+                            </a>
+                          </div>
+                          <div class="govuk-task-list__status" id="before-you-start-1-status">
+                            {{ lowestGrade }}
+                          </div>
+                        </li>
+                        </ul>
+
+
+
+
+ 
+    {% if not query.checkAnswers %}
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+    {% endif %}
+ 
+</form>
+    </div>
+  </div>
+{% endblock %}

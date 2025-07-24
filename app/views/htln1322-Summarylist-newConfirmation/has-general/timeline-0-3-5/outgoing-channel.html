@@ -1,0 +1,89 @@
+{% extends "layout.html" %}
+{% set bodyAttributes = { id: "assess" } %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block main %}
+
+{% include "includes/assessment-status-neutral.html" %}
+
+
+  <div class="govuk-width-container {{ containerClasses }}">
+    <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+  <!-- <div class="navigation-header">
+      <ul class="govuk-list">
+        <li class="govuk-!-margin-bottom-2"><a href="#" class="govuk-link--no-visited-state govuk-link--no-underline">Referrals</a></li>
+        <li class="govuk-!-margin-bottom-2"><a href="#" class="govuk-link--no-visited-state govuk-link--no-underline">Claimant details</a></li>
+        <li class="govuk-!-margin-bottom-2"><a href="#" class="govuk-link--no-visited-state govuk-link--no-underline">Appointments</a></li>
+        <li class="govuk-!-margin-bottom-2"><a href="#" class="govuk-link--no-visited-state govuk-link--no-underline">Evidence</a></li>
+        <li class="govuk-!-margin-bottom-2 active">Claimant log</li>
+      </ul>
+    </div>--> 
+
+    <main class="govuk-main-wrapper {{ mainClasses }}" id="main-content" role="main"{% if mainLang %} lang="{{ mainLang }}"{% endif %}>
+
+      
+
+        <div class="govuk-grid-row">
+
+          
+
+            <div class="govuk-grid-column-two-thirds">
+
+              <form action="outgoing-date" method="post">
+
+         
+
+              {{ govukRadios({
+                idPrefix: "type",
+                name: "contact-method",
+                fieldset: {
+                  legend: {
+                    text: "How did we contact the claimant? ",
+                    isPageHeading: true,
+                    classes: "govuk-fieldset__legend--l"
+                  }
+                },
+                items: [
+                  {
+                    value: "Phonecall to the claimant",
+                    text: "Phonecall",
+                    id: "contact-method-phonecall-to-claimant",
+                    checked: checked("contact-method", "Phonecall to the claimant")
+                  },
+                  {
+                    value: "Email to the claimant",
+                    text: "Email",
+                    id: "contact-method-email-to-claimant",
+                    checked: checked("contact-method", "Email to the claimant")
+                  },
+                  {
+                    value: "Text message (SMS) to the claimant",
+                    text: "Text message (SMS)",
+                    id: "contact-method-text-to-claimant",
+                    checked: checked("contact-method", "Text message (SMS) to the claimant")
+                  },
+                  {
+                    value: "Posted to the claimant",
+                    text: "Post",
+                    id: "contact-method-post-to-claimant",
+                    checked: checked("contact-method", "Posted to the claimant")
+                  }
+                ]
+              }) }}
+
+
+              {{ govukButton({
+                text: "Continue"
+              }) }}
+
+            </form>
+
+            </div>
+        </div>
+
+    </main>
+  </div>
+{% endblock %}

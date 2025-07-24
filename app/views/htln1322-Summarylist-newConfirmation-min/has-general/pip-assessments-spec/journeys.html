@@ -1,0 +1,185 @@
+{% extends "layout.html" %}
+{% set bodyAttributes = { id: "assess" } %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block main %}
+
+{% include "includes/assessment-status-neutral.html" %}
+
+  <div class="govuk-width-container {{ containerClasses }}">
+
+
+    <!-- {{ govukBackLink({
+      text: "Back",
+      href: "assessment-status"
+    }) }} -->
+
+    {{ govukBackLink({
+      text: "Go back to Check your answers",
+      href: "javascript:history.back()"
+    }) }}
+    
+    <main class="govuk-main-wrapper {{ mainClasses }}" id="main-content" role="main"{% if mainLang %} lang="{{ mainLang }}"{% endif %}>
+        <div class="govuk-grid-row">
+
+            <div class="govuk-grid-column-two-thirds">
+
+
+                <h1 class="govuk-heading-l">Planning and following journeys</h1>
+
+                </div>
+          </div>
+
+          <div class="govuk-grid-row">
+
+            <div class="govuk-grid-column-two-thirds">
+
+            <form action="assessment-status" method="post">
+
+              {% if data['assessmenttype'] !== "Paper" %}
+
+              {{ govukTextarea({
+                name: "journeysNotes",
+                id: "journeysNotes",
+                rows: "8",
+                classes: "govuk-!-margin-bottom-9",
+                label: {
+                  text: "Functional history for planning and following journeys",
+                  classes: "govuk-label--s",
+                  isPageHeading: false
+                },
+                value: data['journeysNotes']
+              }) }}
+
+          
+
+              {{ govukRadios({
+                name: "journeysSelect",
+                fieldset: {
+                  legend: {
+                    text: "Which of these describes how well the claimant can plan and follow journeys?",
+                    isPageHeading: false,
+                    classes: "govuk-fieldset__legend--s"
+                  }
+                },
+                items: [
+                  {
+                    value: "(11a) Can plan and follow the route of a journey unaided",
+                    text: "(11a) Can plan and follow the route of a journey unaided",
+                    checked: (data['journeysSelect'] == "(11a) Can plan and follow the route of a journey unaided")
+                  },
+                  {
+                    value: "(11b) Needs prompting to be able to undertake any journey to avoid overwhelming psychological distress to the claimant",
+                    text: "(11b) Needs prompting to be able to undertake any journey to avoid overwhelming psychological distress to the claimant",
+                    checked: (data['journeysSelect'] == "(11b) Needs prompting to be able to undertake any journey to avoid overwhelming psychological distress to the claimant")
+                  },
+                  {
+                    value: "(11c) Cannot plan the route of a journey",
+                    text: "(11c) Cannot plan the route of a journey",
+                    checked: (data['journeysSelect'] == "(11c) Cannot plan the route of a journey")
+                  },
+                  {
+                    value: "(11d) Cannot follow the route of an unfamiliar journey without another person, assistance dog or orientation aid",
+                    text: "(11d) Cannot follow the route of an unfamiliar journey without another person, assistance dog or orientation aid",
+                    checked: (data['journeysSelect'] == "(11d) Cannot follow the route of an unfamiliar journey without another person, assistance dog or orientation aid")
+                  },
+                  {
+                    value: "(11e) Cannot undertake any journey because it would cause overwhelming psychological distress to the claimant",
+                    text: "(11e) Cannot undertake any journey because it would cause overwhelming psychological distress to the claimant",
+                    checked: (data['journeysSelect'] == "(11e) Cannot undertake any journey because it would cause overwhelming psychological distress to the claimant")
+                  },
+                  {
+                    value: "(11g) Cannot follow the route of a familiar journey without another person, an assistance dog or an orientation aid",
+                    text: "(11g) Cannot follow the route of a familiar journey without another person, an assistance dog or an orientation aid",
+                    checked: (data['journeysSelect'] == "(11g) Cannot follow the route of a familiar journey without another person, an assistance dog or an orientation aid")
+                  }
+                ]
+              }) }}
+
+
+
+
+                    {{ govukTextarea({
+                      name: "journeysReason",
+                      id: "journeysReason",
+                      label: {
+                        text: "What is the reason for this answer?",
+                        classes: "govuk-label--s",
+                        isPageHeading: false
+                      },
+                      value: data['journeysReason']
+                    }) }}
+
+
+                    {% else %}
+
+                    {{ govukRadios({
+                      name: "journeysSelectpbr",
+                      fieldset: {
+                        legend: {
+                          text: "Which of these describes how well the claimant can plan and follow journeys?",
+                          isPageHeading: false,
+                          classes: "govuk-fieldset__legend--s"
+                        }
+                      },
+                      items: [
+                      {
+                        value: "(11a) Can plan and follow the route of a journey unaided",
+                        text: "(11a) Can plan and follow the route of a journey unaided",
+                        checked: (data['journeysSelectpbr'] == "(11a) Can plan and follow the route of a journey unaided")
+                      },
+                      {
+                        value: "(11b) Needs prompting to be able to undertake any journey to avoid overwhelming psychological distress to the claimant",
+                        text: "(11b) Needs prompting to be able to undertake any journey to avoid overwhelming psychological distress to the claimant",
+                        checked: (data['journeysSelectpbr'] == "(11b) Needs prompting to be able to undertake any journey to avoid overwhelming psychological distress to the claimant")
+                      },
+                      {
+                        value: "(11c) Cannot plan the route of a journey",
+                        text: "(11c) Cannot plan the route of a journey",
+                        checked: (data['journeysSelectpbr'] == "(11c) Cannot plan the route of a journey")
+                      },
+                      {
+                        value: "(11d) Cannot follow the route of an unfamiliar journey without another person, assistance dog or orientation aid",
+                        text: "(11d) Cannot follow the route of an unfamiliar journey without another person, assistance dog or orientation aid",
+                        checked: (data['journeysSelectpbr'] == "(11d) Cannot follow the route of an unfamiliar journey without another person, assistance dog or orientation aid")
+                      },
+                      {
+                        value: "(11e) Cannot undertake any journey because it would cause overwhelming psychological distress to the claimant",
+                        text: "(11e) Cannot undertake any journey because it would cause overwhelming psychological distress to the claimant",
+                        checked: (data['journeysSelectpbr'] == "(11e) Cannot undertake any journey because it would cause overwhelming psychological distress to the claimant")
+                      },
+                      {
+                        value: "(11f) Cannot follow the route of a familiar journey without another person, an assistance dog or an orientation aid",
+                        text: "(11f) Cannot follow the route of a familiar journey without another person, an assistance dog or an orientation aid",
+                        checked: (data['journeysSelectpbr'] == "(11f) Cannot follow the route of a familiar journey without another person, an assistance dog or an orientation aid")
+                      }
+                    ]
+                  }) }}
+
+                    {% endif %}
+
+                    {{ govukButton({
+                      text: "Save and continue"
+                    }) }}
+                </ul>
+
+
+
+            </form>
+
+
+
+            </div>
+
+            <div class="govuk-grid-column-one-third">
+
+            </div>
+
+        </div>
+
+    </main>
+  </div>
+{% endblock %}

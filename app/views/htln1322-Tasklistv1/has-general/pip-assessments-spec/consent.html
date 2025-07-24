@@ -1,0 +1,82 @@
+{% extends "layout.html" %}
+{% set bodyAttributes = { id: "assess" } %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block main %}
+
+{% include "includes/assessment-status-neutral.html" %}
+
+  <div class="govuk-width-container {{ containerClasses }}">
+
+      <!-- {{ govukBackLink({
+        text: "Back",
+        href: "assessment-status"
+      }) }} -->
+
+      {{ govukBackLink({
+        text: "Back",
+        href: "javascript:history.back()"
+      }) }}
+      
+    <main class="govuk-main-wrapper {{ mainClasses }}" id="main-content" role="main"{% if mainLang %} lang="{{ mainLang }}"{% endif %}>
+        <div class="govuk-grid-row">
+
+            <div class="govuk-grid-column-two-thirds">
+
+  <form action="assessment-status" method="post" id="question-form" novalidate>
+
+
+
+  <div class="govuk-form-group">
+    <fieldset class="govuk-fieldset" aria-describedby="sign-in-hint">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <h1 class="govuk-fieldset__heading">
+        Has consent been given for a physical examination?
+        </h1>
+      </legend>
+
+       <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+         <div class="govuk-radios__item">
+           <input class="govuk-radios__input" id="consent" name="consent" type="radio" value="consent" aria-describedby="sign-in-2-item-hint">
+           <label class="govuk-label govuk-radios__label" for="consent">
+             Yes
+           </label>
+         </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="noconsent" name="consent" type="radio" value="noconsent" data-aria-controls="conditional-how-contacted-conditional">
+          <label class="govuk-label govuk-radios__label" for="how-contacted-conditional">
+            No
+          </label>
+        </div>
+        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional">
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="contact-by-email">
+              Why consent wasn't given
+            </label>
+            <textarea class="govuk-textarea" id="contact-by-email" name="contact-by-email" rows="5" type="email" spellcheck="false"></textarea>
+          </div>
+
+        </div>
+
+      </div>
+    </fieldset>
+
+  </div>
+
+</div>
+</div>
+
+<button class="govuk-button" data-module="govuk-button">
+  Save and continue
+</button>
+
+</main>
+</div>
+
+
+
+
+{% endblock %}

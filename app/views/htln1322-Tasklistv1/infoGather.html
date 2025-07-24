@@ -1,0 +1,85 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Information gathering
+{% endblock %}
+
+
+{% block beforeContent %}
+
+{% include "includes/assessment-status-neutral-pip.html" %}
+
+<div class="govuk-width-container {{ containerClasses }}"></div>
+
+<a href="taskList.html" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+<form class="form" action="taskList#infoGather-{{ query.infoGather }}" method="post">
+
+{{ govukRadios({
+  name: "grade-" + query.infoGather,
+  value: data['grade-' + query.infoGather],
+  fieldset: {
+    legend: {
+      text: infoGather[query.infoGather],
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  items: [
+    {
+      value: "A - Sufficient information gathered to support robust advice",
+      text: "A - Sufficient information gathered to support robust advice"
+    },
+    {
+      value: "AF - Information gathered lacks detail but unlikely to have an adverse effect on advice",
+      text: "AF - Information gathered lacks detail but unlikely to have an adverse effect on advice"
+    },
+    {
+      value: "AA - Omission that has limited potential to change advice",
+      text: "AA - Omission that has limited potential to change advice"
+    },
+    {
+      value: "U - Major omissions such that advice cannot be relied on and correct award cannot be reasonably determined",
+      text: "U - Major omissions such that advice cannot be relied on and correct award cannot be reasonably determined"
+    },
+    {
+      value: "N/A - not applicable",
+      text: "N/A - not applicable"
+    }
+   
+  ]
+}) }}
+
+
+{{ govukTextarea({
+  name: "comment-" + query.infoGather,
+  id: "comment-" + query.infoGather,
+  value: data['comment-' + query.infoGather],
+  label: {
+    text: "Comment"
+  }
+}) }}
+
+
+{{ govukButton({
+  text: "Continue"
+}) }}
+
+</form>
+    </div>
+  </div>
+{% endblock %}
