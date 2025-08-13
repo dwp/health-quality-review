@@ -2,16 +2,16 @@ apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   name: prototype.interface.health-quality-review-prototype
-  title: health-quality-review-prototype
+  title: Health-Quality-Review-Prototype
   description: |
-    TODO: add description for health-quality-review-prototype.
+    "Prototype for Health Quality Review"
 
   annotations:
-    gitlab.com/project-slug: dwp/user-centred-design/health-quality-review-prototype
+    gitlab.com/project-slug: dwp/user-centred-design/health-quality-review-prototype 
 
   labels:
-    dwp.gov.uk/version: unknown
-    dwp.gov.uk/license: unknown
+    dwp.gov.uk/version: 0.0.1
+    dwp.gov.uk/license: None
 
     dwp.gov.uk/last-verified.by: colin.passant
     dwp.gov.uk/last-verified.on: 2025-08-12
@@ -27,6 +27,16 @@ metadata:
     dwp.gov.uk/impacts.decryption: "false"
     dwp.gov.uk/impacts.payments: "false"
     dwp.gov.uk/impacts.personally-identifying-information: "false"
+
+  tags:
+    - javascript
+    - expressjs
+    - node
+    - css
+    - docker
+    - json
+    - scss
+    - yaml
 
   links:
     - icon: externalLink
