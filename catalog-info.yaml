@@ -41,7 +41,7 @@ metadata:
   links:
     - icon: externalLink
       title: Repository
-      url: https://gitlab.com/dwp/user-centred-design/health-quality-review-prototype
+      url: https://gitlab.com/dwp/user-centred-design/health-quality-review
 
 spec:
   owner: group:default/backstage.group.user-centred-design
