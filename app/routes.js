@@ -169,7 +169,7 @@ router.use('/', (req, res, next) => {
 // Supporting docs
 
 const versions = [
-   'htln1322-Summarylistv1' 
+   '/capture-grades-journey/htln1322-Summarylistv1' 
 ]
 
 console.log('Setting up main router. Locating sub routers');

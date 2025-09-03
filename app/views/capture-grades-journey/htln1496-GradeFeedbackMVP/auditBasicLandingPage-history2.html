@@ -1,0 +1,130 @@
+{% extends "layouts/main.html" %}
+ 
+{% block pageTitle %}
+  Evidence
+{% endblock %}
+ 
+{% block beforeContent %}
+ 
+{% include "includes/assessment-status-neutral-pip.html" %}
+  <div class="govuk-width-container {{ containerClasses }}"></div>
+  <a href="claimant-details-data.html" class="govuk-back-link">Back</a>
+{% endblock %}
+ 
+{% block content %}
+ 
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+ 
+     
+
+
+     
+
+
+      <h1 class="govuk-heading-l"> Quality review</h1>
+     
+      <h2 class="govuk-heading-m"> HCP feedback</h2>
+        {{ govukSummaryList({
+          rows: [
+         
+
+            {
+              key: {
+                text: "HCP name"
+              },
+              value: {
+                text: "Aldo Raine"
+              }
+            },
+           
+            {
+              key: {
+                text: "Date completed"
+              },
+              value: {
+                text: "27 June 2025"
+              }
+            },
+            {
+              key: {
+                text: "Feedback"
+              },
+              value: {
+                text: "I don't agree with you review that descriptor 5 was b, I think it was a based on his condition, etc..."
+              }
+  
+            }
+           
+            ]
+        }) }}
+
+
+
+        <h2 class="govuk-heading-m">Quality review report</h2>
+        {{ govukSummaryList({
+          rows: [
+          {
+            key: {
+              text: "Auditor name"
+            },
+            value: {
+              text: "John Smith"
+            }
+          },
+          {
+            key: {
+              text: "Date completed"
+            },
+            value: {
+              text: "27 June 2025"
+            }
+          },
+            {
+              key: {
+                text: "HCP name"
+              },
+              value: {
+                text: "Aldo Raine"
+              }
+            },
+            
+            
+            {
+              key: {
+                text: "Quality review report"
+              },
+              actions: {
+                items: [
+                  {
+                    text: "View report",
+                    href: "auditBasicLandingPage-storedData.html"
+                  }
+            ]
+              }
+  
+            }
+          
+            ]
+        }) }}
+
+        
+
+     
+
+        
+
+      <p class="govuk-body">
+        Go to <a href="claimant-details-data.html" class="govuk-link">referral overview</a>
+      </p>
+      
+    </div>
+  
+</div>
+
+{% endblock %}

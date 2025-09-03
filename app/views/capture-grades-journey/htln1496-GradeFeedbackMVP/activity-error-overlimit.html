@@ -1,0 +1,122 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Activities
+{% endblock %}
+
+
+{% block beforeContent %}
+
+{% include "includes/assessment-status-neutral-pip.html" %}
+
+<div class="govuk-width-container {{ containerClasses }}"></div>
+
+<a href="auditBasicLandingPage-summary.html" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+
+
+
+
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      
+<form class="form" action="auditBasicLandingPage-summary#activity-{{ query.activity }}" method="post">
+
+  {{ govukErrorSummary({
+    titleText: "There is a problem",
+    errorList: [
+      {
+        text: "Overall comment must be 10,000 characters or less",
+        href: "#"
+      }
+    ]
+  }) }}
+  
+
+
+
+
+{{ govukRadios({
+  name: Daily-living,
+  value: Daily-living,
+  fieldset: {
+    legend: {
+      text: "Daily living",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+
+
+  items: [
+    {
+      value: "A - Clinically probable opinion based on all the available evidence and adequately justified",
+      text: "A - Clinically probable opinion based on all the available evidence and adequately justified"
+    },
+    {
+      value: "AF - Clinically possible advice but evidence supports consideration of an alternative opinion or descriptor choice",
+      text: "AF - Clinically possible advice but evidence supports consideration of an alternative opinion or descriptor choice"
+    },
+    {
+      value: "AF - Justification which supports but doesn't fully explain the advice or the descriptor choice",
+      text: "AF - Justification which supports but doesn't fully explain the advice or the descriptor choice"
+    },
+    {
+      value: "AA - Clinically improbable advice such that the descriptor choice is highly unlikely but would not lead to a wrong award or major error in duration if left unchanged",
+      text: "AA - Clinically improbable advice such that the descriptor choice is highly unlikely but would not lead to a wrong award or major error in duration if left unchanged"
+    },
+ 
+    {
+      value: "AA - Justification which fails to support the advice or the descriptor choice but doesn't suggest an alternative award",
+      text: "AA - Justification which fails to support the advice or the descriptor choice but doesn't suggest an alternative award"
+    },
+    {
+      value: "U - Clinically improbable advice such that the descriptor choice is highly unlikely and would lead to a wrong award if not changed.",
+      text: "U - Clinically improbable advice such that the descriptor choice is highly unlikely and would lead to a wrong award if not changed."
+    },
+    {
+      value: "U - Justification which fails to support the advice, or the descriptor chosen and would suggest an alternative award",
+      text: "U - Justification which fails to support the advice, or the descriptor chosen and would suggest an alternative award"
+    },
+    {
+      value: "N/A - Not applicable",
+      text: "N/A - Not applicable"
+    }
+   
+  ]
+}) }}
+
+{{ govukTextarea({
+  name: "comment-" + query.activity,
+  id: "comment-" + query.activity,
+  value: data['comment-' + query.activity],
+  label: {
+    text: "Comment"
+  },
+  errorMessage: {
+    text: "Overall comment must be 10,000 characters or less"
+  },
+  rows: 4,
+                  threshold: '300'
+}) }}
+
+{{ govukButton({
+  text: "Continue"
+}) }}
+
+</form>
+    </div>
+  </div>
+{% endblock %}
