@@ -81,6 +81,11 @@ const Overallcomment = {
 }
 
 
+const qrtype = {
+  qrtypes: "Quality review type"
+}
+
+
 //
 // For guidance on how to create routes see:
 // https://prototype-kit.service.gov.uk/docs/create-routes
@@ -106,6 +111,7 @@ router.get("*", (req, res, next) => {
   res.locals.condition = condition;
   res.locals.reviewSections = reviewSections;
   res.locals.grades = grades;
+  res.locals.qrtype = qrtype;
   const currentGrades = Object.keys(res.locals.data)
                       .filter((x) => x.startsWith("grade-"))
                       .map((key) => res.locals.data[key].split("-")?.[0]?.trim());

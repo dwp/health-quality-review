@@ -303,6 +303,36 @@
       {% endfor %}
     </dl>
 
+
+    <dl class="govuk-summary-list">
+      {% for key, value in qrtype %}
+      <div id="process-{{ key }}" class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            {{ value }}
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% if data["grade-" + key] %}
+              <p class="govuk-body">
+                {{ data["grade-" + key] }}
+              </p>
+            {% else %}
+              <!-- No feedback -->
+            {% endif %}
+          </dd>
+         
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="qrtype?qrtype={{ key }}">{% if data["grade-" + key] %}Change{% else %}Add{% endif %}<span class="govuk-visually-hidden"> address</span></a>
+          </dd>
+        
+        </div>
+      
+      {% endfor %}
+    </dl>
+
+
+
+
+
     <dl class="govuk-summary-list">
 
       <div id="process-{{ key }}" class="govuk-summary-list__row">
@@ -318,7 +348,7 @@
 
       <div id="process-{{ key }}" class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Overall Comment
+          Overall comment
         </dt>
         <dd class="govuk-summary-list__value">
           {{ data["comment-" + key] }}
