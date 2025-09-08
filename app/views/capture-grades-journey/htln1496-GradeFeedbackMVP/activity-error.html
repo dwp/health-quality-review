@@ -26,7 +26,7 @@
 
 
 
-
+<h1 class="govuk-heading-l">Daily living</h1>
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
@@ -38,7 +38,7 @@
     titleText: "There is a problem",
     errorList: [
       {
-        text: "Select an overall grade",
+        text: "Select a grade",
         href: "#"
       }
     ]
@@ -53,13 +53,13 @@
   value: Daily-living,
   fieldset: {
     legend: {
-      text: "Daily living",
-      isPageHeading: true,
-      classes: "govuk-fieldset__legend--l"
+      text: "Select a grade",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend--s"
     }
   },
   errorMessage: {
-    text: "Select an overall grade"
+    text: "Select a grade"
   },
 
   items: [
@@ -105,7 +105,8 @@
   id: "comment-" + query.activity,
   value: data['comment-' + query.activity],
   label: {
-    text: "Comment"
+    text: "Add a comment",
+    classes: "govuk-fieldset__legend--s"
   }
 }) }}
 

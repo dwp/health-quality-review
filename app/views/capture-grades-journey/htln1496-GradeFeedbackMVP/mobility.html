@@ -25,7 +25,7 @@
 
 
 
-
+<h1 class="govuk-heading-l">{{mobility[query.mobility]}}</h1>
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
@@ -37,9 +37,9 @@
   value: data['grade-' + query.mobility],
   fieldset: {
     legend: {
-      text: mobility[query.mobility],
-      isPageHeading: true,
-      classes: "govuk-fieldset__legend--l"
+      text: "Select a grade",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend--s"
     }
   },
   items: [
@@ -88,7 +88,8 @@
   id: "comment-" + query.mobility,
   value: data['comment-' + query.mobility],
   label: {
-    text: "Add a comment"
+    text: "Add a comment",
+    classes: "govuk-fieldset__legend--s"
   }
 }) }}
 

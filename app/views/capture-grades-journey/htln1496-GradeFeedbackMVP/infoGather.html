@@ -22,7 +22,7 @@
 {% from "govuk/components/button/macro.njk" import govukButton %}
 {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
 
-
+<h1 class="govuk-heading-l">{{infoGather[query.infoGather]}}</h1>
 
 
   <div class="govuk-grid-row">
@@ -34,9 +34,9 @@
   value: data['grade-' + query.infoGather],
   fieldset: {
     legend: {
-      text: infoGather[query.infoGather],
-      isPageHeading: true,
-      classes: "govuk-fieldset__legend--l"
+      text: "Select a grade",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend--s"
     }
   },
   items: [
@@ -70,7 +70,8 @@
   id: "comment-" + query.infoGather,
   value: data['comment-' + query.infoGather],
   label: {
-    text: "Add a comment"
+    text: "Add a comment",
+    classes: "govuk-fieldset__legend--s"
   }
 }) }}
 

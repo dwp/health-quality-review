@@ -24,7 +24,7 @@
 
 
 
-
+<h1 class="govuk-heading-l">{{activities[query.activity]}}</h1>
 
 
   <div class="govuk-grid-row">
@@ -37,11 +37,15 @@
   value: data['grade-' + query.activity],
   fieldset: {
     legend: {
-      text: activities[query.activity],
-      isPageHeading: true,
-      classes: "govuk-fieldset__legend--l"
+      text: "Select a grade",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend--s"
     }
   },
+
+
+
+  
   items: [
     {
       value: "A - Clinically probable opinion based on all the available evidence and adequately justified",
@@ -85,7 +89,8 @@
   id: "comment-" + query.activity,
   value: data['comment-' + query.activity],
   label: {
-    text: "Add a comment"
+    text: "Add a comment",
+      classes: "govuk-fieldset__legend--s"
   }
 }) }}
 

@@ -38,13 +38,13 @@
     titleText: "There is a problem",
     errorList: [
       {
-        text: "Overall comment must be 10,000 characters or less",
+        text: "Comment must be 10,000 characters or less",
         href: "#"
       }
     ]
   }) }}
   
-
+  <h1 class="govuk-heading-l">Daily living</h1>
 
 
 
@@ -53,9 +53,9 @@
   value: Daily-living,
   fieldset: {
     legend: {
-      text: "Daily living",
-      isPageHeading: true,
-      classes: "govuk-fieldset__legend--l"
+      text: "Select a grade",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend--s"
     }
   },
 
@@ -103,10 +103,11 @@
   id: "comment-" + query.activity,
   value: data['comment-' + query.activity],
   label: {
-    text: "Comment"
+    text: "Add a comment",
+    classes: "govuk-fieldset__legend--s"
   },
   errorMessage: {
-    text: "Overall comment must be 10,000 characters or less"
+    text: "Comment must be 10,000 characters or less"
   },
   rows: 4,
                   threshold: '300'
