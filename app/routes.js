@@ -42,7 +42,7 @@ const infoGather = {
 
 const activities = {
   food: "Preparing food",
-  nutrition: "Taking nutrution",
+  nutrition: "Taking nutrition",
   therapy: "Managing therapy",
   washing: "Washing and bathing",
   toilet: "Managing toilet needs",
