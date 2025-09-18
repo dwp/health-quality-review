@@ -39,15 +39,18 @@
           ]
         }) }}
 
+        <h1 class="govuk-heading-l">Quality review type</h1>
 
         {{ govukRadios({
           name: "qr",
           fieldset: {
-            legend: {
-              text: "Quality review type",
-              isPageHeading: true,
-              classes: "govuk-fieldset__legend--l"
-            }
+            
+             legend: {
+                text: "Select the quality review type",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend--s"
+    }
+            
           },
 
           errorMessage: {

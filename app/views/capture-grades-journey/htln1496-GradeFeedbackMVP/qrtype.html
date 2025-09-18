@@ -29,16 +29,18 @@
     <div class="govuk-grid-column-two-thirds">
       <form class="form" action="auditBasicLandingPage-summary#qr-type-{{ query.qr-type }}" method="post">
 
+        <h1 class="govuk-heading-l">Quality review type</h1>
 
         {{ govukRadios({
           name: "grade-" + query.qrtype,
           value: data['grade-' + query.qrtype],
           fieldset: {
             legend: {
-              text: qrtype[query.qrtype],
-              isPageHeading: true,
-              classes: "govuk-fieldset__legend--l"
-            }
+                text: "Select the quality review type",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend--s"
+    }
+            
           },
 
 
