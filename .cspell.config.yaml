@@ -5,7 +5,7 @@ $schema: https://raw.githubusercontent.com/streetsidesoftware/cspell/main/cspell
 
 version: "0.2"
 
-name: health-quality-review-prototype
+name: health-quality-review
 
 failFast: true
 noConfigSearch: true
