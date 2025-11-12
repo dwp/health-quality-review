@@ -1,0 +1,142 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Primary condition
+{% endblock %}
+
+
+{% block beforeContent %}
+
+{% include "includes/assessment-status-neutral-pip.html" %}
+
+<div class="govuk-width-container {{ containerClasses }}"></div>
+
+<a href="auditBasicLandingPage-summary.html" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" action="auditBasicLandingPage-summary#condition-{{ query.condition }}" method="post">
+
+        {{ govukErrorSummary({
+          titleText: "There is a problem",
+          errorList: [
+            {
+              text: "Select a primary condition",
+              href: "#"
+            }
+          ]
+        }) }}
+
+
+        {{ govukRadios({
+          name: "condition",
+          fieldset: {
+            legend: {
+              text: "Primary condition",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          errorMessage: {
+            text: "Select a primary condition"
+          },
+
+
+  items: [
+    {
+      value: "Cancer",
+      text: "Cancer"
+    },
+    {
+      value: "Cardiovascular",
+      text: "Cardiovascular"
+    },
+    {
+      value: "Central nervious system",
+      text: "Central nervious system"
+    },
+    {
+      value: "Dermatological",
+      text: "Dermatological"
+    },
+    {
+      value: "Endocrine",
+      text: "Endocrine"
+    },
+    {
+      value: "Gastrointestinal",
+      text: "Gastrointestinal"
+    },
+    {
+      value: "Gynaecological",
+      text: "Gynaecological"
+    },
+    {
+      value: "Immune",
+      text: "Immune"
+    },
+    {
+      value: "Mental health",
+      text: "Mental health"
+    },
+    {
+      value: "Miscellaneous",
+      text: "Miscellaneous"
+    },
+    {
+      value: "Musculoskeletal",
+      text: "Musculoskeletal"
+    },
+    {
+      value: "Respiratory",
+      text: "Respiratory"
+    },
+    {
+      value: "Special senses",
+      text: "Special senses"
+    },
+    {
+      value: "Urogenital",
+      text: "Urogenital"
+    }
+  ]
+}) }}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{{ govukButton({
+  text: "Continue"
+}) }}
+
+</form>
+    </div>
+  </div>
+{% endblock %}
+

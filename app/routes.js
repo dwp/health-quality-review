@@ -47,7 +47,7 @@ const activities = {
   washing: "Washing and bathing",
   toilet: "Managing toilet needs",
   dressing: "Dressing and undressing",
-  communicating: "Communication verbally",
+  communicating: "Communicating verbally",
   reading: "Reading and understanding",
   engaging: "Engaging with others",
   budgeting: "Making budgeting decisions"
@@ -94,10 +94,6 @@ const qrtype = {
 const govukPrototypeKit = require('govuk-prototype-kit')
 const router = govukPrototypeKit.requests.setupRouter()
 
-// Find an address plugin
-const findAddressPlugin = require("find-an-address-plugin");
-
-findAddressPlugin(router);
 
 router.get("*", (req, res, next) => {
   res.locals.query = req.query;

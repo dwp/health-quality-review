@@ -1,0 +1,93 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Evidence
+{% endblock %}
+
+
+{% block beforeContent %}
+
+{% include "includes/assessment-status-neutral-pip.html" %}
+
+<div class="govuk-width-container {{ containerClasses }}"></div>
+
+<a href="auditBasicLandingPage-summary.html" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+
+
+
+<h1 class="govuk-heading-l">{{evidence[query.evidence]}}</h1>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+<form class="form" action="auditBasicLandingPage-summary#evidence-{{ query.evidence }}" method="post">
+
+{{ govukRadios({
+  name: "grade-" + query.evidence,
+  value: data['grade-' + query.evidence],
+  fieldset: {
+    legend: {
+      text: "Select a grade",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend--s"
+    }
+  },
+  items: [
+    {
+      value: "A - Sufficient further evidence appropriately sought and referenced",
+      text: "A - Sufficient further evidence appropriately sought and referenced"
+    },
+    {
+      value: "AF - Reference to relevant evidence incomplete",
+      text: "AF - Reference to relevant evidence incomplete"
+    },
+    {
+      value: "AF - Important evidence not sought or insufficient attempt to gather it",
+      text: "AF - Important evidence not sought or insufficient attempt to gather it"
+    },
+    {
+      value: "AF - Evidence requested from an inappropriate source",
+      text: "AF - Evidence requested from an inappropriate source"
+    },
+    {
+      value: "AA - In additional support needs case, either important evidence not sought or insufficient attempt to gather it",
+      text: "AA - In additional support needs case, either important evidence not sought or insufficient attempt to gather it"
+    },
+    {
+      value: "U - Critical evidence not sought or insufficient attempt to gather it so that correct award cannot be reasonably determined",
+      text: "U - Critical evidence not sought or insufficient attempt to gather it so that correct award cannot be reasonably determined"
+    },
+    {
+      value: "N/A - Not applicable",
+      text: "N/A - Not applicable"
+    }
+   
+  ]
+}) }}
+
+{{ govukTextarea({
+  name: "comment-" + query.evidence,
+  id: "comment-" + query.evidence,
+  value: data['comment-' + query.evidence],
+  label: {
+    text: "Add a comment",
+      classes: "govuk-fieldset__legend--s"
+  }
+}) }}
+
+{{ govukButton({
+  text: "Continue"
+}) }}
+
+</form>
+    </div>
+  </div>
+{% endblock %}

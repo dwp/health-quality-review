@@ -1,0 +1,168 @@
+{% extends "layout.html" %}
+{% set bodyAttributes = { id: "assess" } %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block main %}
+
+{% include "includes/assessment-status-neutral.html" %}
+
+  <div class="govuk-width-container {{ containerClasses }}">
+    <!-- {{ govukBackLink({
+      text: "Back",
+      href: "assessment-status"
+    }) }} -->
+
+    {{ govukBackLink({
+      text: "Back",
+      href: "javascript:history.back()"
+    }) }}
+
+    <main class="govuk-main-wrapper {{ mainClasses }}" id="main-content" role="main"{% if mainLang %} lang="{{ mainLang }}"{% endif %}>
+        <div class="govuk-grid-row">
+
+            <div class="govuk-grid-column-two-thirds">
+
+              
+
+                <h1 class="govuk-heading-l">Engaging face to face</h1>
+
+                </div>
+          </div>
+
+          <div class="govuk-grid-row">
+
+            <div class="govuk-grid-column-two-thirds">
+
+            <form action="assessment-status" method="post">
+
+              {% if data['assessmenttype'] !== "Paper" %}
+
+              {{ govukTextarea({
+                name: "facetofaceNotes",
+                id: "facetofaceNotes",
+                rows: "8",
+                classes: "govuk-!-margin-bottom-9",
+                label: {
+                  text: "Functional history for engaging face to face",
+                  classes: "govuk-label--s",
+                  isPageHeading: false
+                },
+                value: data['facetofaceNotes']
+              }) }}
+
+          
+
+              {{ govukRadios({
+                name: "facetofaceSelect",
+                fieldset: {
+                  classes: "govuk-!-margin-bottom-9",
+                  legend: {
+                    text: "Which of these describes how well the claimant can engage face to face?",
+                    isPageHeading: false,
+                    classes: "govuk-fieldset__legend--s"
+                  }
+                },
+                items: [
+                  {
+                    value: "(9a) Can engage with other people unaided",
+                    text: "(9a) Can engage with other people unaided",
+                    checked: (data['facetofaceSelect'] == "(9a) Can engage with other people unaided")
+                  },
+                  {
+                    value: "(9b) Needs prompting to be able to engage with other people",
+                    text: "(9b) Needs prompting to be able to engage with other people",
+                    checked: (data['facetofaceSelect'] == "(9b) Needs prompting to be able to engage with other people")
+                  },
+                  {
+                    value: "(9c) Needs social support to be able to engage with other people",
+                    text: "(9c) Needs social support to be able to engage with other people",
+                    checked: (data['facetofaceSelect'] == "(9c) Needs social support to be able to engage with other people")
+                  },
+                  {
+                    value: "(9d) Cannot engage with other people due to such engagement, causing either overwhelming psychological distress to the claimant or leading the claimant to exhibit behaviour which would result in a substantial risk of harm to the claimant or another person",
+                    text: "(9d) Cannot engage with other people due to such engagement, causing either overwhelming psychological distress to the claimant or leading the claimant to exhibit behaviour which would result in a substantial risk of harm to the claimant or another person",
+                    checked: (data['facetofaceSelect'] == "(9d) Cannot engage with other people due to such engagement, causing either overwhelming psychological distress to the claimant or leading the claimant to exhibit behaviour which would result in a substantial risk of harm to the claimant or another person")
+                  }
+                ]
+              }) }}
+
+
+         
+
+                    {{ govukTextarea({
+                      name: "facetofaceReason",
+                      id: "facetofaceReason",
+                      label: {
+                        text: "What is the reason for this answer?",
+                        classes: "govuk-label--s",
+                        isPageHeading: false
+                      },
+                      value: data['facetofaceReason']
+                    }) }}
+
+                    {% else %}
+
+
+              {{ govukRadios({
+                name: "facetofaceSelectpbr",
+                fieldset: {
+                  classes: "govuk-!-margin-bottom-9",
+                  legend: {
+                    text: "Which of these describes how well the claimant can engage face to face?",
+                    isPageHeading: false,
+                    classes: "govuk-fieldset__legend--s"
+                  }
+                },
+                items: [
+                {
+                  value: "(9a) Can engage with other people unaided",
+                  text: "(9a) Can engage with other people unaided",
+                  checked: (data['facetofaceSelectpbr'] == "(9a) Can engage with other people unaided")
+                },
+                {
+                  value: "(9b) Needs prompting to be able to engage with other people",
+                  text: "(9b) Needs prompting to be able to engage with other people",
+                  checked: (data['facetofaceSelectpbr'] == "(9b) Needs prompting to be able to engage with other people")
+                },
+                {
+                  value: "(9c) Needs social support to be able to engage with other people",
+                  text: "(9c) Needs social support to be able to engage with other people",
+                  checked: (data['facetofaceSelectpbr'] == "(9c) Needs social support to be able to engage with other people")
+                },
+                {
+                  value: "(9d) Cannot engage with other people due to such engagement, causing either overwhelming psychological distress to the claimant or leading the claimant to exhibit behaviour which would result in a substantial risk of harm to the claimant or another person",
+                  text: "(9d) Cannot engage with other people due to such engagement, causing either overwhelming psychological distress to the claimant or leading the claimant to exhibit behaviour which would result in a substantial risk of harm to the claimant or another person",
+                  checked: (data['facetofaceSelectpbr'] == "(9d) Cannot engage with other people due to such engagement, causing either overwhelming psychological distress to the claimant or leading the claimant to exhibit behaviour which would result in a substantial risk of harm to the claimant or another person")
+                }
+              ]
+            }) }}
+                      {% endif %}
+
+
+
+                    {{ govukButton({
+                      text: "Save and continue"
+                    }) }}
+                </ul>
+
+
+
+            </form>
+
+
+
+            </div>
+
+            <div class="govuk-grid-column-one-third">
+
+
+            </div>
+
+        </div>
+
+    </main>
+  </div>
+{% endblock %}

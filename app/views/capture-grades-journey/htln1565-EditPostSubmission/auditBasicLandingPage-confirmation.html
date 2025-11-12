@@ -1,0 +1,115 @@
+{% extends "layouts/main.html" %}
+ 
+{% block pageTitle %}
+  Evidence
+{% endblock %}
+ 
+{% block beforeContent %}
+ 
+{% include "includes/assessment-status-neutral-pip.html" %}
+  <div class="govuk-width-container {{ containerClasses }}"></div>
+  <!-- <a href="" class="govuk-back-link">Back</a> -->
+{% endblock %}
+ 
+{% block content %}
+ 
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+ 
+     
+        <div class="govuk-panel govuk-panel--confirmation">
+          <h1 class="govuk-panel__title">
+            Quality review completed 
+          </h1>
+         
+        </div>
+        
+
+
+
+     
+
+            {{ govukSummaryList({
+              rows: [
+                {
+                  key: {
+                    text: "HCP name"
+                  },
+                  value: {
+                    text: "Aldo Raine"
+                  }
+                },
+                {
+                  key: {
+                    text: "Auditor name"
+                  },
+                  value: {
+                    text: "John Smith"
+                  }
+                },
+                {
+                  key: {
+                    text: "Date completed"
+                  },
+                  value: {
+                    text: "27 June 2025"
+                  }
+                },
+                {
+                  key: {
+                    text: "Overall grade"
+                  },
+                  value: {
+                    text: "AA"
+                  }
+                },
+                
+                {
+                  key: {
+                    text: "Quality review report"
+                  },
+                  actions: {
+                    items: [
+                      {
+                        text: "View report",
+                        href: "auditBasicLandingPage-storedData?checkAnswers=true"
+                      }
+                ]
+                  }
+
+                }
+                  
+ 
+
+
+
+                ]
+            }) }}
+
+
+            
+        
+        
+          
+           
+           
+            </dl>
+         
+  
+         
+  
+            
+
+          <p class="govuk-body">
+            Go to <a href="claimant-details-data.html" class="govuk-link">referral overview</a>
+          </p>
+          
+        </div>
+      
+  </div>
+{% endblock %}

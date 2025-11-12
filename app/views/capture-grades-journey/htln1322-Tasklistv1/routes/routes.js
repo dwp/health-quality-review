@@ -78,7 +78,7 @@ router.post(`/${currentVersionPath}/update-document/:id`, (req, res, next) => {
     if (req.query.irrelevant) {
         return res.redirect(`/${currentVersionPath}/document-list?irrelevant=true`);
     } else if (!req.query.ncat) {
-        return res.redirect(`/${currentVersionPath}/view-document/${req.params.id}`);
+        return res.redirect(`/${currentVersionPath}/view-document/${docToUpdate.id}`);
     } else {
         if (res.locals.nextDocumentId) {
             return res.redirect(`/${currentVersionPath}/update-document/${res.locals.nextDocumentId}?ncat=true`);

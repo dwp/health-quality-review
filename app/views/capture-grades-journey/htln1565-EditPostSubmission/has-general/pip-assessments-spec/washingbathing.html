@@ -1,0 +1,197 @@
+{% extends "layout.html" %}
+{% set bodyAttributes = { id: "assess" } %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block main %}
+
+{% include "includes/assessment-status-neutral.html" %}
+
+  <div class="govuk-width-container {{ containerClasses }}">
+
+    <!-- {{ govukBackLink({
+      text: "Back",
+      href: "assessment-status"
+    }) }} -->
+
+    {{ govukBackLink({
+      text: "Back",
+      href: "javascript:history.back()"
+    }) }}
+
+    <main class="govuk-main-wrapper {{ mainClasses }}" id="main-content" role="main"{% if mainLang %} lang="{{ mainLang }}"{% endif %}>
+        <div class="govuk-grid-row">
+
+            <div class="govuk-grid-column-two-thirds">
+
+
+                <h1 class="govuk-heading-l">Washing and bathing</h1>
+
+                </div>
+          </div>
+
+          <div class="govuk-grid-row">
+
+            <div class="govuk-grid-column-two-thirds">
+
+            <form action="assessment-status" method="post">
+
+              {% if data['assessmenttype'] !== "Paper" %}
+
+              {{ govukTextarea({
+                name: "washingbathingNotes",
+                id: "washingbathingNotes",
+                rows: "8",
+                classes: "govuk-!-margin-bottom-9",
+                label: {
+                  text: "Functional history for washing and bathing",
+                  classes: "govuk-label--s",
+                  isPageHeading: false
+                },
+                value: data['washingbathingNotes']
+              }) }}
+
+         
+
+
+
+              {{ govukRadios({
+                name: "washingbathingSelect",
+                fieldset: {
+                  classes: "govuk-!-margin-bottom-9",
+                  legend: {
+                    text: "Which of these describes how well the claimant can wash and bathe?",
+                    isPageHeading: false,
+                    classes: "govuk-fieldset__legend--s"
+                  }
+                },
+                items: [
+                  {
+                    value: "(4a) Can wash and bathe unaided",
+                    text: "(4a) Can wash and bathe unaided",
+                    checked: (data['washingbathingSelect'] == "(4a) Can wash and bathe unaided")
+                  },
+                  {
+                    value: "(4b) Needs to use an aid or appliance to be able to wash or bathe",
+                    text: "(4b) Needs to use an aid or appliance to be able to wash or bathe",
+                    checked: (data['washingbathingSelect'] == "(4b) Needs to use an aid or appliance to be able to wash or bathe")
+                  },
+                  {
+                    value: "(4c) Needs supervision or prompting to be able to wash or bathe",
+                    text: "(4c) Needs supervision or prompting to be able to wash or bathe",
+                    checked: (data['washingbathingSelect'] == "(4c) Needs supervision or prompting to be able to wash or bathe")
+                  },
+                  {
+                    value: "(4d) Needs assistance to be able to wash either their hair or body below the waist",
+                    text: "(4d) Needs assistance to be able to wash either their hair or body below the waist",
+                    checked: (data['washingbathingSelect'] == "(4d) Needs assistance to be able to wash either their hair or body below the waist")
+                  },
+                  {
+                    value: "(4e) Needs assistance to be able to get in or out of a bath or shower",
+                    text: "(4e) Needs assistance to be able to get in or out of a bath or shower",
+                    checked: (data['washingbathingSelect'] == "(4e) Needs assistance to be able to get in or out of a bath or shower")
+                  },
+                  {
+                    value: "(4f) Needs assistance to be able to wash their body between the shoulders and waist",
+                    text: "(4f) Needs assistance to be able to wash their body between the shoulders and waist",
+                    checked: (data['washingbathingSelect'] == "(4f) Needs assistance to be able to wash their body between the shoulders and waist")
+                  },
+                  {
+                    value: "(4g) Cannot wash and bathe at all and needs another person to wash their entire body",
+                    text: "(4g) Cannot wash and bathe at all and needs another person to wash their entire body",
+                    checked: (data['washingbathingSelect'] == "(4g) Cannot wash and bathe at all and needs another person to wash their entire body")
+                  }
+                ]
+              }) }}
+
+
+
+                    {{ govukTextarea({
+                      name: "washingbathingReason",
+                      id: "washingbathingReason",
+                      label: {
+                        text: "What is the reason for this answer?",
+                        classes: "govuk-label--s",
+                        isPageHeading: false
+                      },
+                      value: data['washingbathingReason']
+                    }) }}
+
+                    {% else %}
+
+
+              {{ govukRadios({
+                name: "washingbathingSelectpbr",
+                fieldset: {
+                  classes: "govuk-!-margin-bottom-9",
+                  legend: {
+                    text: "Which of these describes how well the claimant can wash and bathe?",
+                    isPageHeading: false,
+                    classes: "govuk-fieldset__legend--s"
+                  }
+                },
+                items: [
+                {
+                  value: "(4a) Can wash and bathe unaided",
+                  text: "(4a) Can wash and bathe unaided",
+                  checked: (data['washingbathingSelectpbr'] == "(4a) Can wash and bathe unaided")
+                },
+                {
+                  value: "(4b) Needs to use an aid or appliance to be able to wash or bathe",
+                  text: "(4b) Needs to use an aid or appliance to be able to wash or bathe",
+                  checked: (data['washingbathingSelectpbr'] == "(4b) Needs to use an aid or appliance to be able to wash or bathe")
+                },
+                {
+                  value: "(4c) Needs supervision or prompting to be able to wash or bathe",
+                  text: "(4c) Needs supervision or prompting to be able to wash or bathe",
+                  checked: (data['washingbathingSelectpbr'] == "(4c) Needs supervision or prompting to be able to wash or bathe")
+                },
+                {
+                  value: "(4d) Needs assistance to be able to wash either their hair or body below the waist",
+                  text: "(4d) Needs assistance to be able to wash either their hair or body below the waist",
+                  checked: (data['washingbathingSelectpbr'] == "(4d) Needs assistance to be able to wash either their hair or body below the waist")
+                },
+                {
+                  value: "(4e) Needs assistance to be able to get in or out of a bath or shower",
+                  text: "(4e) Needs assistance to be able to get in or out of a bath or shower",
+                  checked: (data['washingbathingSelectpbr'] == "(4e) Needs assistance to be able to get in or out of a bath or shower")
+                },
+                {
+                  value: "(4f) Needs assistance to be able to wash their body between the shoulders and waist",
+                  text: "(4f) Needs assistance to be able to wash their body between the shoulders and waist",
+                  checked: (data['washingbathingSelectpbr'] == "(4f) Needs assistance to be able to wash their body between the shoulders and waist")
+                },
+                {
+                  value: "(4g) Cannot wash and bathe at all and needs another person to wash their entire body",
+                  text: "(4g) Cannot wash and bathe at all and needs another person to wash their entire body",
+                  checked: (data['washingbathingSelectpbr'] == "(4g) Cannot wash and bathe at all and needs another person to wash their entire body")
+                }
+              ]
+            }) }}
+  
+                      {% endif %}
+
+                    {{ govukButton({
+                      text: "Save and continue"
+                    }) }}
+                </ul>
+
+
+
+            </form>
+
+
+
+            </div>
+
+            <div class="govuk-grid-column-one-third">
+
+            </div>
+
+        </div>
+
+    </main>
+  </div>
+{% endblock %}
