@@ -1,0 +1,91 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Activities
+{% endblock %}
+
+
+{% block beforeContent %}
+
+
+
+<div class="govuk-width-container {{ containerClasses }}"></div>
+
+<a href="account_jd.html" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+
+
+
+<h1 class="govuk-heading-l">Rolling for PIP paper-based assessments </h1>
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      
+<form class="form" action="manage-global-settings" method="post">
+
+
+
+{{ govukRadios({
+  name: telephone,
+  fieldset: {
+    legend: {
+      text: "Select frequency",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend--s"
+    }
+  },
+
+
+
+  
+  items: [
+    {
+      value: "Approval-tel",
+      text: "All cases"
+    },
+    {
+      value: "New entrant-tel",
+      text: "1 in 4 cases"
+    },
+    {
+      value: "Rolling-tel",
+      text: "1 in 10 cases"
+    },
+    {
+      value: "Variable-tel",
+      text: "1 in 25 cases"
+      
+    },
+    {
+      value: "Variable-tel",
+      text: "1 in 50 cases",
+      checked: true
+    },
+     {
+      value: "Variable-tel",
+      text: "1 in 100 cases"
+     
+    }
+   
+  ]
+}) }}
+
+
+
+{{ govukButton({
+  text: "Continue"
+}) }}
+
+</form>
+    </div>
+  </div>
+{% endblock %}
