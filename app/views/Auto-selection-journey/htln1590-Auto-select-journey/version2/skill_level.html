@@ -1,0 +1,81 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Activities
+{% endblock %}
+
+
+{% block beforeContent %}
+
+
+
+<div class="govuk-width-container {{ containerClasses }}"></div>
+
+<a href="account_jd.html" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+
+
+
+<h1 class="govuk-heading-l">Skills level</h1>
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      
+<form class="form" action="variable-setting" method="post">
+
+
+
+{{ govukRadios({
+  name: telephone,
+  fieldset: {
+    legend: {
+      text: "Select telephone level",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend--s"
+    }
+  },
+
+
+
+  
+  items: [
+    {
+      value: "Approval-tel",
+      text: "Approval"
+    },
+    {
+      value: "New entrant-tel",
+      text: "New entrant"
+    },
+    {
+      value: "Rolling-tel",
+      text: "Rolling"
+    },
+    {
+      value: "Variable-tel",
+      text: "Variable",
+      checked: true
+    }
+   
+  ]
+}) }}
+
+
+
+{{ govukButton({
+  text: "Continue"
+}) }}
+
+</form>
+    </div>
+  </div>
+{% endblock %}

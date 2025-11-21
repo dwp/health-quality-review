@@ -1,0 +1,131 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Information gathering
+{% endblock %}
+
+
+{% block beforeContent %}
+
+
+
+<div class="govuk-width-container {{ containerClasses }}"></div>
+
+<a href="main-menu.html" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+
+
+
+        
+  <main class="govuk-main-wrapper " id="main-content" role="main">
+ 
+
+
+
+  <h1 class="govuk-heading-l">Manage profiles</h1>
+
+<div class="govuk-form-group govuk-!-margin-bottom-0">
+<label class="govuk-label" for="searchNino">
+Enter name
+</label>
+
+
+<div class="govuk-input__wrapper govuk-!-margin-bottom-0">
+
+
+<input class="govuk-input govuk-input--width-20 govuk-!-margin-right-1" id="searchNino" name="search" type="text" autocomplete="off">
+
+    <button type="submit" data-prevent-double-click="true" class="govuk-button" data-module="govuk-button" id="nino-search-button" data-govuk-button-init="">
+  Search
+</button>
+
+</div>
+
+</div>
+  
+    <table class="govuk-table">
+      <caption class="govuk-visually-hidden">Manage profiles</caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header app-custom-class">Name</th>
+          <th scope="col" class="govuk-table__header app-custom-class">Email</th>
+          <th scope="col" class="govuk-table__header app-custom-class">Healthcare professional</th>
+          <th scope="col" class="govuk-table__header app-custom-class">Provider lot</th>
+          <!-- <th scope="col" class="govuk-table__header app-custom-class">End of life</th>
+          <th scope="col" class="govuk-table__header app-custom-class">Action</th> -->
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+       
+        <tr class="govuk-table__row" data-category="lot1">
+          <td class="govuk-table__cell"> <p><a href="question-hcp.html" class="govuk-link">Amy Gill</a></p> </td>
+          <td class="govuk-table__cell">amy.gill@dwp.gov.uk</td>
+          <td class="govuk-table__cell">Yes</td>
+          <td class="govuk-table__cell"><strong class="govuk-tag" >Lot 100</strong></td>
+          <!-- <td class="govuk-table__cell">No</td>
+          <td class="govuk-table__cell"> <p><a href="view-alert" class="govuk-link">View alert</a></p> </td> -->
+        </tr>
+        <tr class="govuk-table__row" data-category="lot1">
+          <td class="govuk-table__cell"> <p><a href="account_jd.html" class="govuk-link">Jane Doe</a></p> </td>
+          <td class="govuk-table__cell">jane.doe@dwp.gov.uk</td>
+          <td class="govuk-table__cell">Yes</td>
+          <td class="govuk-table__cell"><strong class="govuk-tag" >Lot 100</strong></td>
+          <!-- <td class="govuk-table__cell">No</td>
+          <td class="govuk-table__cell"> <p><a href="view-alert" class="govuk-link">View alert</a></p> </td> -->
+        </tr>
+        <tr class="govuk-table__row" data-category="lot4">
+          <td class="govuk-table__cell"> <p><a href="" class="govuk-link">John Roberts</a></p> </td>
+          <td class="govuk-table__cell">john.roberts@dwp.gov.uk</td>
+          <td class="govuk-table__cell">No</td>
+          <td class="govuk-table__cell"><strong class="govuk-tag" >Lot 100</strong></td>
+          <!-- <td class="govuk-table__cell">No</td>
+          <td class="govuk-table__cell"> <p><a href="view-alert" class="govuk-link">View alert</a></p> </td> -->
+        </tr>
+        <tr class="govuk-table__row" data-category="lot4">
+          <td class="govuk-table__cell"> <p><a href="" class="govuk-link">Jill Mcclough</a></p> </td>
+          <td class="govuk-table__cell">jill.mcclough@dwp.gov.uk</td>
+          <td class="govuk-table__cell">Yes</td>
+          <td class="govuk-table__cell"><strong class="govuk-tag" >Lot 100</strong></td>
+          <!-- <td class="govuk-table__cell">No</td>
+          <td class="govuk-table__cell"> <p><a href="view-alert" class="govuk-link">View alert</a></p> </td> -->
+        </tr>
+                <tr class="govuk-table__row" data-category="lot4">
+          <td class="govuk-table__cell"> <p><a href="account.html" class="govuk-link">Jerry Spinner</a></p> </td>
+          <td class="govuk-table__cell">jerry.spinner@dwp.gov.uk</td>
+          <td class="govuk-table__cell">Yes</td>
+          <td class="govuk-table__cell"><strong class="govuk-tag" >Lot 1</strong></td>
+          <!-- <td class="govuk-table__cell">No</td>
+          <td class="govuk-table__cell"> <p><a href="view-alert" class="govuk-link">View alert</a></p> </td> -->
+        </tr>
+      </tbody>
+    </table>
+    <nav class="moj-pagination" aria-label="Pagination navigation">
+
+      <ul class="moj-pagination__list">
+     
+        </li>
+        <li class="moj-pagination__item moj-pagination__item--active" aria-label="Page 1 of 30" aria-current="page">1</li>
+    
+        <li class="moj-pagination__item"><a class="moj-pagination__link" href="/page=2" aria-label="Page 1 of 30">2</a></li>
+          
+        <li class="moj-pagination__item  moj-pagination__item--next">
+          <a class="moj-pagination__link" href="">Next<span class="govuk-visually-hidden"> page</span></a>
+        </li>
+      </ul>
+      <p class="moj-pagination__results">Showing <b>1</b> to <b>4</b> of <b>4 profiles</b></p>
+    </nav>
+
+</div>
+        <div class="moj-pagination" aria-label="Pagination navigation">
+    
+          </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+{% endblock %}
+

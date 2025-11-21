@@ -1,0 +1,191 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Activities
+{% endblock %}
+
+
+{% block beforeContent %}
+
+
+
+<div class="govuk-width-container {{ containerClasses }}"></div>
+
+<a href="account_jd.html" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+
+
+
+<h1 class="govuk-heading-l">Skills level</h1>
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      
+<form class="form" action="auditBasicLandingPage-summary#activity-{{ query.activity }}" method="post">
+
+{{ govukRadios({
+  name: f2f,
+
+  fieldset: {
+    legend: {
+      text: "Select PIP face to face level",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend--s"
+    }
+  },
+
+
+
+  
+  items: [
+    {
+      value: "Approval-f2f",
+      text: "Approval"
+    },
+    {
+      value: "New entrant-f2f",
+      text: "New entrant"
+    },
+    {
+      value: "Rolling-f2f",
+      text: "Rolling",
+      checked: true
+    },
+    {
+      value: "Targeted-f2f",
+      text: "Targeted"
+    }
+   
+  ]
+}) }}
+
+
+
+{{ govukRadios({
+  name: telephone,
+  fieldset: {
+    legend: {
+      text: "Select telephone level",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend--s"
+    }
+  },
+
+
+
+  
+  items: [
+    {
+      value: "Approval-tel",
+      text: "Approval"
+    },
+    {
+      value: "New entrant-tel",
+      text: "New entrant"
+    },
+    {
+      value: "Rolling-tel",
+      text: "Rolling"
+    },
+    {
+      value: "Targeted-tel",
+      text: "Targeted",
+      checked: true
+    }
+   
+  ]
+}) }}
+
+
+
+{{ govukRadios({
+  name: pbr,
+
+  fieldset: {
+    legend: {
+      text: "Select paper-based level",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend--s"
+    }
+  },
+
+
+
+  
+  items: [
+    {
+      value: "Approval-pbr",
+      text: "Approval",
+      checked: true
+    },
+    {
+      value: "New entrant-pbr",
+      text: "New entrant"
+    },
+    {
+      value: "Rolling-pbr",
+      text: "Rolling"
+    },
+    {
+      value: "Targeted-pbr",
+      text: "Targeted"
+    }
+   
+  ]
+}) }}
+
+
+{{ govukRadios({
+  name: srel,
+
+  fieldset: {
+    legend: {
+      text: "Select SREL level",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend--s"
+    }
+  },
+
+
+
+  
+  items: [
+    {
+      value: "Approval-srel",
+      text: "Approval",
+      checked: true
+    },
+    {
+      value: "New entrant-srel",
+      text: "New entrant"
+    },
+    {
+      value: "Rolling-srel",
+      text: "Rolling"
+    },
+    {
+      value: "Targeted-srel",
+      text: "Targeted"
+    }
+   
+  ]
+}) }}
+
+
+{{ govukButton({
+  text: "Continue"
+}) }}
+
+</form>
+    </div>
+  </div>
+{% endblock %}

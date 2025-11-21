@@ -1,0 +1,142 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Information gathering
+{% endblock %}
+
+
+{% block beforeContent %}
+
+
+
+<div class="govuk-width-container {{ containerClasses }}"></div>
+
+<a href="manage-profiles-multi-lot-audit-history.html" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+
+
+
+        
+  <main class="govuk-main-wrapper " id="main-content" role="main">
+ 
+
+
+
+  <h1 class="govuk-heading-l">Jane Doe audit history</h1>
+
+<div class="govuk-form-group govuk-!-margin-bottom-0">
+
+
+
+
+
+</div>
+  
+    <table class="govuk-table">
+      <caption class="govuk-visually-hidden">Manage profiles</caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header app-custom-class">Referral NI</th>
+          <th scope="col" class="govuk-table__header app-custom-class">Auditor</th>
+          <th scope="col" class="govuk-table__header app-custom-class">Skills</th>
+           <th scope="col" class="govuk-table__header app-custom-class">Grade</th>
+          <th scope="col" class="govuk-table__header app-custom-class">Reviewed</th>
+          <!-- <th scope="col" class="govuk-table__header app-custom-class">End of life</th>
+          <th scope="col" class="govuk-table__header app-custom-class">Action</th> -->
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+       
+   
+         <tr class="govuk-table__row" data-category="lot1">
+          <td class="govuk-table__cell"> <p><a href="question-hcp.html" class="govuk-link">NI123456A</a></p> </td>
+          <td class="govuk-table__cell">Peter Parker</td>
+          <td class="govuk-table__cell">PIP Telephone assessment</td>
+             <td class="govuk-table__cell">Acceptable</td>
+          <td class="govuk-table__cell"><a href="jd-history" class="govuk-link">04/04/25</a></td>
+        </tr>
+         <tr class="govuk-table__row" data-category="lot1">
+          <td class="govuk-table__cell"> <p><a href="question-hcp.html" class="govuk-link">AB123456C</a></p> </td>
+          <td class="govuk-table__cell">John Smith</td>
+          <td class="govuk-table__cell">PIP face to face</td>
+             <td class="govuk-table__cell">Acceptable</td>
+          <td class="govuk-table__cell"><a href="jd-history" class="govuk-link">30/03/25</a></td>
+        </tr>
+          <tr class="govuk-table__row" data-category="lot1">
+          <td class="govuk-table__cell"> <p><a href="question-hcp.html" class="govuk-link">AB123456C</a></p> </td>
+          <td class="govuk-table__cell">Sandra Bullock</td>
+          <td class="govuk-table__cell">PIP Paper-based assessment</td>
+             <td class="govuk-table__cell">Unacceptable</td>
+          <td class="govuk-table__cell"><a href="jd-history" class="govuk-link">27/03/25</a></td>
+        </tr>
+          <tr class="govuk-table__row" data-category="lot1">
+          <td class="govuk-table__cell"> <p><a href="question-hcp.html" class="govuk-link">BA123456D</a></p> </td>
+          <td class="govuk-table__cell">Peter Parker</td>
+          <td class="govuk-table__cell">HCP review</td>
+             <td class="govuk-table__cell">Acceptable</td>
+          <td class="govuk-table__cell"><a href="jd-history" class="govuk-link">21/03/25</a></td>
+        </tr>
+         <tr class="govuk-table__row" data-category="lot1">
+          <td class="govuk-table__cell"> <p><a href="question-hcp.html" class="govuk-link">ZX123456Z</a></p> </td>
+          <td class="govuk-table__cell">John Smith</td>
+          <td class="govuk-table__cell">PIP SREL</td>
+             <td class="govuk-table__cell">Acceptable</td>
+          <td class="govuk-table__cell"><a href="jd-history" class="govuk-link">20/03/25</a></td>
+        </tr>
+         <tr class="govuk-table__row" data-category="lot1">
+          <td class="govuk-table__cell"> <p><a href="question-hcp.html" class="govuk-link">NI123456A</a></p> </td>
+          <td class="govuk-table__cell">Peter Parker</td>
+          <td class="govuk-table__cell">PIP Telephone assessment</td>
+             <td class="govuk-table__cell">Acceptable</td>
+          <td class="govuk-table__cell"><a href="jd-history" class="govuk-link">04/04/25</a></td>
+        </tr>
+         <tr class="govuk-table__row" data-category="lot1">
+          <td class="govuk-table__cell"> <p><a href="question-hcp.html" class="govuk-link">AB123456C</a></p> </td>
+          <td class="govuk-table__cell">John Smith</td>
+          <td class="govuk-table__cell">PIP Paper-based assessment</td>
+             <td class="govuk-table__cell">Acceptable</td>
+          <td class="govuk-table__cell"><a href="jd-history" class="govuk-link">30/03/25</a></td>
+        </tr>
+          <tr class="govuk-table__row" data-category="lot1">
+          <td class="govuk-table__cell"> <p><a href="question-hcp.html" class="govuk-link">AB123456C</a></p> </td>
+          <td class="govuk-table__cell">Sandra Bullock</td>
+          <td class="govuk-table__cell">PIP Paper-based assessment</td>
+             <td class="govuk-table__cell">Unacceptable</td>
+          <td class="govuk-table__cell"><a href="jd-history" class="govuk-link">27/03/25</a></td>
+        </tr>
+          <tr class="govuk-table__row" data-category="lot1">
+          <td class="govuk-table__cell"> <p><a href="question-hcp.html" class="govuk-link">BA123456D</a></p> </td>
+          <td class="govuk-table__cell">Peter Parker</td>
+          <td class="govuk-table__cell">PIP Telephone assessment</td>
+             <td class="govuk-table__cell">Acceptable</td>
+          <td class="govuk-table__cell"><a href="jd-history" class="govuk-link">21/03/25</a></td>
+        </tr>
+         <tr class="govuk-table__row" data-category="lot1">
+          <td class="govuk-table__cell"> <p><a href="question-hcp.html" class="govuk-link">ZX123456Z</a></p> </td>
+          <td class="govuk-table__cell">John Smith</td>
+          <td class="govuk-table__cell">PIP HCP review</td>
+             <td class="govuk-table__cell">Acceptable</td>
+          <td class="govuk-table__cell"><a href="jd-history" class="govuk-link">20/03/25</a></td>
+        </tr>
+     
+     
+     
+         
+      </tbody>
+    </table>
+ 
+
+</div>
+        <div class="moj-pagination" aria-label="Pagination navigation">
+    
+          </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+{% endblock %}
+
