@@ -11,17 +11,13 @@
 
 <div class="govuk-width-container {{ containerClasses }}"></div>
 
-<a href="manage-profiles-multi-lot.html" class="govuk-back-link">Back</a>
+<!-- <a href="manage-profiles-multi-lot.html" class="govuk-back-link">Back</a> -->
 {% endblock %}
 
 {% block content %}
 
 
 
-
-        
-
-    
 
 
 
@@ -32,6 +28,20 @@
 <div class="govuk-grid-row">
 
 <div class="govuk-grid-column-three-quarters">
+
+    
+  {% set html %}
+  <h3 class="govuk-notification-banner__heading">
+    Jane Doe's profile details have been updated
+  </h3>
+  
+{% endset %}
+
+{{ govukNotificationBanner({
+  html: html,
+  type: "success"
+}) }}
+  
   
 <h1 class="govuk-heading-l">
 Jane Doe's profile
@@ -95,7 +105,7 @@ Details
 
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key" style="border-bottom:0px;">
-    Assessment skill
+    Skills type
     </dt>
     <dd class="govuk-summary-list__value" style="border-bottom:0px;">
 
@@ -133,7 +143,7 @@ Details
        PIP telephone
     </dt>
     <dd class="govuk-summary-list__value" style="border-bottom:0px;">
-        Variable (1 in 4 cases)
+        Variable set to 1 in 4 cases
     </dd>
       <dd class="govuk-summary-list__actions">
      <a class="govuk-link" href="skill_level.html">Change </a>
