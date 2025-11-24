@@ -131,3 +131,12 @@ router.post(`/${currentVersionPath}/autosave`, function (req, res) {
         return res.status(500).json({});
     }
 });
+
+router.post(`/${currentVersionPath}/skill_level`, function (req, res) {
+   console.log(req.body); 
+   if (req.body['skillLevel-Tel'] === 'Variable-tel') {
+    return res.redirect(`${currentVersionPath}/account_jd`);
+  } else {
+    return res.redirect(`${currentVersionPath}/variable-setting`);
+  }
+})
