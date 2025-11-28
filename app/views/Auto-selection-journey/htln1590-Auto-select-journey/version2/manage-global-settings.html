@@ -21,6 +21,7 @@
 <div class="govuk-grid-column-three-quarters">
 
   <h1 class="govuk-heading-l">Manage quality review settings</h1>
+  <form class="form" action="manage-global-settings" method="post"></form>
 
   <h2 class="govuk-heading-m">PIP paper-based</h2>
 
@@ -33,7 +34,7 @@
 All cases
       </dd>
       <dd class="govuk-summary-list__actions">
-        <a class="govuk-link" href="">Change </a>
+        <!-- <a class="govuk-link" href="">Change </a> -->
     </dd>
       </div>
 
@@ -51,10 +52,11 @@ All cases
 
        <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key" style="border-bottom:0px;">
-    Rolling
+      Rolling
     </dt>
     <dd class="govuk-summary-list__value" style="border-bottom:0px;">
-1 in 50 cases
+  {{ data['telephone-global-rolling'] }}
+      <!-- 1 in 50 cases -->
       </dd>
       <dd class="govuk-summary-list__actions">
         <a class="govuk-link" href="skill_level-global">Change </a>
@@ -85,7 +87,7 @@ All cases
 All cases
       </dd>
       <dd class="govuk-summary-list__actions">
-        <a class="govuk-link" href="">Change </a>
+        <!-- <a class="govuk-link" href="">Change </a> -->
     </dd>
       </div>
 
@@ -138,7 +140,7 @@ All cases
 All cases
       </dd>
       <dd class="govuk-summary-list__actions">
-        <a class="govuk-link" href="">Change </a>
+        <!-- <a class="govuk-link" href="">Change </a> -->
     </dd>
       </div>
 
@@ -190,7 +192,7 @@ All cases
 All cases
       </dd>
       <dd class="govuk-summary-list__actions">
-        <a class="govuk-link" href="">Change </a>
+        <!-- <a class="govuk-link" href="">Change </a> -->
     </dd>
       </div>
 
@@ -243,7 +245,7 @@ All cases
 All cases
       </dd>
       <dd class="govuk-summary-list__actions">
-        <a class="govuk-link" href="">Change </a>
+        <!-- <a class="govuk-link" href="">Change </a> -->
     </dd>
       </div>
 

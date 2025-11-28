@@ -35,7 +35,7 @@
 
 
 {{ govukRadios({
-  name: telephone,
+  name: 'telephone-global-rolling',
   fieldset: {
     legend: {
       text: "Select frequency",
@@ -45,33 +45,32 @@
   },
 
 
-
+value: data["telephone-global-rolling"],
   
   items: [
     {
-      value: "Approval-tel",
+      value: "All cases",
       text: "All cases"
     },
     {
-      value: "New entrant-tel",
+      value: "1 in 4 cases",
       text: "1 in 4 cases"
     },
     {
-      value: "Rolling-tel",
+      value: "1 in 10 cases",
       text: "1 in 10 cases"
     },
     {
-      value: "Variable-tel",
+      value: "1 in 25 cases",
       text: "1 in 25 cases"
       
     },
     {
-      value: "Variable-tel",
-      text: "1 in 50 cases",
-      checked: true
+      value: "1 in 50 cases",
+      text: "1 in 50 cases"
     },
      {
-      value: "Variable-tel",
+      value: "1 in 100 case",
       text: "1 in 100 cases"
      
     }

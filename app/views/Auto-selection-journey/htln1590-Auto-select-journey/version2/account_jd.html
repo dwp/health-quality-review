@@ -71,7 +71,6 @@ Details
      Yes
     </dd>
     <dd class="govuk-summary-list__actions">
-   
   </dd>
   </div>
 
@@ -87,10 +86,7 @@ Details
     <dd class="govuk-summary-list__actions">
       <!-- <a class="govuk-link" href="agent-hub-location">Change </a> -->
   </dd>
-
-
   </div>
-
 
 
   <div class="govuk-summary-list__row">
@@ -133,7 +129,7 @@ Details
        PIP telephone
     </dt>
     <dd class="govuk-summary-list__value" style="border-bottom:0px;">
-        Variable (1 in 4 cases)
+        {{ data['skillLevel-Tel'] | replace("-tel",  " ") }}{% if data['skillLevel-Tel'] === "Variable-tel" %}( {{ data['frequency-tel']}} ){% endif %}
     </dd>
       <dd class="govuk-summary-list__actions">
      <a class="govuk-link" href="skill_level.html">Change </a>
@@ -145,7 +141,7 @@ Details
        PIP Paper-based
     </dt>
     <dd class="govuk-summary-list__value" style="border-bottom:0px;">
-       Approval
+       New entrant
     </dd>
       <dd class="govuk-summary-list__actions">
      <a class="govuk-link" href="">Change </a>
@@ -183,12 +179,12 @@ Details
   <nav aria-labelledby="subsection-title">
   <ul class="govuk-list">
   
-    <!-- <li>
+    <li>
       
-        <a href="available-for.html" id="action_update_status" class="govuk-link govuk-link--no-visited-state">Add skills</a>
+        <a href="account_jd-history" id="action_update_status" class="govuk-link govuk-link--no-visited-state">View quality review history</a>
       
       
-            </li> -->
+            </li>
           
         <li>
       

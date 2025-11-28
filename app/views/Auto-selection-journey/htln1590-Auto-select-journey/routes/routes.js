@@ -132,11 +132,13 @@ router.post(`/${currentVersionPath}/autosave`, function (req, res) {
     }
 });
 
-router.post(`/${currentVersionPath}/skill_level`, function (req, res) {
-   console.log(req.body); 
+router.post(`/Auto-selection-journey/${currentVersionPath}/version2/skill_level`, function (req, res) {
+   console.log(req.body);
    if (req.body['skillLevel-Tel'] === 'Variable-tel') {
-    return res.redirect(`${currentVersionPath}/account_jd`);
+    return res.redirect(`variable-setting`);
   } else {
-    return res.redirect(`${currentVersionPath}/variable-setting`);
+    return res.redirect(`account_jd`);
   }
 })
+
+

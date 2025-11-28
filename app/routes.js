@@ -171,7 +171,9 @@ router.use('/', (req, res, next) => {
 // Supporting docs
 
 const versions = [
-   '/capture-grades-journey/htln1322-Summarylistv1' 
+   '/capture-grades-journey/htln1322-Summarylistv1',
+    '/Auto-selection-journey/htln1590-Auto-select-journey'
+ 
 ]
 
 console.log('Setting up main router. Locating sub routers');
