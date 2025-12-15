@@ -1,0 +1,81 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Information gathering
+{% endblock %}
+
+
+{% block beforeContent %}
+
+
+
+<div class="govuk-width-container {{ containerClasses }}"></div>
+
+<a href="manage-profiles-multi-lot.html" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+
+
+
+        
+
+    
+
+
+<form class="form" action="account_jd" method="post">
+
+
+
+<div class="govuk-width-container ">
+<div class="govuk-grid-row">
+
+<div class="govuk-grid-column-three-quarters">
+  
+<h1 class="govuk-heading-l">
+Confirm changes
+</h1>
+
+
+
+<dl class="govuk-summary-list">
+
+<h3 class="govuk-heading-m">Quality review level</h3>
+
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key" style="border-bottom:0px;">
+       PIP telephone
+    </dt>
+    <dd class="govuk-summary-list__value" style="border-bottom:0px;">
+        {{ data['skillLevel-Tel'] | replace("-tel",  " ") }}{% if data['skillLevel-Tel'] === "Enhanced-tel" %}( {{ data['frequency-tel']}} ){% endif %}
+    </dd>
+      <dd class="govuk-summary-list__actions">
+     <a class="govuk-link" href="skill_level.html">Change </a>
+    </dd>
+  </div>
+
+</dl>
+
+{{ govukButton({
+  text: "Continue"
+}) }}
+
+</form>
+
+
+</div>
+<div class="govuk-grid-column-one-quarter">     
+
+      </nav>
+    </div>
+  
+  </div>
+  
+  
+            </div>
+</div>
+
+{% endblock %}
+

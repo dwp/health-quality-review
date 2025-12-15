@@ -172,7 +172,8 @@ router.use('/', (req, res, next) => {
 
 const versions = [
    '/capture-grades-journey/htln1322-Summarylistv1',
-    '/Auto-selection-journey/htln1590-Auto-select-journey'
+    '/Auto-selection-journey/htln1590-Auto-select-journey',
+    '/Auto-selection-journey/htln1646-Auto-select-journey'
  
 ]
 

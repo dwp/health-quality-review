@@ -1,0 +1,97 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Activities
+{% endblock %}
+
+
+{% block beforeContent %}
+
+
+
+<div class="govuk-width-container {{ containerClasses }}"></div>
+
+<a href="manage-global-settings" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+
+
+
+<h1 class="govuk-heading-l">Rolling for PIP paper-based assessments </h1>
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      
+<form class="form" action="manage-global-settings_check" method="post">
+
+
+
+{{ govukRadios({
+  name: 'telephone-global-rolling',
+  fieldset: {
+    legend: {
+      text: "Select frequency",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend--s"
+    }
+  },
+
+
+value: data["telephone-global-rolling"],
+  
+  items: [
+    {
+      value: "All cases",
+      text: "All cases"
+    },
+    {
+      value: "50% of cases",
+      text: "50% of cases"
+    },
+    {
+      value: "40% of cases",
+      text: "40% of cases"
+    },
+    {
+      value: "30% of cases",
+      text: "30% of cases"
+      
+    },
+    {
+      value: "20% of cases",
+      text: "20% of cases"
+    },
+ {
+      value: "10% of cases",
+      text: "10% of cases"
+    },
+     {
+      value: "5% of cases",
+      text: "5% of cases"
+    },
+     {
+      value: "2% of cases",
+      text: "2% of cases"
+    }
+   
+  ]
+}) }}
+
+
+
+{{ govukButton({
+  text: "Continue"
+}) }}
+
+</form>
+    </div>
+  </div>
+{% endblock %}

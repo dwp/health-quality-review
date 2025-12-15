@@ -1,0 +1,227 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Information gathering
+{% endblock %}
+
+
+{% block beforeContent %}
+
+
+
+<div class="govuk-width-container {{ containerClasses }}"></div>
+
+<!-- <a href="manage-profiles-multi-lot.html" class="govuk-back-link">Back</a> -->
+{% endblock %}
+
+{% block content %}
+
+
+
+
+
+
+
+
+
+<div class="govuk-width-container ">
+<div class="govuk-grid-row">
+
+<div class="govuk-grid-column-three-quarters">
+
+    
+  {% set html %}
+  <h3 class="govuk-notification-banner__heading">
+    Jane Doe's profile details have been updated
+  </h3>
+  
+{% endset %}
+
+{{ govukNotificationBanner({
+  html: html,
+  type: "success"
+}) }}
+  
+  
+<h1 class="govuk-heading-l">
+Jane Doe's profile
+</h1>
+
+<h1 class="govuk-heading-m">
+Details
+</h1>
+
+<dl class="govuk-summary-list">
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+     Email
+    </dt>
+    <dd class="govuk-summary-list__value">
+      jane.doe@dwp.gov.uk
+    </dd>
+    <dd class="govuk-summary-list__actions">
+  </dd>
+  </div>
+  <!-- <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Provider lot
+    </dt>
+    <dd class="govuk-summary-list__value">
+     Lot 100
+    </dd>
+    <dd class="govuk-summary-list__actions">
+  </dd>
+  </div> -->
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Healthcare professional
+    </dt>
+    <dd class="govuk-summary-list__value">
+     Yes
+    </dd>
+    <dd class="govuk-summary-list__actions">
+   
+  </dd>
+  </div>
+
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key" style="border-bottom:0px;">
+      Office location
+    </dt>
+    <dd class="govuk-summary-list__value" style="border-bottom:0px;">
+      Birmingham, Handsworth
+    </dd>
+
+    <dd class="govuk-summary-list__actions">
+      <!-- <a class="govuk-link" href="agent-hub-location">Change </a> -->
+  </dd>
+
+
+  </div>
+
+
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key" style="border-bottom:0px;">
+    Skills type
+    </dt>
+    <dd class="govuk-summary-list__value" style="border-bottom:0px;">
+
+      <ul class="govuk-list">
+        <li style="white-space:nowrap;">PIP face to face </li>
+        <li style="white-space:nowrap;">  PIP telephone</li> 
+        <li style="white-space:nowrap;">  PIP Paper-based</li> 
+        <li style="white-space:nowrap;">  PIP SREL</li> 
+        
+      </ul>
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="available-for">Change </a>
+    </dd>
+      </div>
+
+     </dl>
+<dl class="govuk-summary-list">
+
+<h3 class="govuk-heading-m">Quality review level</h3>
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key" style="border-bottom:0px;">
+       PIP face to face
+    </dt>
+    <dd class="govuk-summary-list__value" style="border-bottom:0px;">
+        Rolling 
+    </dd>
+      <dd class="govuk-summary-list__actions">
+     <a class="govuk-link" href="">Change </a>
+    </dd>
+  </div>
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key" style="border-bottom:0px;">
+       PIP telephone
+    </dt>
+    <dd class="govuk-summary-list__value" style="border-bottom:0px;">
+        Variable set to 1 in 4 cases
+    </dd>
+      <dd class="govuk-summary-list__actions">
+     <a class="govuk-link" href="skill_level.html">Change </a>
+    </dd>
+  </div>
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key" style="border-bottom:0px;">
+       PIP Paper-based
+    </dt>
+    <dd class="govuk-summary-list__value" style="border-bottom:0px;">
+       Approval
+    </dd>
+      <dd class="govuk-summary-list__actions">
+     <a class="govuk-link" href="">Change </a>
+    </dd>
+  </div>
+
+   <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key" style="border-bottom:0px;">
+       PIP SREL
+    </dt>
+    <dd class="govuk-summary-list__value" style="border-bottom:0px;">
+       Approval
+    </dd>
+      <dd class="govuk-summary-list__actions">
+     <a class="govuk-link" href="">Change </a>
+    </dd>
+  </div>
+
+
+
+
+
+
+
+
+</div>
+<div class="govuk-grid-column-one-quarter">     
+
+  <div class="app-related-items" role="complementary">
+  
+  <div class="has-action-list">
+  <h2 class="govuk-heading-m" id="subsection-title">
+  What you can do next
+  </h2>
+  <nav aria-labelledby="subsection-title">
+  <ul class="govuk-list">
+  
+    <!-- <li>
+      
+        <a href="available-for.html" id="action_update_status" class="govuk-link govuk-link--no-visited-state">Add skills</a>
+      
+      
+            </li> -->
+          
+        <li>
+      
+          <a href="manage-profiles-multi-lot.html" id="action_update_status" class="govuk-link govuk-link--no-visited-state">Manage other profiles</a>
+        
+        
+              </li>
+              <li>
+      
+                <a href="main-menu.html" id="action_update_status" class="govuk-link govuk-link--no-visited-state">Return to main menu</a>
+              
+              
+                    </li>
+       
+        </ul>
+      </nav>
+    </div>
+  
+  </div>
+  
+  
+            </div>
+</div>
+
+{% endblock %}
+

@@ -1,0 +1,76 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Activities
+{% endblock %}
+
+
+{% block beforeContent %}
+
+
+
+<div class="govuk-width-container {{ containerClasses }}"></div>
+
+<a href="account_jd.html" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+
+
+
+<h1 class="govuk-heading-l">Select quality review level</h1>
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      
+<form class="form" action="skill_level" method="post">
+
+
+
+{{ govukRadios({
+  name: "skillLevel-Tel",
+  fieldset: {
+    legend: {
+      text: "Select PIP telephone level",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend--s"
+    }
+  },
+  value: data["skillLevel-Tel"],
+  items: [
+    {
+      value: "Approval-tel",
+      text: "Approval"
+    },
+    {
+      value: "Post-approval-tel",
+      text: "Post approval"
+    },
+    {
+      value: "Rolling-tel",
+      text: "Rolling"
+    },
+    {
+      value: "Enhanced-tel",
+      text: "Enhanced"
+    }
+  ]
+}) }}
+
+
+
+{{ govukButton({
+  text: "Continue"
+}) }}
+
+</form>
+    </div>
+  </div>
+{% endblock %}
