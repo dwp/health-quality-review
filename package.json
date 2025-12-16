@@ -14,5 +14,9 @@
   
     "jquery": "3.7.1",
     "notifications-node-client": "8.2.1"
+  },
+  "overrides": {
+    "jws": "3.2.3"
   }
+ 
 }
