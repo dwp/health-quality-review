@@ -1,3 +1,14 @@
+default:
+  tags:
+    - dwp-aws-x86-linux-l
+  image: alpine@sha256:4b7ce07002c69e8f3d704a9c5d6fd3053be500b7f1c69fc0d80990c2ad8dd412
+  retry:
+    max: 2
+    when:
+      - runner_system_failure
+      - stuck_or_timeout_failure
+      - scheduler_failure
+      
 stages:
   - code-quality
   - heroku-publish
