@@ -23,7 +23,51 @@
   <!-- <main class="govuk-main-wrapper " id="main-content" role="main"> -->
  
 
+<div class="govuk-width-container ">
+<div class="govuk-grid-row">
 
+<div class="govuk-grid-column-one-quarter">
+
+
+{{ govukCheckboxes({
+  name: "Filter_skills",
+  classes: "govuk-checkboxes--small",
+  fieldset: {
+    legend: {
+      text: "Filter skills",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  items: [
+    {
+      value: "PIP telephone",
+      text: "PIP telephone"
+    },
+    {
+      value: "PIP paper-based",
+      text: "PIP paper-based"
+    },
+    {
+      value: "PIP face to face",
+      text: "PIP face to face"
+    },
+    {
+      value: "PIP SREL",
+      text: "PIP SREL"
+    }
+  ]
+}) }}
+
+
+{{ govukButton({
+  text: "Update"
+}) }}
+
+
+</div>
+
+<div class="govuk-grid-column-three-quarters">
 
   <h1 class="govuk-heading-l">Jane Doe quality history</h1>
 
@@ -55,7 +99,7 @@
           <td class="govuk-table__cell"> <p><a href="/capture-grades-journey/htln1565-EditPostSubmission/auditBasicLandingPage-storedData1?checkAnswers=true" class="govuk-link">NI123456A</a></p> </td>
           <td class="govuk-table__cell">John Smith</td>
           <td class="govuk-table__cell">PIP Telephone assessment</td>
-             <td class="govuk-table__cell">Acceptable</td>
+             <td class="govuk-table__cell">Acceptable with feedback</td>
           <td class="govuk-table__cell">04/04/25</td>
         </tr>
          <tr class="govuk-table__row" data-category="lot1">
@@ -76,7 +120,7 @@
           <td class="govuk-table__cell"> <p><a href="" class="govuk-link">BA123456D</a></p> </td>
           <td class="govuk-table__cell">Peter Parker</td>
           <td class="govuk-table__cell">HCP review</td>
-             <td class="govuk-table__cell">Acceptable</td>
+             <td class="govuk-table__cell">Acceptable with amendment</td>
           <td class="govuk-table__cell">21/03/25</td>
         </tr>
          <tr class="govuk-table__row" data-category="lot1">
@@ -97,7 +141,7 @@
           <td class="govuk-table__cell"> <p><a href="" class="govuk-link">AB123456C</a></p> </td>
           <td class="govuk-table__cell">John Smith</td>
           <td class="govuk-table__cell">PIP Paper-based assessment</td>
-             <td class="govuk-table__cell">Acceptable</td>
+             <td class="govuk-table__cell">Acceptable with feedback</td>
           <td class="govuk-table__cell">30/03/25</td>
         </tr>
           <tr class="govuk-table__row" data-category="lot1">
@@ -201,13 +245,12 @@
  
 
 </div>
-        <div class="moj-pagination" aria-label="Pagination navigation">
-    
-          </div>
-      </div>
-    </div>
-  </main>
 </div>
+        
+    
+   
+  </main>
+
 
 {% endblock %}
 
