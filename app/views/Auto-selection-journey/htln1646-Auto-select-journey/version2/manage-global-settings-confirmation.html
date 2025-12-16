@@ -20,6 +20,18 @@
 <div class="govuk-grid-row">
 <div class="govuk-grid-column-three-quarters">
 
+  {% set html %}
+  <h3 class="govuk-notification-banner__heading">
+    Quality review settings has been updated
+  </h3>
+  
+{% endset %}
+
+{{ govukNotificationBanner({
+  html: html,
+  type: "success"
+}) }}
+
   <h1 class="govuk-heading-l">Manage quality review settings</h1>
   <form class="form" action="manage-global-settings" method="post"></form>
 

@@ -11,13 +11,17 @@
 
 <div class="govuk-width-container {{ containerClasses }}"></div>
 
-<!-- <a href="manage-profiles-multi-lot.html" class="govuk-back-link">Back</a> -->
+<a href="manage-profiles-multi-lot.html" class="govuk-back-link">Back</a>
 {% endblock %}
 
 {% block content %}
 
 
 
+
+        
+
+    
 
 
 
@@ -29,10 +33,9 @@
 
 <div class="govuk-grid-column-three-quarters">
 
-    
   {% set html %}
   <h3 class="govuk-notification-banner__heading">
-    Jane Doe's profile details have been updated
+    Jane Doe's profile has been updated
   </h3>
   
 {% endset %}
@@ -41,7 +44,8 @@
   html: html,
   type: "success"
 }) }}
-  
+
+
   
 <h1 class="govuk-heading-l">
 Jane Doe's profile
@@ -81,7 +85,6 @@ Details
      Yes
     </dd>
     <dd class="govuk-summary-list__actions">
-   
   </dd>
   </div>
 
@@ -97,22 +100,19 @@ Details
     <dd class="govuk-summary-list__actions">
       <!-- <a class="govuk-link" href="agent-hub-location">Change </a> -->
   </dd>
-
-
   </div>
-
 
 
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key" style="border-bottom:0px;">
-    Skills type
+    Assessment skill
     </dt>
     <dd class="govuk-summary-list__value" style="border-bottom:0px;">
 
       <ul class="govuk-list">
         <li style="white-space:nowrap;">PIP face to face </li>
         <li style="white-space:nowrap;">  PIP telephone</li> 
-        <li style="white-space:nowrap;">  PIP Paper-based</li> 
+        <li style="white-space:nowrap;">  PIP paper-based</li> 
         <li style="white-space:nowrap;">  PIP SREL</li> 
         
       </ul>
@@ -126,24 +126,14 @@ Details
 <dl class="govuk-summary-list">
 
 <h3 class="govuk-heading-m">Quality review level</h3>
-<div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key" style="border-bottom:0px;">
-       PIP face to face
-    </dt>
-    <dd class="govuk-summary-list__value" style="border-bottom:0px;">
-        Rolling 
-    </dd>
-      <dd class="govuk-summary-list__actions">
-     <a class="govuk-link" href="">Change </a>
-    </dd>
-  </div>
+
 
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key" style="border-bottom:0px;">
        PIP telephone
     </dt>
     <dd class="govuk-summary-list__value" style="border-bottom:0px;">
-        Variable set to 1 in 4 cases
+        {{ data['skillLevel-Tel'] | replace("-tel",  " ") }}{% if data['skillLevel-Tel'] === "Targeted-tel" %}( {{ data['frequency-tel']}} ){% endif %}
     </dd>
       <dd class="govuk-summary-list__actions">
      <a class="govuk-link" href="skill_level.html">Change </a>
@@ -152,10 +142,22 @@ Details
 
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key" style="border-bottom:0px;">
-       PIP Paper-based
+       PIP paper-based
     </dt>
     <dd class="govuk-summary-list__value" style="border-bottom:0px;">
-       Approval
+       Rolling
+    </dd>
+      <dd class="govuk-summary-list__actions">
+     <a class="govuk-link" href="">Change </a>
+    </dd>
+  </div>
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key" style="border-bottom:0px;">
+       PIP face to face
+    </dt>
+    <dd class="govuk-summary-list__value" style="border-bottom:0px;">
+        Post approval
     </dd>
       <dd class="govuk-summary-list__actions">
      <a class="govuk-link" href="">Change </a>
@@ -193,12 +195,12 @@ Details
   <nav aria-labelledby="subsection-title">
   <ul class="govuk-list">
   
-    <!-- <li>
+    <li>
       
-        <a href="available-for.html" id="action_update_status" class="govuk-link govuk-link--no-visited-state">Add skills</a>
+        <a href="account_jd-history" id="action_update_status" class="govuk-link govuk-link--no-visited-state">View quality review history</a>
       
       
-            </li> -->
+            </li>
           
         <li>
       

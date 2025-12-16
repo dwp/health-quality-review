@@ -24,7 +24,7 @@
     
 
 
-<form class="form" action="account_jd" method="post">
+<form class="form" action="account_jd_confirmation" method="post">
 
 
 
@@ -49,7 +49,7 @@ Confirm changes
        PIP telephone
     </dt>
     <dd class="govuk-summary-list__value" style="border-bottom:0px;">
-        {{ data['skillLevel-Tel'] | replace("-tel",  " ") }}{% if data['skillLevel-Tel'] === "Enhanced-tel" %}( {{ data['frequency-tel']}} ){% endif %}
+        {{ data['skillLevel-Tel'] | replace("-tel",  " ") }}{% if data['skillLevel-Tel'] === "Targeted-tel" %}( {{ data['frequency-tel']}} ){% endif %}
     </dd>
       <dd class="govuk-summary-list__actions">
      <a class="govuk-link" href="skill_level.html">Change </a>
