@@ -342,6 +342,10 @@
         <dd class="govuk-summary-list__value">
           <p class="govuk-body">{{ lowestGrade }}</p> 
         </dd>
+
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="overallGrade">{% if data["lowestGrade-" + key] %}{% else %}Add{% endif %}<span class="govuk-visually-hidden"> address</span></a>
+          </dd>
     </div>
 
 
