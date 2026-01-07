@@ -134,7 +134,7 @@ router.post(`/${currentVersionPath}/autosave`, function (req, res) {
 
 router.post(`/Auto-selection-journey/${currentVersionPath}/pages/skill_level`, function (req, res) {
    console.log(req.body);
-   if (req.body['skillLevel-Tel'] === 'Targeted-tel') {
+   if (req.body['skillLevel-Tel'] === 'Targeted support-tel') {
     return res.redirect(`variable-setting`);
   } else {
     return res.redirect(`account_jd_check`);
