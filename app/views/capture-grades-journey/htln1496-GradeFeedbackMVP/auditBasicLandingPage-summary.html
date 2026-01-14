@@ -26,6 +26,9 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
+
+<!-- This page includes the landing and check answers page -->
+<!-- headers -->
       {% if not query.checkAnswers %}
       <form class="form" action="auditBasicLandingPage-summary?checkAnswers=true" method="post">
         <h1 class="{% if query.checkAnswers %}govuk-heading-xl{% else %}govuk-heading-l{% endif %}">Quality review</h1>
@@ -36,11 +39,12 @@
           <h1 class="{% if query.checkAnswers %}govuk-heading-xl{% else %}govuk-heading-l{% endif %}">Check your answers</h1>
           {% endif %}
 
+<!-- dynamic subheaders for Amendments and feedback for check answers -->
       {% for section in reviewSections %}
 
     {% if not query.checkAnswers %}
       {% if loop.index === 1 %}
-      <!-- <h2 class="govuk-heading-m">Assessment Audit</h2> -->
+     
       {% endif %}
     {% else %}
       <h2 class="govuk-heading-l">{{ section }}</h2>
@@ -49,6 +53,7 @@
     {% if not query.checkAnswers and loop.index === 2 %}
     {% else %}
 
+<!-- evidence section -->
     {% if (query.checkAnswers and ((section === "Feedback" and "evidence" in groupsWithFeedback) or (section === "Amendments" and "evidence" in groupsToAmend))) or not query.checkAnswers %}
     
       <h2 class="govuk-heading-m">Evidence</h2>
@@ -85,6 +90,8 @@
 
     {% endif %}
 
+
+<!-- Information gather section     -->
     {% if (query.checkAnswers and ((section === "Feedback" and "infoGather" in groupsWithFeedback) or (section === "Amendments" and "infoGather" in groupsToAmend))) or not query.checkAnswers %}
  
       <h2 class="govuk-heading-m">Information gathering</h2>
@@ -121,6 +128,7 @@
     {% endif %}
 
 
+<!-- Daily living section -->
 
     {% if (query.checkAnswers and ((section === "Feedback" and "activities" in groupsWithFeedback) or (section === "Amendments" and "activities" in groupsToAmend))) or not query.checkAnswers %}
 
@@ -159,7 +167,7 @@
  
     {% endif %}
 
-
+<!-- Mobility section -->
     {% if (query.checkAnswers and ((section === "Feedback" and "mobility" in groupsWithFeedback) or (section === "Amendments" and "mobility" in groupsToAmend))) or not query.checkAnswers %}
 
     <h2 class="govuk-heading-m">Mobility</h2>
@@ -198,7 +206,7 @@
     {% endif %}
 
 
-
+<!-- Opinion section -->
     {% if (query.checkAnswers and ((section === "Feedback" and "opinion" in groupsWithFeedback) or (section === "Amendments" and "opinion" in groupsToAmend))) or not query.checkAnswers %}
 
     <h2 class="govuk-heading-m">Opinion</h2>
@@ -233,7 +241,8 @@
     </dl>
 
     {% endif %}
- 
+
+<!-- Process section     -->
     {% if (query.checkAnswers and ((section === "Feedback" and "process" in groupsWithFeedback) or (section === "Amendments" and "process" in groupsToAmend))) or not query.checkAnswers %}
 
     <h2 class="govuk-heading-m">Process</h2>
@@ -275,36 +284,16 @@
 
     {% endfor %}
 
+
+
+
+<!-- Summary section -->
+
     <h2 class="{% if query.checkAnswers %}govuk-heading-l{% else %}govuk-heading-m{% endif %}">Quality review summary</h2>
       
-   
     <dl class="govuk-summary-list">
-      <!-- {% for key, value in condition %}
-      <div id="process-{{ key }}" class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            {{ value }}
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {% if data["grade-" + key] %}
-              <p class="govuk-body">
-                {{ data["grade-" + key] }}
-              </p>
-            {% else %}
-            
-            {% endif %}
-          </dd>
-         
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="condition?condition={{ key }}">{% if data["grade-" + key] %}Change{% else %}Add{% endif %}<span class="govuk-visually-hidden"> address</span></a>
-          </dd>
-        
-        </div>
-      
-      {% endfor %} -->
-    <!-- </dl>
-
-
-    <dl class="govuk-summary-list"> -->
+     
+<!-- Assessment type       -->
       {% for key, value in qrtype %}
       <div id="process-{{ key }}" class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
@@ -319,22 +308,13 @@
               <!-- No feedback -->
             {% endif %}
           </dd>
-         
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="qrtype?qrtype={{ key }}">{% if data["grade-" + key] %}Change{% else %}Add{% endif %}<span class="govuk-visually-hidden"> address</span></a>
           </dd>
-        
         </div>
-      
       {% endfor %}
-    <!-- </dl>
 
-
-
-
-
-    <dl class="govuk-summary-list"> -->
-
+<!-- Overall grade   -->
       <div id="process-{{ key }}" class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           Overall grade
@@ -342,14 +322,13 @@
         <dd class="govuk-summary-list__value">
           <p class="govuk-body">{{ lowestGrade }}</p> 
         </dd>
-
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="overallGrade">{% if data["lowestGrade-" + key] %}{% else %}Add{% endif %}<span class="govuk-visually-hidden"> address</span></a>
           </dd>
     </div>
 
 
-
+<!-- overall comment     -->
       <div id="process-{{ key }}" class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           Overall comment
@@ -357,27 +336,22 @@
         <dd class="govuk-summary-list__value">
           {{ data["comment-" + key] }}
         </dd>
-       
         <dd class="govuk-summary-list__actions">
           <a class="govuk-link" href="Overallcomment?Overallcomment={{ key }}">{% if data["grade-" + key] %}Change{% else %}Add{% endif %}<span class="govuk-visually-hidden"> address</span></a>
         </dd>
-    
       </div>
-    
-
-
   
-   
-    
     </dl>
  
+
+ <!-- landing page continue button    -->
     {% if not query.checkAnswers %}
       {{ govukButton({
         text: "Continue"
       }) }}
     {% endif %}
 
-
+<!-- Check answers submit button -->
     {% if query.checkAnswers %}
     {{ govukButton({
       text: "Submit"

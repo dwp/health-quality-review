@@ -31,7 +31,7 @@
             <h2 class="{% if query.checkAnswers %}govuk-heading-l{% else %}govuk-heading-m{% endif %}">Quality review summary</h2>
               
 
-           
+  <!-- Summary -->
             <dl class="govuk-summary-list">
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
@@ -95,32 +95,15 @@
                 </dd>
               </div>
 
-              <!-- {% for key, value in condition %}
-              <div id="process-{{ key }}" class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key">
-                    {{ value }}
-                  </dt>
-                  <dd class="govuk-summary-list__value">
-                    {% if data["grade-" + key] %}
-                      <p class="govuk-body">
-                        {{ data["grade-" + key] }}
-                      </p>
-                    {% else %}
-                    
-                    {% endif %}
-                  </dd>
-                </div>
-              {% endfor %} -->
-           
             </dl>
          
   
-
+<!-- sub headers Amendment and feedback -->
             {% for section in reviewSections %}
 
             {% if not query.checkAnswers %}
               {% if loop.index === 1 %}
-              <!-- <h2 class="govuk-heading-m">Assessment Audit</h2> -->
+           
               {% endif %}
             {% else %}
               <h2 class="govuk-heading-l">{{ section }}</h2>
@@ -128,7 +111,8 @@
         
             {% if not query.checkAnswers and loop.index === 2 %}
             {% else %}
-        
+
+<!-- Evidence section -->
             {% if (query.checkAnswers and ((section === "Feedback" and "evidence" in groupsWithFeedback) or (section === "Amendments" and "evidence" in groupsToAmend))) or not query.checkAnswers %}
             
               <h2 class="govuk-heading-m">Further evidence</h2>
@@ -162,7 +146,8 @@
             </dl>
         
             {% endif %}
-        
+
+<!-- Information gather section -->
             {% if (query.checkAnswers and ((section === "Feedback" and "infoGather" in groupsWithFeedback) or (section === "Amendments" and "infoGather" in groupsToAmend))) or not query.checkAnswers %}
          
               <h2 class="govuk-heading-m">Information gathering</h2>
@@ -186,18 +171,14 @@
                       <!-- No feedback -->
                     {% endif %}
                   </dd>
-                
-                
-                 
                 </div>
                 {% endif %}
                 {% endfor %}
             </dl>
-        
             {% endif %}
         
         
-        
+<!-- Daily living section         -->
             {% if (query.checkAnswers and ((section === "Feedback" and "activities" in groupsWithFeedback) or (section === "Amendments" and "activities" in groupsToAmend))) or not query.checkAnswers %}
         
             <h2 class="govuk-heading-m">Daily living</h2>
@@ -222,18 +203,14 @@
                       <!-- No feedback -->
                     {% endif %}
                   </dd>
-                
-               
-                
                 </div>
                 {% endif %}
                 {% endif %}
               {% endfor %}
             </dl>
-         
             {% endif %}
         
-        
+<!-- Mobiliy section -->
             {% if (query.checkAnswers and ((section === "Feedback" and "mobility" in groupsWithFeedback) or (section === "Amendments" and "mobility" in groupsToAmend))) or not query.checkAnswers %}
         
             <h2 class="govuk-heading-m">Mobility</h2>
@@ -258,19 +235,15 @@
                       <!-- No feedback -->
                     {% endif %}
                   </dd>
-               
-                
-              
                 </div>
                 {% endif %}
                 {% endif %}
               {% endfor %}
             </dl>
-         
             {% endif %}
         
         
-        
+<!-- Opinion section -->
             {% if (query.checkAnswers and ((section === "Feedback" and "opinion" in groupsWithFeedback) or (section === "Amendments" and "opinion" in groupsToAmend))) or not query.checkAnswers %}
         
             <h2 class="govuk-heading-m">Opinion</h2>
@@ -294,16 +267,14 @@
                       <!-- No feedback -->
                     {% endif %}
                   </dd>
-                  
-                 
-                
                 </div>
                 {% endif %}
               {% endfor %}
             </dl>
-        
             {% endif %}
          
+
+<!-- Process section -->
             {% if (query.checkAnswers and ((section === "Feedback" and "process" in groupsWithFeedback) or (section === "Amendments" and "process" in groupsToAmend))) or not query.checkAnswers %}
         
             <h2 class="govuk-heading-m">Process</h2>
@@ -327,22 +298,16 @@
                       <!-- No feedback -->
                     {% endif %}
                   </dd>
-                 
-                 
-                 
                 </div>
                 {% endif %}
               {% endfor %}
-        
-           
             </dl>
-        
             {% endif %}
-        
             {% endif %}
-        
             {% endfor %}
-        
+
+            
+<!-- Edit report link -->
   <p class="govuk-body"> This report has been submitted.     
  <a href="auditBasicLandingPage-summary" class="govuk-link">Edit quality review report</a></p>    
 
@@ -350,7 +315,7 @@
          
         </form>
             
-
+<!-- Goto referral link -->
           <p class="govuk-body">
             Go to <a href="claimant-details-data.html" class="govuk-link">referral overview</a>
           </p>
