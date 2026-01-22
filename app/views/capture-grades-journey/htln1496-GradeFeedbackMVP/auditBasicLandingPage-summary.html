@@ -320,11 +320,9 @@
           Overall grade
         </dt>
         <dd class="govuk-summary-list__value">
-          <p class="govuk-body">{{ lowestGrade }}</p> 
-        </dd>
+          <p class="govuk-body">{% if data.overallGradeUserSet and not lowestGrade %}{{ data.overallGradeUserSet }}{% elif lowestGrade %}{{ lowestGrade }}{% endif %}</p>         </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="overallGrade">{% if data["lowestGrade-" + key] %}{% else %}Add{% endif %}<span class="govuk-visually-hidden"> address</span></a>
-          </dd>
+          <a class="govuk-link" href="overallGrade">{% if not data.overallGradeUserSet and not lowestGrade %}Add{% elif data.overallGradeUserSet and not lowestGrade %}Change{% endif %}<span class="govuk-visually-hidden"></span></a>          </dd>
     </div>
 
 
