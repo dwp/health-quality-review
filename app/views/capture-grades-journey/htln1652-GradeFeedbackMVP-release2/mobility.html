@@ -1,10 +1,48 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-  Opinion
+  Activities
 {% endblock %}
 
-{% set items = [
+
+{% block beforeContent %}
+
+{% include "includes/assessment-status-neutral-pip.html" %}
+
+<div class="govuk-width-container {{ containerClasses }}"></div>
+
+<a href="auditBasicLandingPage-summary.html" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+
+
+
+
+<h1 class="govuk-heading-l">{{mobility[query.mobility]}}</h1>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      
+<form class="form" action="auditBasicLandingPage-summary#mobility-{{ query.mobility }}" method="post">
+
+{{ govukRadios({
+  name: "grade-" + query.mobility,
+  value: data['grade-' + query.mobility],
+  fieldset: {
+    legend: {
+      text: "Select a grade",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend--s"
+    }
+  },
+  items: [
     {
       value: "A - Clinically probable opinion based on all the available evidence and adequately justified",
       text: "A - Clinically probable opinion based on all the available evidence and adequately justified"
@@ -21,10 +59,7 @@
       value: "AA - Clinically improbable advice such that the descriptor choice is highly unlikely but would not lead to a wrong award or major error in duration if left unchanged",
       text: "AA - Clinically improbable advice such that the descriptor choice is highly unlikely but would not lead to a wrong award or major error in duration if left unchanged"
     },
-    {
-      value: "AA - Clinically improbable prognosis advice – award duration recommended considered to be too long/too short",
-      text: "AA - Clinically improbable prognosis advice – award duration recommended considered to be too long/too short"
-    },
+   
     {
       value: "AA - Justification which fails to support the advice or the descriptor choice but doesn't suggest an alternative award",
       text: "AA - Justification which fails to support the advice or the descriptor choice but doesn't suggest an alternative award"
@@ -41,65 +76,14 @@
       value: "N/A - Not applicable",
       text: "N/A - Not applicable"
     }
-  ] %}
-
-{% if query.opinion === "Prognosis" %}
-  {% set putBack = items.pop() %}
-  {{ items.pop() }}
-    {{ items.pop() }}
-    {{ items.push(putBack)  }}
-
-{% endif %}
-
-{% set opinionItems = [] %}
-
-{% for item in items %}
-  {% set opinionItems = (opinionItems.push({
-    value: item.value,
-    text: item.text
-  }), opinionItems) %}
-{% endfor %}
-
-
-{% block beforeContent %}
-
-{% include "includes/assessment-status-neutral-pip.html" %}
-
-<div class="govuk-width-container {{ containerClasses }}"></div>
-
-<a href="auditBasicLandingPage-summary.html" class="govuk-back-link">Back</a>
-{% endblock %}
-
-{% block content %}
-
-{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
-{% from "govuk/components/radios/macro.njk" import govukRadios %}
-{% from "govuk/components/button/macro.njk" import govukButton %}
-{% from "govuk/components/textarea/macro.njk" import govukTextarea %}
-
-<h1 class="govuk-heading-l">{{opinion[query.opinion]}}</h1>
-
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-<form class="form" action="auditBasicLandingPage-summary#opinion-{{ query.opinion }}" method="post">
-
-{{ govukRadios({
-  name: "grade-" + query.opinion,
-  value: data['grade-' + query.opinion],
-  fieldset: {
-    legend: {
-      text: "Select a grade",
-      isPageHeading: false,
-      classes: "govuk-fieldset__legend--s"
-    }
-  },
-  items: opinionItems
+   
+  ]
 }) }}
 
 {{ govukTextarea({
-  name: "comment-" + query.opinion,
-  id: "comment-" + query.opinion,
-  value: data['comment-' + query.opinion],
+  name: "comment-" + query.mobility,
+  id: "comment-" + query.mobility,
+  value: data['comment-' + query.mobility],
   label: {
     text: "Add a comment",
     classes: "govuk-fieldset__legend--s"

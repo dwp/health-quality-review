@@ -1,0 +1,63 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Overall grade - Health Assessment Service
+{% endblock %}
+
+{% block beforeContent %}
+
+{% include "includes/assessment-status-neutral-pip.html" %}
+<div class="govuk-width-container {{ containerClasses }}"></div>
+<a href="auditBasicLandingPage-summary.html" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" action="auditBasicLandingPage-summary#qr-type-{{ query.qr-type }}" method="post">
+        <h1 class="govuk-heading-l">Overall grade</h1>
+        {{ govukRadios({
+          name: "overallGradeUserSet",
+          value: data['overallGradeUserSet'],
+          fieldset: {
+            legend: {
+                text: "Select the overall grade",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend--s"
+    }  
+          },
+  items: [
+    {
+      value: "Acceptable",
+      text: "Acceptable"
+    },
+     {
+      value: "Acceptable with feedback",
+      text: "Acceptable with feedback"
+    },
+     {
+      value: "Acceptable with amendment",
+      text: "Acceptable with amendment"
+    },
+    {
+      value: "Unacceptable",
+      text: "Unacceptable"
+    }
+   
+  ]
+}) }}
+
+{{ govukButton({
+  text: "Continue"
+}) }}
+
+</form>
+    </div>
+  </div>
+{% endblock %}

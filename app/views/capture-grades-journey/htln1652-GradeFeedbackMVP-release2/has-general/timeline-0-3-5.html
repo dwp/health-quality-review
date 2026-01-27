@@ -1,0 +1,96 @@
+{% extends "layouts/main.html" %}
+{% set bodyAttributes = { id: "assess" } %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block main %}
+
+{% include "includes/assessment-status-neutral-pip.html" %}
+
+  <div class="govuk-width-container {{ containerClasses }}">
+
+    {{ govukBackLink({
+      text: "Back",
+      href: "javascript:history.back()"
+    }) }}
+  
+    <main class="govuk-main-wrapper {{ mainClasses }}" id="main-content" role="main"{% if mainLang %} lang="{{ mainLang }}"{% endif %}>
+
+      <div class="govuk-grid-row">
+
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">Timeline</h1>
+
+      <div class="dwp-timeline">
+        <ol class="dwp-timeline__items">
+
+          <li class="dwp-timeline__item">
+            <p class="dwp-timeline__datetime">07 February 2024</p>
+            <h2 class="dwp-timeline__heading">PIP report completed</h2>
+            <p class="dwp-timeline__by-line">By John Smith</p>
+          </li>
+
+
+          <li class="dwp-timeline__item">
+            <p class="dwp-timeline__datetime">06 February 2024</p>
+            <h2 class="dwp-timeline__heading">PIP update</h2>
+            <p class="dwp-timeline__by-line">By John Smith</p>
+            <p class="dwp-timeline__by-line">PIP TA 06/02/2024 has been attended. Report in progress</p>
+          </li>
+
+          <li class="dwp-timeline__item">
+            <p class="dwp-timeline__datetime">04 February 2024</p>
+            <h2 class="dwp-timeline__heading">PIP sms reminder sent for TA</h2>
+            <p class="dwp-timeline__by-line">By Jayne Doe</p>
+          </li>
+
+
+          <li class="dwp-timeline__item">
+            <p class="dwp-timeline__datetime">15 January 2024</p>
+            <h2 class="dwp-timeline__heading">PIP Booked an assessment</h2>
+            <p class="dwp-timeline__by-line">By Jayne Do</p>
+          </li>
+
+          <li class="dwp-timeline__item">
+            <p class="dwp-timeline__datetime">12 January 2024</p>
+            <h2 class="dwp-timeline__heading">HCP review completed</h2>
+            <p class="dwp-timeline__by-line">By Sandra Bullock</p>
+          </li>
+
+
+        <li class="dwp-timeline__item">
+          <p class="dwp-timeline__datetime">15 December 2023</p>
+          <h2 class="dwp-timeline__heading">Returned questionnaire</h2>
+          <p class="dwp-timeline__by-line">posted by claimant</p>
+        </li>
+          <p class="dwp-timeline__datetime">13 December 2023 at 10am</p>
+          <h2 class="dwp-timeline__heading">Reminded them to return questionnaire</h2>
+          <p class="dwp-timeline__by-line">Telephone call to claimant by Phil Smith</p>
+        </li>
+        <li class="dwp-timeline__item">
+          <p class="dwp-timeline__datetime">7 December 2023</p>
+          <h2 class="dwp-timeline__heading">Sent questionnaire</h2>
+          <p class="dwp-timeline__by-line">Posted to claimant by Phil Smith</p>
+          <p class="dwp-timeline__content">Posted the questionnaire through the post to the claimant</p>
+        </li>
+        </ol>
+      </div>
+    
+</div>
+
+             <div class="govuk-grid-column-one-third">
+              <div class="app-related-items">
+                  <h2 class="govuk-heading-m">What you can do next</h2>
+             <ul class="govuk-list">
+
+             <li class="govuk-!-margin-bottom-2"><a href="referral">Add  {% if  data['claim']   != 'UC' %}PIP  {% else %} UC {% endif %} entry to timeline</a></li> 
+                </ul>  
+            </div>
+            </div>
+        </div>
+
+    </main>
+  </div>
+{% endblock %}

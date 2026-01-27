@@ -1,0 +1,46 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  GOV.UK page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{% block beforeContent %}
+
+{% endblock %}
+
+<div class="govuk-width-container">
+
+    {{ govukBackLink({
+      text: "Back",
+      href: "javascript:history.back()"
+    }) }}
+
+    <form class="form" action="/auditForm/auditBasicLandingPage.html" method="post">
+
+
+    <main class="govuk-main-wrapper {{ mainClasses }}" id="main-content" role="main"{% if mainLang %} lang="{{ mainLang }}"{% endif %}>
+        <div class="govuk-grid-row">
+          <form action="/{{ currentVersionPath  }}" method="POST">
+            <div class="govuk-grid-column-two-thirds">
+              <h1 class="govuk-heading-l">Quality review journey</h1>
+              <p class="govuk-body-l">This journey contains a made up persona and scenario for research and training purposes. It is just for illustration to help undertand how the journey flows and to gather feedback from user research.</p>
+                 
+              <a href="/capture-grades-journey/htln1652-GradeFeedbackMVP-release2/claimant-details.html" role="button" draggable="false" class="govuk-button govuk-!-margin-top-2 govuk-!-margin-bottom-8 govuk-button--start" >
+                Start now
+                <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" aria-hidden="true" focusable="false">
+                  <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z" />
+                </svg>
+              </a>
+
+            </div>
+          </form>
+        </div>
+    </main>
+  </div>
+{% endblock %}
