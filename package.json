@@ -17,7 +17,11 @@
   },
   "overrides": {
     "jws": "3.2.3", 
-    "fast-xml-parser": "5.3.4",
-    "axios": "1.13.5"
+    "fast-xml-parser": "5.3.4", 
+    "axios": "1.13.5",
+    "socket.io": "4.2.6",
+    "immutable": "5.1.5",
+    "minimatch": "9.0.7"
+ 
   }
 }
