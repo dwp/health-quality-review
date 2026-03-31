@@ -43,11 +43,11 @@
 
 
 {{ govukCheckboxes({
-  name: "Level_tyoe",
+  name: "Level_",
   classes: "govuk-checkboxes--small",
   fieldset: {
     legend: {
-      text: "Level type",
+      text: "Level",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--s"
     }
@@ -75,11 +75,11 @@
 }) }}
 
 {{ govukCheckboxes({
-  name: "Assessment type",
+  name: "Type",
   classes: "govuk-checkboxes--small",
   fieldset: {
     legend: {
-      text: "Quality review type",
+      text: "Type",
 
       classes: "govuk-fieldset__legend--s"
     }
@@ -87,12 +87,12 @@
   
   items: [
     {
-      value: "PIP telephone",
-      text: "PIP telephone"
-    },
-    {
       value: "PIP paper-based",
       text: "PIP paper-based"
+    },
+    {
+      value: "PIP telephone",
+      text: "PIP telephone"
     },
     {
       value: "PIP face to face",
@@ -103,11 +103,11 @@
 }) }}
 
 {{ govukCheckboxes({
-  name: "grade_type",
+  name: "grade",
   classes: "govuk-checkboxes--small",
   fieldset: {
     legend: {
-      text: "Grade type",
+      text: "Grade",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--s"
     }
@@ -149,7 +149,7 @@
 <div class="govuk-grid-column-three-quarters">
 
 
-  <h1 class="govuk-heading-l">Jane Doe quality review history</h1>
+  <h1 class="govuk-heading-l">Jane Doe's quality review history</h1>
 
 <div class="govuk-form-group govuk-!-margin-bottom-0">
 
@@ -165,9 +165,9 @@
         <tr class="govuk-table__row">
 
           <th scope="col" class="govuk-table__header app-custom-class">Level</th>
-          <th scope="col" class="govuk-table__header app-custom-class">Assessment type</th>
+          <th scope="col" class="govuk-table__header app-custom-class">Type</th>
            <th scope="col" class="govuk-table__header app-custom-class">Grade</th>
-          <th scope="col" class="govuk-table__header app-custom-class">Audit date</th>
+          <th scope="col" class="govuk-table__header app-custom-class">Date completed</th>
           <th scope="col" class="govuk-table__header app-custom-class">Action</th>
           <!-- <th scope="col" class="govuk-table__header app-custom-class">End of life</th>
           <th scope="col" class="govuk-table__header app-custom-class">Action</th> -->
@@ -189,7 +189,7 @@
           <td class="govuk-table__cell">PIP face to face </td>
              <td class="govuk-table__cell">AA</td>
           <td class="govuk-table__cell">28 February 2026,<br />2:05pm</td>
-           <td class="govuk-table__cell"> <p><a href="/capture-grades-journey/htln1565-EditPostSubmission/auditBasicLandingPage-storedData1?checkAnswers=true" class="govuk-link">View case</a></p> </td>
+           <td class="govuk-table__cell"> <p><a href="/capture-grades-journey/htln1652-GradeFeedbackMVP-release2/claimant-details" class="govuk-link">View case</a></p> </td>
         
         
            <tr class="govuk-table__row" data-category="lot1">
