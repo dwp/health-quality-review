@@ -30,12 +30,12 @@
 <!-- This page includes the landing and check answers page -->
 <!-- headers -->
       {% if not query.checkAnswers %}
-      <form class="form" action="auditBasicLandingPage-summary?checkAnswers=true" method="post">
+      <form class="form" action="/auditor-view/auditor-confirmation" method="post">
         <h1 class="{% if query.checkAnswers %}govuk-heading-xl{% else %}govuk-heading-l{% endif %}">Quality review</h1>
         {% endif %}
 
         {% if query.checkAnswers %}
-        <form class="form" action="auditBasicLandingPage-confirmation?checkAnswers=true" method="post">
+        <form class="form" action="/auditor-view/auditor-confirmation" method="post">
           <h1 class="{% if query.checkAnswers %}govuk-heading-xl{% else %}govuk-heading-l{% endif %}">Check your answers</h1>
           {% endif %}
 
@@ -344,8 +344,8 @@
 
  <!-- landing page continue button    -->
     {% if not query.checkAnswers %}
-      {{ govukButton({
-        text: "Continue"
+      {{ govukButton({ 
+        text: "Continue" 
       }) }}
     {% endif %}
 
