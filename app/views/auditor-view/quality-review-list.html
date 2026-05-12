@@ -1,0 +1,287 @@
+{% extends "layouts/main.html" %}
+{% from "govuk/components/pagination/macro.njk" import govukPagination %}
+{% block pageTitle %}
+  Information gathering
+{% endblock %}
+
+
+{% block beforeContent %}
+
+
+
+<div class="govuk-width-container {{ containerClasses }}"></div>
+
+<a href="hcp-main-menu-btesting.html" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+
+
+
+        
+  <!-- <main class="govuk-main-wrapper " id="main-content" role="main"> -->
+ 
+
+<div class="govuk-width-container ">
+<div class="govuk-grid-row">
+
+<div class="govuk-grid-column-one-quarter">
+<form class="form" action="account_jd-history_filter_tel" method="post">
+
+
+  <h1 class="govuk-label-wrapper">
+    <label class="govuk-label govuk-label--m" for="more-detail">
+      Filters
+    </label>
+  </h1>
+  <div id="more-detail-hint" class="govuk-hint">
+    Select one or more filters to apply to the list
+   </div>
+
+
+
+
+{{ govukCheckboxes({
+  name: "Stage",
+  classes: "govuk-checkboxes--small",
+  fieldset: {
+    legend: {
+      text: "Stage",
+
+      classes: "govuk-fieldset__legend--s"
+    }
+  },
+  
+  items: [
+    {
+      value: "Approval",
+      text: "Approval"
+    },
+    {
+      value: "Post approval",
+      text: "Post approval"
+    },
+    {
+      value: "Rolling",
+      text: "Rolling"
+
+    },
+        {
+      value: "Targeted support",
+      text: "Targeted support"
+
+    }
+  ]
+}) }}
+
+{{ govukCheckboxes({
+  name: "Type",
+  classes: "govuk-checkboxes--small",
+  fieldset: {
+    legend: {
+      text: "Type",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--s"
+    }
+  },
+  items: [
+    {
+      value: "PIP paper-based",
+      text: "PIP paper-based"
+    },
+    {
+      value: "PIP telephone",
+      text: "PIP telephone"
+    },
+    {
+      value: "PIP face to face",
+      text: "PIP face to face"
+
+    }
+  ]
+}) }}
+
+{{ govukCheckboxes({
+  name: "Status",
+  classes: "govuk-checkboxes--small",
+  fieldset: {
+    legend: {
+      text: "Status",
+
+      classes: "govuk-fieldset__legend--s"
+    }
+  },
+  
+  items: [
+    {
+      value: "Not started",
+      text: "Not started"
+    },
+    {
+      value: "In progress",
+      text: "In progress"
+    },
+    {
+      value: "Completed",
+      text: "Completed"
+
+    }
+  ]
+}) }}
+
+
+
+<button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+ Apply filters
+</button>
+
+<p class="govuk-body">
+<a class="govuk-link" href="#">Cancel filters</a>
+</p>
+
+</form>
+</div>
+
+<div class="govuk-grid-column-three-quarters">
+
+
+  <h1 class="govuk-heading-l">Quality review list</h1>
+
+<div class="govuk-form-group govuk-!-margin-bottom-0">
+
+
+
+
+
+</div>
+  
+    <table class="govuk-table">
+      <caption class="govuk-visually-hidden">Quality review list</caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+
+          <th scope="col" class="govuk-table__header app-custom-class">HCP</th>
+           <th scope="col" class="govuk-table__header app-custom-class">Stage</th>
+          <th scope="col" class="govuk-table__header app-custom-class">Type</th>
+          <th scope="col" class="govuk-table__header app-custom-class">Status</th>
+          <th scope="col" class="govuk-table__header app-custom-class">Action</th>
+          <!-- <th scope="col" class="govuk-table__header app-custom-class">End of life</th>
+          <th scope="col" class="govuk-table__header app-custom-class">Action</th> -->
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+       
+          
+           
+ 
+ 
+           <tr class="govuk-table__row" data-category="lot1">
+          <td class="govuk-table__cell"> Peter Parker</td>
+             <td class="govuk-table__cell">Rolling</td>
+          <td class="govuk-table__cell">PIP paper-based </td>
+             <td class="govuk-table__cell">Not started </td>
+          <td class="govuk-table__cell"> <p><a href="/hcp-view-b/hcp-assessment-btesting" class="govuk-link">View case</a></p>
+        
+        
+            <tr class="govuk-table__row" data-category="lot1">
+          <td class="govuk-table__cell"> Lucy Lu</td>
+             <td class="govuk-table__cell">Targeted support</td>
+          <td class="govuk-table__cell">PIP face to face </td>
+             <td class="govuk-table__cell">In progress </td>
+          <td class="govuk-table__cell"> <p><a href="/hcp-view-b/hcp-assessment-btesting" class="govuk-link">View case</a></p>
+        
+          <tr class="govuk-table__row" data-category="lot1">
+          <td class="govuk-table__cell"> William Shakespere </td>
+             <td class="govuk-table__cell">Approval</td>
+          <td class="govuk-table__cell">PIP Telephone </td>
+             <td class="govuk-table__cell">Not started </td>
+          <td class="govuk-table__cell"> <p><a href="/hcp-view-b/hcp-assessment-btesting" class="govuk-link">View case</a></p>
+        
+        <tr class="govuk-table__row" data-category="lot1">
+          <td class="govuk-table__cell"> Tom Cruise</td>
+             <td class="govuk-table__cell">Rolling</td>
+          <td class="govuk-table__cell">PIP face to face </td>
+             <td class="govuk-table__cell">Completed </td>
+          <td class="govuk-table__cell"> <p><a href="/hcp-view-b/hcp-assessment-btesting" class="govuk-link">View case</a></p>
+        
+        <tr class="govuk-table__row" data-category="lot1">
+          <td class="govuk-table__cell"> Cameron Diaz</td>
+             <td class="govuk-table__cell">Post approval</td>
+          <td class="govuk-table__cell">PIP paper based </td>
+             <td class="govuk-table__cell">In progress </td>
+          <td class="govuk-table__cell"> <p><a href="/hcp-view-b/hcp-assessment-btesting" class="govuk-link">View case</a></p>
+        
+        <tr class="govuk-table__row" data-category="lot1">
+          <td class="govuk-table__cell"> Jack Sparrow</td>
+             <td class="govuk-table__cell">Rolling</td>
+          <td class="govuk-table__cell">PIP Telephone </td>
+             <td class="govuk-table__cell">Not started </td>
+          <td class="govuk-table__cell"> <p><a href="/hcp-view-b/hcp-assessment-btesting" class="govuk-link">View case</a></p>
+        
+        <tr class="govuk-table__row" data-category="lot1">
+          <td class="govuk-table__cell"> Brad Pit</td>
+             <td class="govuk-table__cell">Approval</td>
+          <td class="govuk-table__cell">Paper based </td>
+             <td class="govuk-table__cell">Completed </td>
+          <td class="govuk-table__cell"> <p><a href="/hcp-view-b/hcp-assessment-btesting" class="govuk-link">View case</a></p>
+        
+        <tr class="govuk-table__row" data-category="lot1">
+          <td class="govuk-table__cell"> Angiolina Jolie</td>
+             <td class="govuk-table__cell">Targeted Support</td>
+          <td class="govuk-table__cell">PIP face to face</td>
+             <td class="govuk-table__cell">Not started </td>
+          <td class="govuk-table__cell"> <p><a href="/hcp-view-b/hcp-assessment-btesting" class="govuk-link">View case</a></p>
+        
+        <tr class="govuk-table__row" data-category="lot1">
+          <td class="govuk-table__cell"> Peter Parker</td>
+             <td class="govuk-table__cell">Rolling</td>
+          <td class="govuk-table__cell">PIP telephone </td>
+             <td class="govuk-table__cell">In progress </td>
+          <td class="govuk-table__cell"> <p><a href="/hcp-view-b/hcp-assessment-btesting" class="govuk-link">View case</a></p>
+
+            <tr class="govuk-table__row" data-category="lot1">
+          <td class="govuk-table__cell"> Boris Johnson</td>
+             <td class="govuk-table__cell">Approval</td>
+          <td class="govuk-table__cell">PIP face to face </td>
+             <td class="govuk-table__cell">Not started </td>
+          <td class="govuk-table__cell"> <p><a href="/hcp-view-b/hcp-assessment-btesting" class="govuk-link">View case</a></p>
+
+
+        </tr>
+      </tbody>
+    </table>
+
+    {{ govukPagination({
+  next: {
+    href: "#"
+  },
+  items: [
+    {
+      number: 1,
+      current: true,
+      href: "#"
+    },
+    {
+      number: 2,
+      href: "#"
+    },
+    {
+      number: 3,
+      href: "#"
+    }
+  ]
+}) }}
+ 
+    
+
+</div>
+</div>
+        
+    
+   
+  </main>
+
+
+{% endblock %}
+
