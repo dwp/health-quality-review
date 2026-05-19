@@ -11,7 +11,7 @@
 
 <div class="govuk-width-container {{ containerClasses }}"></div>
 
-<a href="hcp-main-menu-btesting.html" class="govuk-back-link">Back</a>
+<a href="hcp-main-menu.html" class="govuk-back-link">Back</a>
 {% endblock %}
 
 {% block content %}
@@ -38,6 +38,27 @@
   <div id="more-detail-hint" class="govuk-hint">
     Select one or more filters to apply to the list
    </div>
+
+   <div class="govuk-form-group">
+  <h1 class="govuk-label-wrapper">
+    
+    <label class="govuk-label govuk-label--m" for="NINo">
+      Enter NINo
+    </label>
+  </h1>
+  <select class="govuk-select" id="NINo" name="NINo"
+    data-module="autocomplete" data-autoselect="" data-display-menu="" data-min-length="" data-show-all-values="" data-show-no-options-found="">
+    <option value=" | "></option>
+    <option value="AB 12 34 56 C">AB 12 34 56 C</option>
+    <option value="AB 12 34 00 C">AB 12 34 00 C</option>
+    <option value="AB 12 34 50 C">AB 12 34 50 C</option>
+    <option value="AB 12 14 50 C">AB 12 14 50 C</option>
+    <option value="AB 12 74 50 C">AB 12 74 50 C</option>
+    <option value="AF 12 74 50 C">AF 12 74 50 C</option>
+    <option value="AF 12 74 50 A">AF 12 74 50 A</option>
+    <option value="AF 22 74 50 A">AF 22 74 50 A</option>
+  </select>
+</div>
 
 
 
@@ -132,6 +153,7 @@
       <thead class="govuk-table__head">
         <tr class="govuk-table__row">
 
+          <th scope="col" class="govuk-table__header app-custom-class">NINo</th>
           <th scope="col" class="govuk-table__header app-custom-class">Type</th>
           <th scope="col" class="govuk-table__header app-custom-class">Grade</th>
            <th scope="col" class="govuk-table__header app-custom-class">Date completed</th>
@@ -144,21 +166,24 @@
        
    
          <tr class="govuk-table__row" data-category="lot1">
+            <td class="govuk-table__cell"> AB 12 34 56 C </td>
           <td class="govuk-table__cell"> PIP face to face </td>
              <td class="govuk-table__cell">U <strong class="govuk-tag">New </strong> </td>
           <td class="govuk-table__cell">4 March 2026,<br />8:45am </td>
-           <td class="govuk-table__cell"> <p><a href="/hcp-view-b/hcp-assessment-btesting" class="govuk-link">View case</a></p> </td>
+           <td class="govuk-table__cell"> <p><a href="/hcp-view-b/hcp-assessment" class="govuk-link">View case</a></p> </td>
            
  
  
            <tr class="govuk-table__row" data-category="lot1">
+            <td class="govuk-table__cell"> AB 12 34 00 C </td>
           <td class="govuk-table__cell">PIP face to face </td>
              <td class="govuk-table__cell">AA</td>
           <td class="govuk-table__cell">28 February 2026,<br />2:05pm</td>
-           <td class="govuk-table__cell"> <p><a href="/hcp-view/hcp-report" class="govuk-link">View case</a></p> </td>
+           <td class="govuk-table__cell"> <p><a href="/hcp-view-a/hcp-report" class="govuk-link">View case</a></p> </td>
         
         
            <tr class="govuk-table__row" data-category="lot1">
+            <td class="govuk-table__cell"> AB 12 34 50 C </td>
           <td class="govuk-table__cell">PIP face to face </td>
              <td class="govuk-table__cell">AA</td>
           <td class="govuk-table__cell">28 February 2026,<br />9:35am</td>
@@ -166,6 +191,7 @@
         
         
           <tr class="govuk-table__row" data-category="lot1">
+            <td class="govuk-table__cell"> AB 12 14 50 C </td>
           <td class="govuk-table__cell">PIP telephone </td>
              <td class="govuk-table__cell">A</td>
           <td class="govuk-table__cell">15 February 2026,<br />3:00pm</td>
@@ -173,18 +199,21 @@
 
 
           <tr class="govuk-table__row" data-category="lot1">
+             <td class="govuk-table__cell"> AB 12 74 50 C </td>
           <td class="govuk-table__cell">PIP paper based </td>
              <td class="govuk-table__cell">AF</td>
           <td class="govuk-table__cell">10 February 2026,<br />4:00pm</td>
            <td class="govuk-table__cell"> <p><a href="/capture-grades-journey/htln1565-EditPostSubmission/auditBasicLandingPage-storedData1?checkAnswers=true" class="govuk-link">View case</a></p> </td>
         
           <tr class="govuk-table__row" data-category="lot1">
+             <td class="govuk-table__cell"> AF 12 74 50 C </td>
           <td class="govuk-table__cell">PIP face to face </td>
              <td class="govuk-table__cell">AF</td>
           <td class="govuk-table__cell">1 February 2026,<br />9:00am</td>
            <td class="govuk-table__cell"> <p><a href="/capture-grades-journey/htln1565-EditPostSubmission/auditBasicLandingPage-storedData1?checkAnswers=true" class="govuk-link">View case</a></p> </td>
 
          <tr class="govuk-table__row" data-category="lot1">
+              <td class="govuk-table__cell"> AF 12 74 50 A </td>
           <td class="govuk-table__cell">PIP telephone </td>
              <td class="govuk-table__cell">AF</td>
           <td class="govuk-table__cell">25 January 2026,<br />9:10am</td>
@@ -192,6 +221,7 @@
  
  
            <tr class="govuk-table__row" data-category="lot1">
+            <td class="govuk-table__cell"> AF 22 74 50 A </td>
           <td class="govuk-table__cell">PIP face to face </td>
              <td class="govuk-table__cell">U</td>
           <td class="govuk-table__cell">20 January 2026,<br />3:30pm</td>
@@ -199,6 +229,7 @@
         
         
            <tr class="govuk-table__row" data-category="lot1">
+              <td class="govuk-table__cell"> BF 22 74 50 A</td>
           <td class="govuk-table__cell">PIP paper based </td>
              <td class="govuk-table__cell">AA</td>
           <td class="govuk-table__cell">14 January 2026,<br />11:30am</td>
@@ -206,6 +237,7 @@
         
 
  <tr class="govuk-table__row" data-category="lot1">
+             <td class="govuk-table__cell"> AF 82 74 50 A </td>
           <td class="govuk-table__cell">PIP face to face </td>
              <td class="govuk-table__cell">AF</td>
           <td class="govuk-table__cell">4 January 2026,<br />10:07am</td>

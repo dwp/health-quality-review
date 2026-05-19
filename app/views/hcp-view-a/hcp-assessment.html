@@ -25,10 +25,10 @@
      
 
       
-          <h1 class="govuk-heading-xl">My quality review report </h1>
+          <h1 class="govuk-heading-xl">Quality review completed </h1>
   
   
-            <h2 class="{% if query.checkAnswers %}govuk-heading-l{% else %}govuk-heading-m{% endif %}">My quality review summary</h2>
+            <h2 class="{% if query.checkAnswers %}govuk-heading-l{% else %}govuk-heading-m{% endif %}">Quality review summary</h2>
               
 
   <!-- Summary -->
@@ -56,7 +56,7 @@
                 Date completed
               </dt>
               <dd class="govuk-summary-list__value">
-                27 June 2025
+                4 March 2026
               </dd>
             </div>
             <div class="govuk-summary-list__row">
@@ -73,7 +73,7 @@
                   Overall grade
                 </dt>
                 <dd class="govuk-summary-list__value">
-                  U
+                  <p class="govuk-body">{{ lowestGrade }}</p> 
                 </dd>
             </div>
 
@@ -83,6 +83,7 @@
                 </dt>
                 <dd class="govuk-summary-list__value">
                   {{ data["comment-" + key] }}
+                  Overall, this assessment indicates that the required standard has not yet been met. While there are some basic elements of understanding demonstrated, there are significant gaps in both clinical knowledge and application.
                 </dd>
               </div>
             
@@ -91,7 +92,7 @@
                   Assessment type
                 </dt>
                 <dd class="govuk-summary-list__value">
-                  Telephone assessment
+                  PIP face to face
                 </dd>
               </div>
 
@@ -132,6 +133,7 @@
                       <p class="govuk-body">Comment:</p>
                       <p class="govuk-body">
                         {{ data["comment-" + key] }}
+                        More work required
                       </p>
                     {% else %}
                       <!-- No feedback -->
@@ -191,6 +193,7 @@
                     {{ value }}
                   </dt>
                   <dd class="govuk-summary-list__value">
+                    U - Critical evidence not sought or insufficient attempt to gather it so that correct award cannot be reasonably determined
                     {% if data["grade-" + key] %}
                       <p class="govuk-body">
                         {{ data["grade-" + key] }}
@@ -223,6 +226,7 @@
                     {{ value }}
                   </dt>
                   <dd class="govuk-summary-list__value">
+                    U - Critical evidence not sought or insufficient attempt to gather it so that correct award cannot be reasonably determined
                     {% if data["grade-" + key] %}
                       <p class="govuk-body">
                         {{ data["grade-" + key] }}
@@ -255,6 +259,7 @@
                     {{ value }}
                   </dt>
                   <dd class="govuk-summary-list__value">
+                    U - Critical evidence not sought or insufficient attempt to gather it so that correct award cannot be reasonably determined
                     {% if data["grade-" + key] %}
                       <p class="govuk-body">
                         {{ data["grade-" + key] }}
@@ -283,9 +288,10 @@
               {% if not query.checkAnswers or ((section === "Feedback" and "grade-" + key in hasFeedback) or (section === "Amendments" and "grade-" + key in requiresAmendment)) %}
               <div id="process-{{ key }}" class="govuk-summary-list__row">
                   <dt class="govuk-summary-list__key">
-                    {{ value }}
+                    {{ value }}  
                   </dt>
                   <dd class="govuk-summary-list__value">
+                    U - Critical evidence not sought or insufficient attempt to gather it so that correct award cannot be reasonably determined 
                     {% if data["grade-" + key] %}
                       <p class="govuk-body">
                         {{ data["grade-" + key] }}
@@ -307,20 +313,12 @@
             {% endfor %}
 
             
-<!-- Edit report link -->
-  <!-- <p class="govuk-body"> This report has been submitted.     
- <a href="auditBasicLandingPage-summary" class="govuk-link">Edit assessmentt</a></p>    
-
-<br> -->
-         
-        </form>
             
-<!-- Go to edit assessment -->
-          <p class="govuk-body">
+<!-- Goto referral link -->
+           <p class="govuk-body">
             Go to <a href="hcp-assessment.html" class="govuk-link">edit assessment</a>
           </p>
           
         </div>
-      
   </div>
 {% endblock %}

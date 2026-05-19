@@ -39,6 +39,27 @@
     Select one or more filters to apply to the list
    </div>
 
+  <div class="govuk-form-group">
+  <h1 class="govuk-label-wrapper">
+    
+    <label class="govuk-label govuk-label--m" for="NINo">
+      Enter NINo
+    </label>
+  </h1>
+  <select class="govuk-select" id="NINo" name="NINo"
+    data-module="autocomplete" data-autoselect="" data-display-menu="" data-min-length="" data-show-all-values="" data-show-no-options-found="">
+    <option value=" | "></option>
+    <option value="AB 12 34 56 C">AB 12 34 56 C</option>
+    <option value="AB 12 34 00 C">AB 12 34 00 C</option>
+    <option value="AB 12 34 50 C">AB 12 34 50 C</option>
+    <option value="AB 12 14 50 C">AB 12 14 50 C</option>
+    <option value="AB 12 74 50 C">AB 12 74 50 C</option>
+    <option value="AF 12 74 50 C">AF 12 74 50 C</option>
+    <option value="AF 12 74 50 A">AF 12 74 50 A</option>
+    <option value="AF 22 74 50 A">AF 22 74 50 A</option>
+  </select>
+</div>
+
 
 
 
@@ -146,7 +167,7 @@
 <div class="govuk-grid-column-three-quarters">
 
 
-  <h1 class="govuk-heading-l">Quality review list</h1>
+  <h1 class="govuk-heading-l">Quality review list history</h1>
 
 <div class="govuk-form-group govuk-!-margin-bottom-0">
 
@@ -161,8 +182,10 @@
       <thead class="govuk-table__head">
         <tr class="govuk-table__row">
 
+         
+          <th scope="col" class="govuk-table__header app-custom-class">NINo</th>
           <th scope="col" class="govuk-table__header app-custom-class">HCP</th>
-           <th scope="col" class="govuk-table__header app-custom-class">Stage</th>
+          <th scope="col" class="govuk-table__header app-custom-class">Stage</th>
           <th scope="col" class="govuk-table__header app-custom-class">Type</th>
           <th scope="col" class="govuk-table__header app-custom-class">Status</th>
           <th scope="col" class="govuk-table__header app-custom-class">Action</th>
@@ -177,6 +200,7 @@
  
  
            <tr class="govuk-table__row" data-category="lot1">
+             <td class="govuk-table__cell"> AB 11 31 26 T </td>
           <td class="govuk-table__cell"> Peter Parker</td>
              <td class="govuk-table__cell">Rolling</td>
           <td class="govuk-table__cell">PIP paper-based </td>
@@ -185,6 +209,7 @@
         
         
             <tr class="govuk-table__row" data-category="lot1">
+          <td class="govuk-table__cell"> CB 11 31 16 C </td>
           <td class="govuk-table__cell"> Lucy Lu</td>
              <td class="govuk-table__cell">Targeted support</td>
           <td class="govuk-table__cell">PIP face to face </td>
@@ -192,6 +217,7 @@
           <td class="govuk-table__cell"> <p><a href="/hcp-view-b/hcp-assessment-btesting" class="govuk-link">View case</a></p>
         
           <tr class="govuk-table__row" data-category="lot1">
+            <td class="govuk-table__cell"> CI 12 11 56 B </td>
           <td class="govuk-table__cell"> William Shakespere </td>
              <td class="govuk-table__cell">Approval</td>
           <td class="govuk-table__cell">PIP Telephone </td>
@@ -199,6 +225,7 @@
           <td class="govuk-table__cell"> <p><a href="/hcp-view-b/hcp-assessment-btesting" class="govuk-link">View case</a></p>
         
         <tr class="govuk-table__row" data-category="lot1">
+          <td class="govuk-table__cell"> AI 18 24 71 F </td>
           <td class="govuk-table__cell"> Tom Cruise</td>
              <td class="govuk-table__cell">Rolling</td>
           <td class="govuk-table__cell">PIP face to face </td>
@@ -206,6 +233,7 @@
           <td class="govuk-table__cell"> <p><a href="/hcp-view-b/hcp-assessment-btesting" class="govuk-link">View case</a></p>
         
         <tr class="govuk-table__row" data-category="lot1">
+          <td class="govuk-table__cell"> II 21 30 15 A </td>
           <td class="govuk-table__cell"> Cameron Diaz</td>
              <td class="govuk-table__cell">Post approval</td>
           <td class="govuk-table__cell">PIP paper based </td>
@@ -213,6 +241,7 @@
           <td class="govuk-table__cell"> <p><a href="/hcp-view-b/hcp-assessment-btesting" class="govuk-link">View case</a></p>
         
         <tr class="govuk-table__row" data-category="lot1">
+          <td class="govuk-table__cell"> SI 13 11 27 E </td>
           <td class="govuk-table__cell"> Jack Sparrow</td>
              <td class="govuk-table__cell">Rolling</td>
           <td class="govuk-table__cell">PIP Telephone </td>
@@ -220,13 +249,15 @@
           <td class="govuk-table__cell"> <p><a href="/hcp-view-b/hcp-assessment-btesting" class="govuk-link">View case</a></p>
         
         <tr class="govuk-table__row" data-category="lot1">
-          <td class="govuk-table__cell"> Brad Pit</td>
+          <td class="govuk-table__cell"> IC 11 24 71 A </td>
+           <td class="govuk-table__cell"> Nelson Mandela</td>
              <td class="govuk-table__cell">Approval</td>
           <td class="govuk-table__cell">Paper based </td>
              <td class="govuk-table__cell">Completed </td>
           <td class="govuk-table__cell"> <p><a href="/hcp-view-b/hcp-assessment-btesting" class="govuk-link">View case</a></p>
         
         <tr class="govuk-table__row" data-category="lot1">
+          <td class="govuk-table__cell"> AC 11 24 17 F </td>
           <td class="govuk-table__cell"> Angiolina Jolie</td>
              <td class="govuk-table__cell">Targeted Support</td>
           <td class="govuk-table__cell">PIP face to face</td>
@@ -234,6 +265,7 @@
           <td class="govuk-table__cell"> <p><a href="/hcp-view-b/hcp-assessment-btesting" class="govuk-link">View case</a></p>
         
         <tr class="govuk-table__row" data-category="lot1">
+          <td class="govuk-table__cell"> CI 12 11 16 T </td>
           <td class="govuk-table__cell"> Peter Parker</td>
              <td class="govuk-table__cell">Rolling</td>
           <td class="govuk-table__cell">PIP telephone </td>
@@ -241,6 +273,7 @@
           <td class="govuk-table__cell"> <p><a href="/hcp-view-b/hcp-assessment-btesting" class="govuk-link">View case</a></p>
 
             <tr class="govuk-table__row" data-category="lot1">
+            <td class="govuk-table__cell"> AB 32 11 21 T </td>
           <td class="govuk-table__cell"> Boris Johnson</td>
              <td class="govuk-table__cell">Approval</td>
           <td class="govuk-table__cell">PIP face to face </td>
