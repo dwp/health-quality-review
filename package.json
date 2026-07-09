@@ -9,12 +9,25 @@
     "@dwp/dwp-frontend": "3.3.0",
     "@govuk-prototype-kit/common-templates": "2.0.1",
     "@govuk-prototype-kit/step-by-step": "2.2.3",
-    "axios": "1.18.1",
+    "axios": "1.15.2",
     "govuk-frontend": "5.8.0",
-    "govuk-prototype-kit": "13.20.2",
+    "govuk-prototype-kit": "13.18.1",
     "jquery": "3.7.1",
     "npm-force-resolutions": "0.0.10",
-    "notifications-node-client": "8.4.0",
+    "notifications-node-client": "8.2.1",
     "qs": "^6.14.1"
+  },
+  "overrides": {
+    "jws": "3.2.3", 
+    "fast-xml-parser": "5.3.4", 
+    "axios": "1.15.2",
+    "socket.io": "4.2.6",
+    "immutable": "5.1.5",
+    "minimatch": "9.0.7"
+  }, 
+  "resolutions": {
+    "socket.io": "4.8.3",
+    "immutable": "5.1.5",
+    "minimatch": "9.0.7"
   }
 }
