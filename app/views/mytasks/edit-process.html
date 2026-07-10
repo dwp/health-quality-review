@@ -1,0 +1,35 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Information gathering
+{% endblock %}
+
+
+{% block content %}
+ 
+ 
+  <h1 class="govuk-heading-l">
+Well done for getting this far. 
+
+<p> </p>Can you please speak out loud and tell us what you would expect to do to finish this task? 
+
+
+  </h1>
+ 
+ 
+ 
+
+
+  
+  
+ 
+{{ govukButton({
+  text: "Mark task as complete",
+  href: "my-tasks-end.html"
+}) }}
+ 
+
+ 
+{% endblock %}
+  
+

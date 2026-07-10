@@ -8,7 +8,7 @@
  
 {% include "includes/assessment-status-neutral-pip.html" %}
   <div class="govuk-width-container {{ containerClasses }}"></div>
-  <a href="claimant-details-data.html" class="govuk-back-link">Back</a>
+  <a href="referral-page.html" class="govuk-back-link">Back</a>
 {% endblock %}
  
 {% block content %}
@@ -25,7 +25,9 @@
      
 
       
-          <h1 class="govuk-heading-xl">Quality review completed </h1>
+          <h1 class="govuk-heading-xl">Quality review </h1>
+
+         
   
   
             <h2 class="{% if query.checkAnswers %}govuk-heading-l{% else %}govuk-heading-m{% endif %}">Quality review summary</h2>
@@ -56,7 +58,7 @@
                 Date completed
               </dt>
               <dd class="govuk-summary-list__value">
-                4 March 2026
+                20 July 2026
               </dd>
             </div>
             <div class="govuk-summary-list__row">
@@ -73,7 +75,7 @@
                   Overall grade
                 </dt>
                 <dd class="govuk-summary-list__value">
-                  <p class="govuk-body">{{ lowestGrade }}</p> 
+                  AA
                 </dd>
             </div>
 
@@ -83,9 +85,12 @@
                 </dt>
                 <dd class="govuk-summary-list__value">
                   {{ data["comment-" + key] }}
-                  Overall, this assessment indicates that the required standard has not yet been met. While there are some basic elements of understanding demonstrated, there are significant gaps in both clinical knowledge and application.
-                </dd>
-              </div>
+                  Action – Please follow UE process.
+                  <p class="govuk-body">  Additional feedback:</p>
+                  <p class="govuk-body">  HOC – The history provides a reasonable overview of the claimant's conditions and functional impact; however, there could have been further exploration of recent treatment, specialist input and any changes since the previous assessment. This would have helped to strengthen the clinical picture and support progression or stability of symptoms.:</p>
+                  <p class="govuk-body">  VB – More detail around frequency and variability would have been beneficial. The report refers to difficulties occurring "most days" but does not clearly establish how many days per week difficulties are experienced, nor the extent to which function differs on better days.</p>
+
+</div>
             
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
@@ -125,7 +130,9 @@
                     {{ value }}
                   </dt>
          
-                  <dd class="govuk-summary-list__value">
+                  <dd class="govuk-summary-list__value">Whilst there is sufficient information available to support the advised outcome, some areas of the report rely on broad statements rather than detailed functional evidence. Additional probing and clearer documentation would improve auditability and strengthen the rationale for the selected descriptors.
+
+                  Overall, the evidence supports the decision reached; however, improvements in probing, inconsistency resolution and documentation of functional impact would enhance the quality and robustness of the report.
                     {% if data["grade-" + key] %}
                       <p class="govuk-body">
                         {{ data["grade-" + key] }}
@@ -160,7 +167,7 @@
                   <dt class="govuk-summary-list__key">
                     {{ value }}
                   </dt>
-                  <dd class="govuk-summary-list__value">
+                  <dd class="govuk-summary-list__value">  AA - In additional support needs case, either important evidence not sought or insufficient attempt to gather it
                     {% if data["grade-" + key] %}
                       <p class="govuk-body">
                         {{ data["grade-" + key] }}
@@ -180,38 +187,7 @@
             {% endif %}
         
         
-<!-- Daily living section         -->
-            {% if (query.checkAnswers and ((section === "Feedback" and "activities" in groupsWithFeedback) or (section === "Amendments" and "activities" in groupsToAmend))) or not query.checkAnswers %}
-        
-            <h2 class="govuk-heading-m">Daily living</h2>
-            <dl class="govuk-summary-list">
-              {% for key, value in activities %}
-                {% if loop.index !== 10 and loop.index !== 11 %}
-                {% if not query.checkAnswers or ((section === "Feedback" and "grade-" + key in hasFeedback) or (section === "Amendments" and "grade-" + key in requiresAmendment)) %}
-                <div id="activity-{{ key }}" class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key">
-                    {{ value }}
-                  </dt>
-                  <dd class="govuk-summary-list__value">
-                    U - Critical evidence not sought or insufficient attempt to gather it so that correct award cannot be reasonably determined
-                    {% if data["grade-" + key] %}
-                      <p class="govuk-body">
-                        {{ data["grade-" + key] }}
-                      </p>
-                      <p class="govuk-body">Comment: </p>
-                      <p class="govuk-body">
-                        {{ data["comment-" + key] }}
-                      </p>
-                    {% else %}
-                      <!-- No feedback -->
-                    {% endif %}
-                  </dd>
-                </div>
-                {% endif %}
-                {% endif %}
-              {% endfor %}
-            </dl>
-            {% endif %}
+
         
 <!-- Mobiliy section -->
             {% if (query.checkAnswers and ((section === "Feedback" and "mobility" in groupsWithFeedback) or (section === "Amendments" and "mobility" in groupsToAmend))) or not query.checkAnswers %}
@@ -226,7 +202,7 @@
                     {{ value }}
                   </dt>
                   <dd class="govuk-summary-list__value">
-                    U - Critical evidence not sought or insufficient attempt to gather it so that correct award cannot be reasonably determined
+                    AA - Justification which fails to support the advice or the descriptor choice but doesn't suggest an alternative award
                     {% if data["grade-" + key] %}
                       <p class="govuk-body">
                         {{ data["grade-" + key] }}
@@ -247,36 +223,7 @@
             {% endif %}
         
         
-<!-- Opinion section -->
-            {% if (query.checkAnswers and ((section === "Feedback" and "opinion" in groupsWithFeedback) or (section === "Amendments" and "opinion" in groupsToAmend))) or not query.checkAnswers %}
-        
-            <h2 class="govuk-heading-m">Opinion</h2>
-            <dl class="govuk-summary-list">
-              {% for key, value in opinion %}
-              {% if not query.checkAnswers or ((section === "Feedback" and "grade-" + key in hasFeedback) or (section === "Amendments" and "grade-" + key in requiresAmendment)) %}
-              <div id="opinion-{{ key }}" class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key">
-                    {{ value }}
-                  </dt>
-                  <dd class="govuk-summary-list__value">
-                    U - Critical evidence not sought or insufficient attempt to gather it so that correct award cannot be reasonably determined
-                    {% if data["grade-" + key] %}
-                      <p class="govuk-body">
-                        {{ data["grade-" + key] }}
-                      </p>
-                      <p class="govuk-body">Comment: </p>
-                      <p class="govuk-body">
-                        {{ data["comment-" + key] }}
-                      </p>
-                    {% else %}
-                      <!-- No feedback -->
-                    {% endif %}
-                  </dd>
-                </div>
-                {% endif %}
-              {% endfor %}
-            </dl>
-            {% endif %}
+
          
 
 <!-- Process section -->
@@ -291,7 +238,7 @@
                     {{ value }}  
                   </dt>
                   <dd class="govuk-summary-list__value">
-                    U - Critical evidence not sought or insufficient attempt to gather it so that correct award cannot be reasonably determined 
+                    AA - Directive advice on entitlement
                     {% if data["grade-" + key] %}
                       <p class="govuk-body">
                         {{ data["grade-" + key] }}
@@ -315,9 +262,6 @@
             
             
 <!-- Goto referral link -->
-           <p class="govuk-body">
-            Go to <a href="hcp-assessment.html" class="govuk-link">edit assessment</a>
-          </p>
           
         </div>
   </div>

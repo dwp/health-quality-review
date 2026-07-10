@@ -1,0 +1,301 @@
+{% extends "layouts/main.html" %}
+{% from "govuk/components/pagination/macro.njk" import govukPagination %}
+{% block pageTitle %}
+  Information gathering
+{% endblock %}
+
+
+{% block beforeContent %}
+
+
+
+<div class="govuk-width-container {{ containerClasses }}"></div>
+
+<a href="account_jd.html" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+
+
+
+        
+  <!-- <main class="govuk-main-wrapper " id="main-content" role="main"> -->
+ 
+
+<div class="govuk-width-container ">
+<div class="govuk-grid-row">
+
+<div class="govuk-grid-column-one-quarter">
+<form class="form" action="account_jd-history_filter_tel" method="post">
+
+
+  <h1 class="govuk-label-wrapper">
+    <label class="govuk-label govuk-label--m" for="more-detail">
+      Filters
+    </label>
+  </h1>
+  <div id="more-detail-hint" class="govuk-hint">
+    Select one or more filters to apply to the list
+   </div>
+
+
+
+
+{{ govukCheckboxes({
+  name: "Level_",
+  classes: "govuk-checkboxes--small",
+  fieldset: {
+    legend: {
+      text: "Level",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--s"
+    }
+  },
+  items: [
+    {
+      value: "Approval",
+      text: "Approval"
+    },
+    {
+      value: "Post approval",
+      text: "Post approval"
+    },
+    {
+      value: "Rolling",
+      text: "Rolling"
+
+    },
+    {
+      value: "Targeted support",
+      text: "Targeted support"
+
+    }
+  ]
+}) }}
+
+{{ govukCheckboxes({
+  name: "Type",
+  classes: "govuk-checkboxes--small",
+  fieldset: {
+    legend: {
+      text: "Type",
+
+      classes: "govuk-fieldset__legend--s"
+    }
+  },
+  
+  items: [
+    {
+      value: "PIP paper-based",
+      text: "PIP paper-based"
+    },
+    {
+      value: "PIP telephone",
+      text: "PIP telephone"
+    },
+    {
+      value: "PIP face to face",
+      text: "PIP face to face"
+
+    }
+  ]
+}) }}
+
+{{ govukCheckboxes({
+  name: "grade",
+  classes: "govuk-checkboxes--small",
+  fieldset: {
+    legend: {
+      text: "Grade",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--s"
+    }
+  },
+  items: [
+
+      {
+      value: "Green",
+      text: "Green"
+    },    {
+      value: "Amber",
+      text: "Amber"
+    },    {
+      value: "Red",
+      text: "Red"
+    },
+    {
+      value: "A",
+      text: "A"
+    },
+    {
+      value: "AF",
+      text: "AF"
+    },
+    {
+      value: "AA",
+      text: "AA"
+
+    },
+        {
+      value: "U",
+      text: "U"
+
+    }
+  ]
+}) }}
+
+
+<button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+ Apply filters
+</button>
+
+<p class="govuk-body">
+<a class="govuk-link" href="#">Cancel filters</a>
+</p>
+
+</form>
+</div>
+
+<div class="govuk-grid-column-three-quarters">
+
+
+  <h1 class="govuk-heading-l">Jane Doe's quality review history</h1>
+
+<div class="govuk-form-group govuk-!-margin-bottom-0">
+
+
+
+
+
+</div>
+  
+    <table class="govuk-table">
+      <caption class="govuk-visually-hidden">Manage profiles</caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+
+          <th scope="col" class="govuk-table__header app-custom-class">Level</th>
+          <th scope="col" class="govuk-table__header app-custom-class">Type</th>
+           <th scope="col" class="govuk-table__header app-custom-class">Grade</th>
+          <th scope="col" class="govuk-table__header app-custom-class">Date completed</th>
+          <th scope="col" class="govuk-table__header app-custom-class">Action</th>
+          <!-- <th scope="col" class="govuk-table__header app-custom-class">End of life</th>
+          <th scope="col" class="govuk-table__header app-custom-class">Action</th> -->
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+       
+   
+         <tr class="govuk-table__row" data-category="lot1">
+          <td class="govuk-table__cell">Approval</td>
+          <td class="govuk-table__cell">PIP face to face </td>
+             <td class="govuk-table__cell">Green</td>
+          <td class="govuk-table__cell">4 March 2026,<br />8:45am </td>
+           <td class="govuk-table__cell"> <p><a href="/capture-grades-journey/htln1565-EditPostSubmission/auditBasicLandingPage-storedData1?checkAnswers=true" class="govuk-link">View case</a></p> </td>
+ 
+ 
+           <tr class="govuk-table__row" data-category="lot1">
+          <td class="govuk-table__cell">Targeted support</td>
+          <td class="govuk-table__cell">PIP face to face </td>
+             <td class="govuk-table__cell">Amber</td>
+          <td class="govuk-table__cell">28 February 2026,<br />2:05pm</td>
+           <td class="govuk-table__cell"> <p><a href="/capture-grades-journey/htln1652-GradeFeedbackMVP-release2/claimant-details-data">View case</a></p> </td>
+
+           <tr class="govuk-table__row" data-category="lot1">
+          <td class="govuk-table__cell">Targeted support</td>
+          <td class="govuk-table__cell">PIP face to face </td>
+             <td class="govuk-table__cell">Amber</td>
+          <td class="govuk-table__cell">28 February 2026,<br />9:35am</td>
+           <td class="govuk-table__cell"> <p><a href="/capture-grades-journey/htln1565-EditPostSubmission/auditBasicLandingPage-storedData1?checkAnswers=true" class="govuk-link">View case</a></p> </td>
+
+        
+          <tr class="govuk-table__row" data-category="lot1">
+          <td class="govuk-table__cell">Rolling</td>
+          <td class="govuk-table__cell">PIP telephone </td>
+             <td class="govuk-table__cell">Red</td>
+          <td class="govuk-table__cell">15 February 2026,<br />3:00pm</td>
+           <td class="govuk-table__cell"> <p><a href="/capture-grades-journey/htln1565-EditPostSubmission/auditBasicLandingPage-storedData1?checkAnswers=true" class="govuk-link">View case</a></p> </td>
+
+
+          <tr class="govuk-table__row" data-category="lot1">
+          <td class="govuk-table__cell">Approval</td>
+          <td class="govuk-table__cell">PIP paper based </td>
+             <td class="govuk-table__cell">AF</td>
+          <td class="govuk-table__cell">10 February 2026,<br />4:00pm</td>
+           <td class="govuk-table__cell"> <p><a href="/capture-grades-journey/htln1565-EditPostSubmission/auditBasicLandingPage-storedData1?checkAnswers=true" class="govuk-link">View case</a></p> </td>
+        
+          <tr class="govuk-table__row" data-category="lot1">
+          <td class="govuk-table__cell">Approval</td>
+          <td class="govuk-table__cell">PIP face to face </td>
+             <td class="govuk-table__cell">AF</td>
+          <td class="govuk-table__cell">1 February 2026,<br />9:00am</td>
+           <td class="govuk-table__cell"> <p><a href="/capture-grades-journey/htln1565-EditPostSubmission/auditBasicLandingPage-storedData1?checkAnswers=true" class="govuk-link">View case</a></p> </td>
+
+         <tr class="govuk-table__row" data-category="lot1">
+          <td class="govuk-table__cell">Approval</td>
+          <td class="govuk-table__cell">PIP telephone </td>
+             <td class="govuk-table__cell">AF</td>
+          <td class="govuk-table__cell">25 January 2026,<br />9:10am</td>
+           <td class="govuk-table__cell"> <p><a href="/capture-grades-journey/htln1565-EditPostSubmission/auditBasicLandingPage-storedData1?checkAnswers=true" class="govuk-link">View case</a></p> </td>
+ 
+ 
+           <tr class="govuk-table__row" data-category="lot1">
+          <td class="govuk-table__cell">Targeted support</td>
+          <td class="govuk-table__cell">PIP face to face </td>
+             <td class="govuk-table__cell">U</td>
+          <td class="govuk-table__cell">20 January 2026,<br />3:30pm</td>
+           <td class="govuk-table__cell"> <p><a href="/capture-grades-journey/htln1565-EditPostSubmission/auditBasicLandingPage-storedData1?checkAnswers=true" class="govuk-link">View case</a></p> </td>
+        
+        
+           <tr class="govuk-table__row" data-category="lot1">
+          <td class="govuk-table__cell">Post approval</td>
+          <td class="govuk-table__cell">PIP paper based </td>
+             <td class="govuk-table__cell">AA</td>
+          <td class="govuk-table__cell">14 January 2026,<br />11:30am</td>
+           <td class="govuk-table__cell"> <p><a href="/capture-grades-journey/htln1565-EditPostSubmission/auditBasicLandingPage-storedData1?checkAnswers=true" class="govuk-link">View case</a></p> </td>
+        
+
+ <tr class="govuk-table__row" data-category="lot1">
+          <td class="govuk-table__cell">Approval</td>
+          <td class="govuk-table__cell">PIP face to face </td>
+             <td class="govuk-table__cell">AF</td>
+          <td class="govuk-table__cell">4 January 2026,<br />10:07am</td>
+           <td class="govuk-table__cell"> <p><a href="/capture-grades-journey/htln1565-EditPostSubmission/auditBasicLandingPage-storedData1?checkAnswers=true" class="govuk-link">View case</a></p> </td>
+        </tr>
+      </tbody>
+    </table>
+
+    {{ govukPagination({
+  next: {
+    href: "#"
+  },
+  items: [
+    {
+      number: 1,
+      current: true,
+      href: "#"
+    },
+    {
+      number: 2,
+      href: "#"
+    },
+    {
+      number: 3,
+      href: "#"
+    }
+  ]
+}) }}
+ 
+    
+
+</div>
+</div>
+        
+    
+   
+  </main>
+
+
+{% endblock %}
+

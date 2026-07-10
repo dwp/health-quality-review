@@ -86,10 +86,27 @@
     }
   },
   items: [
+
+  
     {
+      value: "Green",
+      text: "Green"
+    },
+
+        {
+      value: "Amber",
+      text: "Amber"
+    },
+
+        {
+      value: "Red",
+      text: "Red"
+    },
+        {
       value: "A",
       text: "A"
     },
+
     {
       value: "AF",
       text: "AF"
@@ -113,7 +130,7 @@
 </button>
 
 <p class="govuk-body">
-<a class="govuk-link" href="#">Cancel filters</a>
+<a class="govuk-link" href="#">Clear filters</a>
 </p>
 
 </form>
@@ -137,10 +154,10 @@
       <thead class="govuk-table__head">
         <tr class="govuk-table__row">
 
-
           <th scope="col" class="govuk-table__header app-custom-class">Type</th>
           <th scope="col" class="govuk-table__header app-custom-class">Grade</th>
-           <th scope="col" class="govuk-table__header app-custom-class">Date completed</th>
+           <th scope="col" class="govuk-table__header app-custom-class">Quality review date</th>
+           <th scope="col" class="govuk-table__header app-custom-class">Assessment date</th>
           <th scope="col" class="govuk-table__header app-custom-class">Action</th>
           <!-- <th scope="col" class="govuk-table__header app-custom-class">End of life</th>
           <th scope="col" class="govuk-table__header app-custom-class">Action</th> -->
@@ -151,23 +168,26 @@
    
          <tr class="govuk-table__row" data-category="lot1">
           <td class="govuk-table__cell"> PIP face to face </td>
-             <td class="govuk-table__cell">U <strong class="govuk-tag">New </strong> </td>
+             <td class="govuk-table__cell">Red </td>
           <td class="govuk-table__cell">4 March 2026,<br />8:45am </td>
-           <td class="govuk-table__cell"> <p><a href="/hcp-view-a/hcp-assessment" class="govuk-link">View case</a></p> </td>
+          <td class="govuk-table__cell">3 March 2026,<br />9:45am </td>
+           <td class="govuk-table__cell"> <p><a href="/post-research/referral-page" class="govuk-link">View case</p> </td>
            
  
  
            <tr class="govuk-table__row" data-category="lot1">
           <td class="govuk-table__cell">PIP face to face </td>
-             <td class="govuk-table__cell">AA</td>
+             <td class="govuk-table__cell">Amber</td>
           <td class="govuk-table__cell">28 February 2026,<br />2:05pm</td>
+          <td class="govuk-table__cell">27 February 2026,<br />1:05pm</td>
            <td class="govuk-table__cell"> <p><a href="/hcp-view-a/hcp-report" class="govuk-link">View case</a></p> </td>
         
         
            <tr class="govuk-table__row" data-category="lot1">
           <td class="govuk-table__cell">PIP face to face </td>
-             <td class="govuk-table__cell">AA</td>
+             <td class="govuk-table__cell">Amber</td>
           <td class="govuk-table__cell">28 February 2026,<br />9:35am</td>
+          <td class="govuk-table__cell">26 February 2026,<br />2:05pm</td>
            <td class="govuk-table__cell"> <p><a href="/capture-grades-journey/htln1565-EditPostSubmission/auditBasicLandingPage-storedData1?checkAnswers=true" class="govuk-link">View case</a></p> </td>
         
         
@@ -175,6 +195,7 @@
           <td class="govuk-table__cell">PIP telephone </td>
              <td class="govuk-table__cell">A</td>
           <td class="govuk-table__cell">15 February 2026,<br />3:00pm</td>
+          <td class="govuk-table__cell">14 February 2026,<br />2:34pm</td>
            <td class="govuk-table__cell"> <p><a href="/capture-grades-journey/htln1565-EditPostSubmission/auditBasicLandingPage-storedData1?checkAnswers=true" class="govuk-link">View case</a></p> </td>
 
 
@@ -182,18 +203,21 @@
           <td class="govuk-table__cell">PIP paper based </td>
              <td class="govuk-table__cell">AF</td>
           <td class="govuk-table__cell">10 February 2026,<br />4:00pm</td>
+          <td class="govuk-table__cell">9 February 2026,<br />11:00pm</td>
            <td class="govuk-table__cell"> <p><a href="/capture-grades-journey/htln1565-EditPostSubmission/auditBasicLandingPage-storedData1?checkAnswers=true" class="govuk-link">View case</a></p> </td>
         
           <tr class="govuk-table__row" data-category="lot1">
           <td class="govuk-table__cell">PIP face to face </td>
              <td class="govuk-table__cell">AF</td>
           <td class="govuk-table__cell">1 February 2026,<br />9:00am</td>
+          <td class="govuk-table__cell">31 January 2026,<br />10:05pm</td>
            <td class="govuk-table__cell"> <p><a href="/capture-grades-journey/htln1565-EditPostSubmission/auditBasicLandingPage-storedData1?checkAnswers=true" class="govuk-link">View case</a></p> </td>
 
          <tr class="govuk-table__row" data-category="lot1">
           <td class="govuk-table__cell">PIP telephone </td>
              <td class="govuk-table__cell">AF</td>
           <td class="govuk-table__cell">25 January 2026,<br />9:10am</td>
+          <td class="govuk-table__cell">23 January 2026,<br />2:05pm</td>
            <td class="govuk-table__cell"> <p><a href="/capture-grades-journey/htln1565-EditPostSubmission/auditBasicLandingPage-storedData1?checkAnswers=true" class="govuk-link">View case</a></p> </td>
  
  
@@ -201,6 +225,7 @@
           <td class="govuk-table__cell">PIP face to face </td>
              <td class="govuk-table__cell">U</td>
           <td class="govuk-table__cell">20 January 2026,<br />3:30pm</td>
+          <td class="govuk-table__cell">18 January 2026,<br />10:48pm</td>
            <td class="govuk-table__cell"> <p><a href="/capture-grades-journey/htln1565-EditPostSubmission/auditBasicLandingPage-storedData1?checkAnswers=true" class="govuk-link">View case</a></p> </td>
         
         
@@ -208,6 +233,7 @@
           <td class="govuk-table__cell">PIP paper based </td>
              <td class="govuk-table__cell">AA</td>
           <td class="govuk-table__cell">14 January 2026,<br />11:30am</td>
+          <td class="govuk-table__cell">12 January 2026,<br />2:05pm</td>
            <td class="govuk-table__cell"> <p><a href="/capture-grades-journey/htln1565-EditPostSubmission/auditBasicLandingPage-storedData1?checkAnswers=true" class="govuk-link">View case</a></p> </td>
         
 
@@ -215,6 +241,7 @@
           <td class="govuk-table__cell">PIP face to face </td>
              <td class="govuk-table__cell">AF</td>
           <td class="govuk-table__cell">4 January 2026,<br />10:07am</td>
+          <td class="govuk-table__cell">3 January 2026,<br />2:05pm</td>
            <td class="govuk-table__cell"> <p><a href="/capture-grades-journey/htln1565-EditPostSubmission/auditBasicLandingPage-storedData1?checkAnswers=true" class="govuk-link">View case</a></p> </td>
         </tr>
       </tbody>
