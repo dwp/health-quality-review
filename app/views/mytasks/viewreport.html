@@ -1,0 +1,790 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Claimant details
+{% endblock %}
+
+
+{% block beforeContent %}
+
+{% include "includes/assessment-status-neutral-pip.html" %}
+
+<div class="govuk-width-container {{ containerClasses }}"></div>
+
+<a href="referral-page.html" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+
+
+             
+  </style>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+  
+
+
+  <!-- <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+      <div class="govuk-notification-banner__header">
+        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+          Important
+        </h2>
+      </div>
+      <div class="govuk-notification-banner__content">
+        <p class="govuk-notification-banner__heading">
+          You are viewing a draft version of this report.
+          <a class="govuk-notification-banner__link" href="report-version">View latest version</a>. 
+        </p>
+      </div>
+    </div> -->
+    
+    <span class="govuk-caption-xl">Personal Independence Payment</span>
+    <h1 class="govuk-heading-xl">Health assessment report</h1>
+
+ 
+
+    <h2 class="govuk-heading-l" id="claimant-details">Claimant details</h2>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Name
+        </dt>
+        <dd class="govuk-summary-list__value">
+           Raymond Adamu
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          National Insurance number
+        </dt>
+        <dd class="govuk-summary-list__value">
+           RN 65 43 21 X
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+         Date of birth
+        </dt>
+        <dd class="govuk-summary-list__value">
+          30 July 1961
+        </dd>
+      </div>
+    </dl> 
+
+    <h2 class="govuk-heading-l" id="assessment-details">Assessment details</h2>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Date report was completed
+        </dt>
+        <dd class="govuk-summary-list__value">
+           13 October 2023
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Benefit
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Personal Independence Payment
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+         Assessment type
+        </dt>
+        <dd class="govuk-summary-list__value">
+            Face to face
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Healthcare professional
+        </dt>
+        <dd class="govuk-summary-list__value">
+            Aldo Raine
+        </dd>  
+      </div>
+    </dl>  
+
+
+    <h2 class="govuk-heading-l" id="evidence">Evidence</h2>
+
+     <div class="govuk-inset-text">
+        All evidence available on the day of the assessment report has been reviewed.
+     </div>
+
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Evidence used
+        </dt>
+    
+        <dd class="govuk-summary-list__value">
+          Prescription or medication list, 20 May 2024
+          GP letter, 12 March 2023<br>
+          Factual medical report (FRR2), 18 June 2024
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+         Did the claimant present further evidence during the consultation?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          No
+        </dd>
+        <dd class="govuk-summary-list__actions">
+       
+        </dd>
+      </div>
+    </dl>
+
+  
+    <table class="govuk-table">
+        <caption class="govuk-table__caption govuk-table__caption--m">Abbreviations used in this report</caption>
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">Abbreviation</th>
+            <th scope="col" class="govuk-table__header">What it means</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">CH</th>
+            <td class="govuk-table__cell">Condition history</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">FE</th>
+            <td class="govuk-table__cell">Further evidence</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">FH</th>
+            <td class="govuk-table__cell">Functional history</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">IO</th>
+            <td class="govuk-table__cell">Informal observations</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">MSO</th>
+            <td class="govuk-table__cell">Mental state observations</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">SOH</th>
+            <td class="govuk-table__cell">Social and occupational history</td>
+          </tr>
+        </tbody>
+      </table>
+
+    
+   
+    <h2 class="govuk-heading-l" id="consultation">Consultation</h2>
+
+     <div class="govuk-inset-text">
+       The purpose of the consultation has been explained to the claimant.
+      </div>
+
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+         Consulation date
+        </dt>
+        <dd class="govuk-summary-list__value">
+          13 October 2023
+        </dd>
+        <dd class="govuk-summary-list__actions">
+
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Was the claimant's identity confirmed?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Yes
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          How was their identity confirmed?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Passport, NINo, First line of address
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Did the claimant give consent?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Yes
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        
+        </dd>
+      </div>
+    </dl>
+
+    <h3 class="govuk-heading-l" id="attendees">Additional attendees</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-7">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+           Attendee 1 name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Sue Smith
+          </dd>
+          <dd class="govuk-summary-list__actions">
+    
+          </dd>
+        </div>
+  
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Relationship or role
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Sister
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          
+          </dd>
+        </div>
+  
+      </dl>
+
+    
+    <h3 class="govuk-heading-l" id="conditions">Condition history</h2>
+
+       <div class="govuk-inset-text">
+        All conditions and disabilities reported during the consultation have been added.
+      </div>
+    <!-- Report view -->
+     {% for condition in data['conditionAdded'] %}
+
+    <h2 class="govuk-heading-m govuk-!-margin-bottom-2"> {{ condition.conditionName }}</h2>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-2">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+           When did the condition or disability start?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ condition.conditionLength }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+    
+     </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Condition history
+          <pre class="condition-text govuk-body">{{ condition.conditionHistory }}</pre>
+        </dt>
+        <dd class="govuk-summary-list__value">
+     
+        </dd>
+        <dd class="govuk-summary-list__actions"> 
+
+        </dd> 
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+         Is this a mental health condition?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ condition.mentalHealthQuestion }}
+        </dd>
+        <dd class="govuk-summary-list__actions"> 
+   
+         </dd>
+      </div>
+      {% if (condition.mentalHealthQuestion == "Yes") %}
+      <div class="govuk-summary-list__row"> 
+         <dt class="govuk-summary-list__key">
+     
+         <p class="mentalHealth-title">Suicidal thoughts and self harm</p>
+         <pre class="mentalHealth-text govuk-body">{{ condition.mentalHealth }}</pre>
+        </dt>
+        <dd class="govuk-summary-list__value">
+         
+        </dd>
+        <dd class="govuk-summary-list__actions"> 
+
+        </dd>
+      </div>
+      {% else %}
+
+      {% endif %}
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+         Will the condition still be present in 9 months’ time?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ condition.conditionDuration }}
+        </dd>
+        <dd class="govuk-summary-list__actions"> 
+          <!--<a class="govuk-link" href="conditions-change?indexCond={{outerLoopIndex}}&condName={{condition.conditionName}}&conDate={{condition.conditionLength}}&condHistory={{condition.conditionHistory}}&condMH={{condition.mentalHealthQuestion}}&addNotesMH={{condition.condition.mentalHealth}}">Change<span class="govuk-visually-hidden"></span></a> -->
+        </dd>
+      </div>
+    </dl>
+    <br>
+    <br>
+    <br>
+    {% endfor %} 
+
+      <h2 class="govuk-heading-l" id="medications">Medication</h2>
+
+      <div>
+        <h3 class="govuk-heading-m" style="display: inline-block;">Codeine</h3>
+      </div>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Dosage and frequency
+          </dt>
+          <dd class="govuk-summary-list__value">
+            30mg daily
+          </dd>
+          <dd class="govuk-summary-list__actions">
+        
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Reason for taking
+          </dt>
+          <dd class="govuk-summary-list__value">
+           To ease pain
+          </dd>
+          <dd class="govuk-summary-list__actions">
+           
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Effectiveness
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Sometime eases symptoms
+          </dd>
+          <dd class="govuk-summary-list__actions">
+           
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Side effects
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Feel sick
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          
+          </dd>
+        </div>
+    </dl>
+
+     <div>
+        <h3 class="govuk-heading-m" style="display: inline-block;">Side effects</h3>
+        <p class="govuk-body">The claimant does not experience side effects from any of their medication.</p>
+        <hr class="govuk-section-break govuk-section-break--m govuk-!-margin-bottom-7 govuk-section-break--visible">
+      </div>
+
+       <div>
+        <h3 class="govuk-heading-m" style="display: inline-block;">Home therapies</h3>
+        <p class="govuk-body">The claimant does not receive any home therapies.</p>
+        <hr class="govuk-section-break govuk-section-break--m govuk-!-margin-bottom-7 govuk-section-break--visible">
+      </div>
+
+    <div>
+      <h3 class="govuk-heading-m" style="display: inline-block;">Sertraline</h3>
+    </div>
+
+    <dl class="govuk-summary-list govuk-!-margin-bottom-7">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Dosage and frequency
+        </dt>
+        <dd class="govuk-summary-list__value">
+          30mg daily
+        </dd>
+        <dd class="govuk-summary-list__actions">
+         
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Reason for taking
+        </dt>
+        <dd class="govuk-summary-list__value">
+         To reduce anxiety
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Effectiveness
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Sometime eases symptoms
+        </dd>
+        <dd class="govuk-summary-list__actions">
+         
+        </dd>
+      </div>
+  </dl>
+
+
+     <div>
+        <h3 class="govuk-heading-m" style="display: inline-block;">Side effects</h3>
+        <p class="govuk-body">The claimant does not experience side effects from any of their medication.</p>
+        <hr class="govuk-section-break govuk-section-break--m govuk-!-margin-bottom-7 govuk-section-break--visible">
+      </div>
+
+       <div>
+        <h3 class="govuk-heading-m" style="display: inline-block;">Home therapies</h3>
+        <p class="govuk-body">The claimant does not receive any home therapies.</p>
+        <hr class="govuk-section-break govuk-section-break--m govuk-!-margin-bottom-7 govuk-section-break--visible">
+      </div>
+  
+    <br>
+
+    <h2 class="govuk-heading-l" id="social">Social and occupational history</h2>
+
+    <div>
+      <p class="govuk-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec fringilla erat. Duis rhoncus cursus lectus id porttitor. Quisque porta lacus lectus, a porta erat consequat ultricies. Fusce id arcu eget nisi accumsan efficitur. Nullam non tempus lacus. Vestibulum ultrices et odio id interdum. Fusce mattis ullamcorper maximus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Mauris vitae ligula vehicula, congue arcu nec, consectetur purus. Sed quis accumsan lectus.<br><br>
+
+        Cras ullamcorper quis neque vel condimentum. Sed lobortis sem vitae volutpat dapibus. Praesent auctor ac diam et lobortis. Nulla nec libero ac tellus suscipit rhoncus. Praesent nec pellentesque risus. Vivamus ultricies leo quis maximus varius. Curabitur dolor arcu, facilisis eget arcu sed, gravida euismod nulla. Aenean mattis non libero eget mattis. Nulla finibus iaculis nisi. Cras accumsan nibh eget hendrerit dapibus. Pellentesque sollicitudin massa vitae tortor ullamcorper auctor. Pellentesque sed consequat mauris, et malesuada orci. Aliquam eros odio, finibus non ligula id, fringilla gravida velit.<br><br>
+        
+        Sed vehicula quam a elit dictum eleifend sed in est. Proin luctus sit amet eros sit amet feugiat. Phasellus pretium rhoncus neque, a tristique sapien faucibus at. Aliquam imperdiet lacus sollicitudin tellus auctor, vitae varius lorem tincidunt. Mauris tellus felis, posuere in euismod vehicula, porta ut purus. Ut in justo erat. Nullam viverra sit amet tortor quis interdum. Nulla accumsan quam vel mi tincidunt viverra. Duis id cursus tortor.</p>
+    </div>
+  
+    <hr class="govuk-section-break govuk-section-break--m govuk-!-margin-bottom-7 govuk-section-break--visible">
+    <br>
+
+      <h2 class="govuk-heading-l" id="functionalHistory">Daily living</h2>
+      
+      <h3 class="govuk-heading-m" style="display: inline-block;">Preparing food</h3>
+
+    <div>
+      <h3 class="govuk-heading-s" style="display: inline-block;">Functional history for preparing food</h3>
+    </div>
+
+      <p class="text">She is unable to prepare and cook a simple meal from fresh ingredients for 1 person. 
+        Her concentration is quite poor and tends to forget switching electric appliances on and off regularly. There have been instances when she's had accidents in the kitchen due to accidently burning herself. 
+        She is unable to cut, peel and chop ingredients or open up packaging, tins and jars due to her hand pans.</p>
+
+      <div>
+          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+      <h3 class="govuk-heading-m" style="display: inline-block;">Taking nutrition</h3>
+      <div>
+      <h3 class="govuk-heading-s" style="display: inline-block;">Functional history for taking nutrition</h3>
+      </div>
+
+      <p class="text">Whenever she has a plate of food in front of her, she can independently convey it to the mouth, chew and swallow, reporting no regular spillage episodes. 
+
+        However she generally eats foods which require her to only use a fork or a spoon with the right hand for ease and convenience purposes as her left hand might cause tremors.</p>
+      <div>
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+        
+
+      <h3 class="govuk-heading-m" style="display: inline-block;">Managing therapy</h3>
+      
+      <div>
+      <h3 class="govuk-heading-s" style="display: inline-block;">Functional history for managing therapy</h3>
+      </div>
+
+      <p class="text">She tends to be forgetful about which medication she has to take at which time of day. Normally certain symptoms come on, and this would serve as a reminder to her that she needs to take her tablets.        her behalf should any sudden changes to her conditions occur, but she can also not contact anyone at all as she prefers to let the sensation pass. </p>
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+ 
+      <h3 class="govuk-heading-m" style="display: inline-block;">Washing and bathing</h3>
+      <div>
+      <h3 class="govuk-heading-s" style="display: inline-block;">Functional history for washing and bathing</h3>
+     </div>
+     
+
+      <p class="text">She needs to hold onto the grab rails at the side of the bath to make bathing transfers safely owing to added leverage and stability required due to her physical pains. 
+
+        Normally she has a shower, she sits at the edge of the bath whilst holding onto the grab rails to get in the bath, she then stands in the bath to shower, and whilst standing in the bath she can independently wash her hair, upper body and lower body. 
+      <div>
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+    
+  
+      <h3 class="govuk-heading-m" style="display: inline-block;">Managing toilet needs</h3>
+  
+      <div>
+      <h3 class="govuk-heading-s" style="display: inline-block;">Functional history for managing toilet needs</h3>
+      </div>
+
+      <p class="text">She holds onto the nearby sink and the walking stick for added leverage and support to steadily get on and off the toilet due to her physical pains. 
+        Otherwise she can attend to her hygiene needs and can maintain hygiene and cleanliness throughout without difficulties.</p>
+     
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+    
+
+      <h3 class="govuk-heading-m" style="display: inline-block;">Dressing and undressing</h3>
+    
+     <div>
+      <h3 class="govuk-heading-s" style="display: inline-block;">Functional history for dressing and undressing</h3>
+    </div>
+
+      <p class="text">She is physically capable of putting on and taking off t-shirts, shirts, sweaters and tops independently without difficulties. 
+        She tends to find managing zips, fastenings and buttons a bit fiddly due to her hand pains and possibly having swollen fingers. She needs to be sitting down to put on and take off trousers, socks and shoes, for lower half items once sat down she leans forwards to reach down to her feet and lifts her knees closer to her chest in sitting, depending on which position is mostly comfortable.</p>
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+   
+
+      <h3 class="govuk-heading-m" style="display: inline-block;">Communicating verbally</h3>
+    
+      <div>
+      <h3 class="govuk-heading-s" style="display: inline-block;">Functional history for communicating verbally</h3>
+      </div>
+      
+
+      <p class="text">She does not express any significant issues with verbal communication, speaking and hearing. Normally she can speak to people, can understand what is being said and can maintain a conversation going without difficulties. </p>
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+
+      <h3 class="govuk-heading-m" style="display: inline-block;">Reading and understanding signs, symbols and words</h3>
+   
+      <div>
+      <h3 class="govuk-heading-s" style="display: inline-block;">Functional history for reading and understanding signs, symbols and words</h3>
+      </div>
+
+      <p class="text">She is able to read and understand basic and complex written information and sentences without difficulties. If she receives official documentation, letters and correspondence she wouldn't require complex information to be broken down into simple text for her to make sense out of what she's just read. She can easily distinguish between signs and symbols in roads and public places. 
+      </p>
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+      
+      <h3 class="govuk-heading-m" style="display: inline-block;">Engaging face to face</h3>
+
+      <div>
+      <h3 class="govuk-heading-s" style="display: inline-block;">Functional history for engaging face to face</h3>
+      </div>
+
+      <p class="text">If she is to interact with a new person face to face, she'd need to be notified of the meeting beforehand so that she mentally prepares herself for the actual encounter, and she would also need any friend or close relative support her before, during and after she meets that person to ensure that she remains calm and composed.</p>
+     
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+ 
+  
+      <h3 class="govuk-heading-m" style="display: inline-block;">Budgeting</h3>
+
+      <div>
+      <h3 class="govuk-heading-s" style="display: inline-block;">Functional history for budgeting</h3>
+      </div>
+
+      <p class="text">She has a good understanding of money and is aware of how money works. She is aware of the concept of money, the value of things and the need to budget for future purchases.</p>
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+     
+      <br>
+      <br>
+
+      <h2 class="govuk-heading-l">Mobility</h2>
+
+      <h3 class="govuk-heading-m" style="display: inline-block;">Planning and following journeys</h3>
+      
+      <div>
+      <h3 class="govuk-heading-s" style="display: inline-block;">Functional history for planning and following journeys</h3>
+      </div>
+
+      <p class="text">She usually gets a lift to attend for appointments, as she's used to it being done this way. She usually goes out to the countryside accompanied by her friend once every couple of weeks.</p>
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+
+      <h3 class="govuk-heading-m" style="display: inline-block;">Moving around</h3>
+      
+      <div>
+      <h3 class="govuk-heading-s" style="display: inline-block;">Functional history for moving around</h3>
+      </div>
+
+      <p class="text">She can comfortably cover up to 30 metres prior to needing to stop, it would approximately take her 5 minutes to walk such distance, and she'd need to stop owing to knee pains especially in the left knee.</p>
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+   
+      <br>
+      <br>
+
+  
+    <!-- <h2 class="govuk-heading-l">Physical examination</h2>
+
+      <div>
+      <h3 class="govuk-heading-m" style="display: inline-block;">Examination consent</h3>
+    </div>
+
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Did the claimant consent to the physical examination?
+        </dt>
+        <dd class="govuk-summary-list__value">
+            No
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Why did they not give consent?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nisl metus, auctor non hendrerit in
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Chaperone name
+        </dt>
+        <dd class="govuk-summary-list__value">
+           Simon Peterson
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        
+        </dd>
+      </div>
+
+    </dl>
+
+    <div>
+      <h3 class="govuk-heading-m" style="display: inline-block;">Physical examination notes</h3>
+    </div>
+
+     <p class="text">She managed to maintain a calm and relaxed behaviour whilst managing to establish an appropriate rapport with the assessor. She was keen on participating and was happy to provide elaborate answers to the questions asked.</p>
+    
+
+     <hr class="govuk-section-break govuk-section-break--m govuk-!-margin-bottom-9  govuk-section-break--visible"> -->
+
+    
+      <h2 class="govuk-heading-l">Observations</h2>
+
+      <div>
+      <h3 class="govuk-heading-m" id="mentalState" style="display: inline-block;">Mental state observations</h3>
+    </div>
+
+     <p class="text">She managed to maintain a calm and relaxed behaviour whilst managing to establish an appropriate rapport with the assessor. She was keen on participating and was happy to provide elaborate answers to the questions asked.</p>
+    
+     <hr class="govuk-section-break govuk-section-break--m govuk-!-margin-bottom-7  govuk-section-break--visible">
+      <br>
+     
+      <div>
+      <h3 class="govuk-heading-m" id="informal" style="display: inline-block;">Informal observations</h3>
+    </div>
+
+     <p class="text">She was able to concentrate throughout the assessment with no signs of fatigue or irritability.</p>
+    
+     <hr class="govuk-section-break govuk-section-break--m govuk-!-margin-bottom-9  govuk-section-break--visible">
+
+      <h2 class="govuk-heading-l">Additional needs</h2>
+      <dl class="govuk-summary-list govuk-!-margin-bottom-1">
+
+        
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Do they need additional support for future claims processes?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            No
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Do they meet the criteria for special rules?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            No
+          </dd>
+        </div>
+      </dl>
+     
+      <div class="govuk-inset-text">
+        No harmful information has been included in this report.
+      </div>
+    
+<p><a href="edit-process.html" class="govuk-link">Edit report</a>
+
+  <p><a href="#" class="govuk-link">Print this page</a>
+</p>
+
+  </div> 
+  </div>   
+</div>  
+      </div>
+
+       <div class="govuk-grid-column-one-third sticky">
+    
+            <nav role="navigation" class="border" aria-labelledby="subsection-title" style="float: right">
+              <h2 class="govuk-heading-s" id="subsection-title">
+              On this page
+            </h2>
+              <ul class="govuk-list">
+                <li>
+                  <a href="#claimant-details" class="govuk-link govuk-link--no-visited-state">Claimant details</a>
+                </li>
+                <li>
+                  <a href="#assessment-details" class="govuk-link govuk-link--no-visited-state">Assessment details</a>
+                </li>
+                <li>
+                  <a href="#evidence" class="govuk-link govuk-link--no-visited-state">Evidence</a>
+                </li>
+                <li>
+                  <a href="#consultation" class="govuk-link govuk-link--no-visited-state">Consultation</a>
+                </li>
+                <li>
+                  <a href="#attendees" class="govuk-link govuk-link--no-visited-state">Additional attendees</a>
+                </li>
+                <li>
+                  <a href="#conditions" class="govuk-link govuk-link--no-visited-state">Conditions</a>
+                </li>
+                <li>
+                  <a href="#medications">Medication</a>
+                </li>
+                <li>
+                  <a href="#social">Social and occupational history</a>
+                </li>
+                <li>
+                  <a href="#functionalHistory">Functional history</a>
+                </li>
+    
+                <li>
+                  <a href="#mentalState">Mental state observations</a>
+                </li>
+                <li>
+                  <a href="#informal">Informal observations</a>
+                </li>
+              </ul>
+            </nav>
+          
+    
+        </div>
+      
+      
+
+{% endblock %}
