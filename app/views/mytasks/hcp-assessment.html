@@ -85,19 +85,17 @@
                 </dt>
                 <dd class="govuk-summary-list__value">
                   {{ data["comment-" + key] }}
-                  Action – Please follow UE process.
-                  <p class="govuk-body">  Additional feedback:</p>
-                  <p class="govuk-body">  HOC – The history provides a reasonable overview of the claimant's conditions and functional impact; however, there could have been further exploration of recent treatment, specialist input and any changes since the previous assessment. This would have helped to strengthen the clinical picture and support progression or stability of symptoms.:</p>
-                  <p class="govuk-body">  VB – More detail around frequency and variability would have been beneficial. The report refers to difficulties occurring "most days" but does not clearly establish how many days per week difficulties are experienced, nor the extent to which function differs on better days.</p>
-
-</div>
+                  Imagine this is an AA graded quality review report telling you to make amendments. 
+                   <p class="govuk"></p>
+                   <p class="govuk-body-m"> Please continue and show us how you would do this.<span class="moj-notification-badge"></p>
+                  </div>
             
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
                   Assessment type
                 </dt>
                 <dd class="govuk-summary-list__value">
-                  PIP face to face
+                  
                 </dd>
               </div>
 
@@ -130,9 +128,7 @@
                     {{ value }}
                   </dt>
          
-                  <dd class="govuk-summary-list__value">Whilst there is sufficient information available to support the advised outcome, some areas of the report rely on broad statements rather than detailed functional evidence. Additional probing and clearer documentation would improve auditability and strengthen the rationale for the selected descriptors.
-
-                  Overall, the evidence supports the decision reached; however, improvements in probing, inconsistency resolution and documentation of functional impact would enhance the quality and robustness of the report.
+                  <dd class="govuk-summary-list__value">
                     {% if data["grade-" + key] %}
                       <p class="govuk-body">
                         {{ data["grade-" + key] }}
@@ -140,7 +136,7 @@
                       <p class="govuk-body">Comment:</p>
                       <p class="govuk-body">
                         {{ data["comment-" + key] }}
-                        More work required
+                        
                       </p>
                     {% else %}
                       <!-- No feedback -->
@@ -167,12 +163,11 @@
                   <dt class="govuk-summary-list__key">
                     {{ value }}
                   </dt>
-                  <dd class="govuk-summary-list__value">  AA - In additional support needs case, either important evidence not sought or insufficient attempt to gather it
-                    {% if data["grade-" + key] %}
+                  <dd class="govuk-summary-list__value">  
                       <p class="govuk-body">
                         {{ data["grade-" + key] }}
                       </p>
-                      <p class="govuk-body">Comment: </p>
+                      <p class="govuk-body"> </p>
                       <p class="govuk-body">
                         {{ data["comment-" + key] }}
                       </p>
@@ -181,7 +176,7 @@
                     {% endif %}
                   </dd>
                 </div>
-                {% endif %}
+                
                 {% endfor %}
             </dl>
             {% endif %}
@@ -202,7 +197,7 @@
                     {{ value }}
                   </dt>
                   <dd class="govuk-summary-list__value">
-                    AA - Justification which fails to support the advice or the descriptor choice but doesn't suggest an alternative award
+                    
                     {% if data["grade-" + key] %}
                       <p class="govuk-body">
                         {{ data["grade-" + key] }}
@@ -238,7 +233,7 @@
                     {{ value }}  
                   </dt>
                   <dd class="govuk-summary-list__value">
-                    AA - Directive advice on entitlement
+                   
                     {% if data["grade-" + key] %}
                       <p class="govuk-body">
                         {{ data["grade-" + key] }}
