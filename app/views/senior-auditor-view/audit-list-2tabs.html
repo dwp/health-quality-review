@@ -1,0 +1,181 @@
+{% extends "layouts/main.html" %}
+{% from "govuk/components/pagination/macro.njk" import govukPagination %}
+{% block pageTitle %}
+  Information gathering
+{% endblock %}
+
+
+{% block beforeContent %}
+
+
+
+<div class="govuk-width-container {{ containerClasses }}"></div>
+
+
+
+<a href="main-menu.html" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+
+
+
+        
+  <!-- <main class="govuk-main-wrapper " id="main-content" role="main"> -->
+
+    
+ 
+
+<div class="govuk-width-container ">
+<div class="govuk-grid-row">
+
+<div class="govuk-grid-column-one-quarter">
+
+  <div class="govuk-width-container ">
+<div class="govuk-grid-row">
+
+<div class="govuk-grid-column-one-quarter">
+<form class="form" action="account_jd-history_filter_tel" method="post">
+</form>
+</div>
+
+<div class="govuk-grid-column-three-quarters">
+
+
+  <h1 class="govuk-heading-l">Pending quality review list</h1>
+
+<div class="govuk-form-group govuk-!-margin-bottom-0">
+<div class="govuk-form-group govuk-!-margin-bottom-0">
+<div class="govuk-form-group govuk-!-margin-bottom-0">
+<label class="govuk-label" for="searchNino">
+Enter name
+</label>
+
+
+<div class="govuk-input__wrapper govuk-!-margin-bottom-0">
+
+
+<input class="govuk-input govuk-input--width-20 govuk-!-margin-right-1" id="searchNino" name="search" type="text" autocomplete="off">
+
+    <button type="submit" data-prevent-double-click="true" class="govuk-button" data-module="govuk-button" id="nino-search-button" data-govuk-button-init="">
+  Search
+</button>
+
+</div>
+
+
+
+ <div class="govuk-tabs" data-module="govuk-tabs">
+
+
+
+<div class="govuk-tabs" data-module="govuk-tabs">
+  
+  
+  
+    <h2 class="govuk-tabs__title">
+      Contents
+    </h2>
+    <ul class="govuk-tabs__list">
+      <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+        <a class="govuk-tabs__tab" href="#open-tasks">
+          Review amendments
+        </a>
+      </li>
+      <li class="govuk-tabs__list-item">
+        <a class="govuk-tabs__tab" href="#closed-tasks">
+          Pending HCP amendments
+        </a>
+      </li>
+    </ul>
+
+
+
+ <div class="govuk-tabs__panel" id="open-tasks">
+      <table class="govuk-table">
+          <th scope="col" class="govuk-table__header app-custom-class">HCP</th>
+          <th scope="col" class="govuk-table__header app-custom-class">Auditor</th>
+          <th scope="col" class="govuk-table__header app-custom-class">Quality review date</th>
+          <th scope="col" class="govuk-table__header app-custom-class">Assessment date</th>
+          <th scope="col" class="govuk-table__header app-custom-class">Action</th>
+        
+        <tbody class="govuk-table__body">
+          <td class="govuk-table__cell"> Peter Parker</td>
+           <td class="govuk-table__cell"> John Doh</td>
+             <td class="govuk-table__cell">22 September 2026, 4:40pm</td>
+             <td class="govuk-table__cell">21 September 2026, 11:34am</td>
+          <td class="govuk-table__cell"> <p><a href="/hcp-view-b/hcp-assessment-btesting" class="govuk-link">View case</a></p>
+          </td>
+                    
+ 
+ 
+          <tr class="govuk-table__row">
+           <td class="govuk-table__cell"> John Smith</td>
+           <td class="govuk-table__cell"> Tom Cruise</td>
+             <td class="govuk-table__cell">21 September 2026, 9:45am</td>
+             <td class="govuk-table__cell">20 September 2026, 3:20pm</td>
+          <td class="govuk-table__cell"> <p><a href="/hcp-view-b/hcp-assessment-btesting" class="govuk-link">View case</a></p>
+          </tr>
+          <tr class="govuk-table__row">
+          <td class="govuk-table__cell"> William Shakespere </td>
+          <td class="govuk-table__cell"> Jessica Alba </td>
+             <td class="govuk-table__cell">20 September 2026, 1:18pm</td>
+              <td class="govuk-table__cell">19 September 2026, 4:18pm</td>
+          <td class="govuk-table__cell"> <p><a href="/hcp-view-b/hcp-assessment-btesting" class="govuk-link">View case</a></p>
+          </tr>
+          <tr class="govuk-table__row">
+          <td class="govuk-table__cell"> Tom Cruise</td>
+          <td class="govuk-table__cell"> Harry Potter</td>
+             <td class="govuk-table__cell">19 September 2026, 12:51pm</td>
+             <td class="govuk-table__cell">19 September 2026, 11:15am</td>
+          <td class="govuk-table__cell"> <p><a href="/hcp-view-b/hcp-assessment-btesting" class="govuk-link">View case</a></p>
+          </tr>
+          </tr>
+        </tbody>
+      </table>
+ 
+</div>
+ 
+    <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="waiting-on">
+      <table class="govuk-table">
+        <thead class="govuk-table__head">
+          <th scope="col" class="govuk-table__header app-custom-class">HCP</th>
+          <th scope="col" class="govuk-table__header app-custom-class">Auditor</th>
+          <th scope="col" class="govuk-table__header app-custom-class">Quality review date</th>
+          <th scope="col" class="govuk-table__header app-custom-class">Assessment date</th>
+          <th scope="col" class="govuk-table__header app-custom-class">Action</th>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+]
+          </tr>
+          <tr class="govuk-table__row">
+          <td class="govuk-table__cell"> Peter Parker</td>
+           <td class="govuk-table__cell"> John Doh</td>
+             <td class="govuk-table__cell">22 July 2026, 4:40pm</td>
+             <td class="govuk-table__cell">21 July 2026, 11:34am</td>
+          <td class="govuk-table__cell"> <p><a href="/hcp-view-b/hcp-assessment-btesting" class="govuk-link">View case</a></p>
+          </tr>
+         
+        </tbody>
+
+    </div> 
+ 
+      </table>
+
+ 
+    
+
+</div>
+</div>
+        
+    
+   
+  </main>
+
+
+  
+{% endblock %}
+
+

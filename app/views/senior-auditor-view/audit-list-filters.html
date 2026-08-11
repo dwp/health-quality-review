@@ -11,7 +11,9 @@
 
 <div class="govuk-width-container {{ containerClasses }}"></div>
 
-<a href="hcp-main-menu-btesting.html" class="govuk-back-link">Back</a>
+
+
+<a href="main-menu.html" class="govuk-back-link">Back</a>
 {% endblock %}
 
 {% block content %}
@@ -21,9 +23,16 @@
 
         
   <!-- <main class="govuk-main-wrapper " id="main-content" role="main"> -->
+
+    
  
 
 <div class="govuk-width-container ">
+<div class="govuk-grid-row">
+
+<div class="govuk-grid-column-one-quarter">
+
+  <div class="govuk-width-container ">
 <div class="govuk-grid-row">
 
 <div class="govuk-grid-column-one-quarter">
@@ -39,68 +48,16 @@
     Select one or more filters to apply to the list
    </div>
 
+  <div class="govuk-form-group">
+  <h1 class="govuk-label-wrapper">
+    
+
+</div>
 
 
 
-{{ govukCheckboxes({
-  name: "Stage",
-  classes: "govuk-checkboxes--small",
-  fieldset: {
-    legend: {
-      text: "Stage",
 
-      classes: "govuk-fieldset__legend--s"
-    }
-  },
-  
-  items: [
-    {
-      value: "Approval",
-      text: "Approval"
-    },
-    {
-      value: "Post approval",
-      text: "Post approval"
-    },
-    {
-      value: "Rolling",
-      text: "Rolling"
 
-    },
-        {
-      value: "Targeted support",
-      text: "Targeted support"
-
-    }
-  ]
-}) }}
-
-{{ govukCheckboxes({
-  name: "Type",
-  classes: "govuk-checkboxes--small",
-  fieldset: {
-    legend: {
-      text: "Type",
-      isPageHeading: true,
-      classes: "govuk-fieldset__legend--s"
-    }
-  },
-  items: [
-    {
-      value: "PIP paper-based",
-      text: "PIP paper-based"
-    },
-    {
-      value: "PIP telephone",
-      text: "PIP telephone"
-    },
-    {
-      value: "PIP face to face",
-      text: "PIP face to face"
-
-    }
-  ]
-}) }}
 
 {{ govukCheckboxes({
   name: "Status",
@@ -115,30 +72,34 @@
   
   items: [
     {
-      value: "Not started",
-      text: "Not started"
+      value: "Review amendments",
+      text: "Review amendments"
     },
+
     {
-      value: "In progress",
-      text: "In progress"
-    },
-    {
-      value: "Completed",
-      text: "Completed"
+      value: "Pending HCP amendments",
+      text: "Pending HCP amendments"
 
     }
   ]
 }) }}
-
-
 
 <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
  Apply filters
 </button>
 
 <p class="govuk-body">
-<a class="govuk-link" href="#">Cancel filters</a>
+<a class="govuk-link" href="#">Clear filters</a>
 </p>
+
+
+<form class="form" action="account_jd-history_filter_tel" method="post">
+
+
+
+
+
+
 
 </form>
 </div>
@@ -146,26 +107,44 @@
 <div class="govuk-grid-column-three-quarters">
 
 
-  <h1 class="govuk-heading-l">Quality review list</h1>
+  <h1 class="govuk-heading-l">Pending audit list</h1>
 
 <div class="govuk-form-group govuk-!-margin-bottom-0">
+<div class="govuk-form-group govuk-!-margin-bottom-0">
+<div class="govuk-form-group govuk-!-margin-bottom-0">
+<label class="govuk-label" for="searchNino">
+Enter name
+</label>
 
 
+<div class="govuk-input__wrapper govuk-!-margin-bottom-0">
+
+
+<input class="govuk-input govuk-input--width-20 govuk-!-margin-right-1" id="searchNino" name="search" type="text" autocomplete="off">
+
+    <button type="submit" data-prevent-double-click="true" class="govuk-button" data-module="govuk-button" id="nino-search-button" data-govuk-button-init="">
+  Search
+</button>
+
+</div>
 
 
 
 </div>
+
+
   
     <table class="govuk-table">
-      <caption class="govuk-visually-hidden">Quality review list</caption>
+      <caption class="govuk-visually-hidden">Pending quality review list</caption>
       <thead class="govuk-table__head">
         <tr class="govuk-table__row">
 
-          <th scope="col" class="govuk-table__header app-custom-class">Auditor</th>
+
           <th scope="col" class="govuk-table__header app-custom-class">HCP</th>
-          <th scope="col" class="govuk-table__header app-custom-class">Stage</th>
-          <th scope="col" class="govuk-table__header app-custom-class">Type</th>
-          <th scope="col" class="govuk-table__header app-custom-class">Status</th>
+          <th scope="col" class="govuk-table__header app-custom-class">Auditor</th>
+          <th scope="col" class="govuk-table__header app-custom-class">Quality review date</th>
+          <th scope="col" class="govuk-table__header app-custom-class">Assessment date</th>
+          <th scope="col" class="govuk-table__header app-custom-class">Amendment status</th>
           <th scope="col" class="govuk-table__header app-custom-class">Action</th>
           <!-- <th scope="col" class="govuk-table__header app-custom-class">End of life</th>
           <th scope="col" class="govuk-table__header app-custom-class">Action</th> -->
@@ -178,84 +157,84 @@
  
  
            <tr class="govuk-table__row" data-category="lot1">
-            <td class="govuk-table__cell"> John Smith</td>
           <td class="govuk-table__cell"> Peter Parker</td>
-             <td class="govuk-table__cell">Rolling</td>
-          <td class="govuk-table__cell">PIP paper-based </td>
-             <td class="govuk-table__cell">Not started </td>
+           <td class="govuk-table__cell"> John Doh</td>
+             <td class="govuk-table__cell">22 July 2026, 4:40pm</td>
+             <td class="govuk-table__cell">21 July 2026, 11:34am</td>
+             <td class="govuk-table__cell">Review amendments</td>
           <td class="govuk-table__cell"> <p><a href="/hcp-view-b/hcp-assessment-btesting" class="govuk-link">View case</a></p>
         
         
             <tr class="govuk-table__row" data-category="lot1">
            <td class="govuk-table__cell"> John Smith</td>
-          <td class="govuk-table__cell"> Lucy Lu</td>
-             <td class="govuk-table__cell">Targeted support</td>
-          <td class="govuk-table__cell">PIP face to face </td>
-             <td class="govuk-table__cell">In progress </td>
+           <td class="govuk-table__cell"> Tom Cruise</td>
+             <td class="govuk-table__cell">21 July 2026, 9:45am</td>
+             <td class="govuk-table__cell">20 July 2026, 3:20pm</td>
+             <td class="govuk-table__cell">Pending HCP amendments</td>
           <td class="govuk-table__cell"> <p><a href="/hcp-view-b/hcp-assessment-btesting" class="govuk-link">View case</a></p>
         
           <tr class="govuk-table__row" data-category="lot1">
-          <td class="govuk-table__cell"> John Smith</td>
-          <td class="govuk-table__cell"> William Shakespere </td>
-             <td class="govuk-table__cell">Approval</td>
-          <td class="govuk-table__cell">PIP Telephone </td>
-             <td class="govuk-table__cell">Not started </td>
+          <td class="govuk-table__cell"> William Shakespere </td>\
+          <td class="govuk-table__cell"> Jessica Alba </td>
+             <td class="govuk-table__cell">20 July 2026, 1:18pm</td>
+              <td class="govuk-table__cell">19 July 2026, 4:18pm</td>
+              <td class="govuk-table__cell">Review amendments</td>
           <td class="govuk-table__cell"> <p><a href="/hcp-view-b/hcp-assessment-btesting" class="govuk-link">View case</a></p>
         
         <tr class="govuk-table__row" data-category="lot1">
-          <td class="govuk-table__cell"> John Smith</td>
           <td class="govuk-table__cell"> Tom Cruise</td>
-             <td class="govuk-table__cell">Rolling</td>
-          <td class="govuk-table__cell">PIP face to face </td>
-             <td class="govuk-table__cell">Completed </td>
+          <td class="govuk-table__cell"> Harry Potter</td>
+             <td class="govuk-table__cell">19 July 2026, 12:51pm</td>
+             <td class="govuk-table__cell">19 July 2026, 11:15am</td>
+              <td class="govuk-table__cell">Review amendments</td>
           <td class="govuk-table__cell"> <p><a href="/hcp-view-b/hcp-assessment-btesting" class="govuk-link">View case</a></p>
         
         <tr class="govuk-table__row" data-category="lot1">
-          <td class="govuk-table__cell"> John Smith</td>
           <td class="govuk-table__cell"> Cameron Diaz</td>
-             <td class="govuk-table__cell">Post approval</td>
-          <td class="govuk-table__cell">PIP paper based </td>
-             <td class="govuk-table__cell">In progress </td>
+          <td class="govuk-table__cell"> Emma Dyson</td>
+             <td class="govuk-table__cell">19 July 2026, 8:45am</td>
+              <td class="govuk-table__cell">18 July 2026, 9:31am</td>
+              <td class="govuk-table__cell">Pending HCP amendments</td>
           <td class="govuk-table__cell"> <p><a href="/hcp-view-b/hcp-assessment-btesting" class="govuk-link">View case</a></p>
         
         <tr class="govuk-table__row" data-category="lot1">
-          <td class="govuk-table__cell"> John Smith</td>
           <td class="govuk-table__cell"> Jack Sparrow</td>
-             <td class="govuk-table__cell">Rolling</td>
-          <td class="govuk-table__cell">PIP Telephone </td>
-             <td class="govuk-table__cell">Not started </td>
+          <td class="govuk-table__cell"> Claudia Shiffer</td>
+             <td class="govuk-table__cell">18 July 2026, 4:42pm</td>
+             <td class="govuk-table__cell">17 July 2026 9:07am</td>
+             <td class="govuk-table__cell">Pending HCP amendments</td>
           <td class="govuk-table__cell"> <p><a href="/hcp-view-b/hcp-assessment-btesting" class="govuk-link">View case</a></p>
         
         <tr class="govuk-table__row" data-category="lot1">
-          <td class="govuk-table__cell"> John Smith</td>
           <td class="govuk-table__cell"> Brad Pit</td>
-             <td class="govuk-table__cell">Approval</td>
-          <td class="govuk-table__cell">Paper based </td>
-             <td class="govuk-table__cell">Completed </td>
+          <td class="govuk-table__cell"> Peppa Pig</td>
+             <td class="govuk-table__cell">18 July 2026, 10:23am</td>
+             <td class="govuk-table__cell">17 July 2026, 2:46pm</td>
+             <td class="govuk-table__cell">Review amendments</td>
           <td class="govuk-table__cell"> <p><a href="/hcp-view-b/hcp-assessment-btesting" class="govuk-link">View case</a></p>
         
         <tr class="govuk-table__row" data-category="lot1">
-          <td class="govuk-table__cell"> John Smith</td>
           <td class="govuk-table__cell"> Angiolina Jolie</td>
-             <td class="govuk-table__cell">Targeted Support</td>
-          <td class="govuk-table__cell">PIP face to face</td>
-             <td class="govuk-table__cell">Not started </td>
+          <td class="govuk-table__cell"> John Smith</td>
+             <td class="govuk-table__cell">17 July 2026, 9:01am</td>
+              <td class="govuk-table__cell">16 July 2026, 10:32am</td>
+              <td class="govuk-table__cell">Review amendments</td>
           <td class="govuk-table__cell"> <p><a href="/hcp-view-b/hcp-assessment-btesting" class="govuk-link">View case</a></p>
         
         <tr class="govuk-table__row" data-category="lot1">
-          <td class="govuk-table__cell"> John Smith</td>
           <td class="govuk-table__cell"> Peter Parker</td>
-             <td class="govuk-table__cell">Rolling</td>
-          <td class="govuk-table__cell">PIP telephone </td>
-             <td class="govuk-table__cell">In progress </td>
+          <td class="govuk-table__cell"> Peter Jessica</td>
+             <td class="govuk-table__cell">16 July 2026, 3:41pm</td>
+             <td class="govuk-table__cell">15 July 2026, 8:59am</td>
+             <td class="govuk-table__cell">Pending HCP amendments</td>
           <td class="govuk-table__cell"> <p><a href="/hcp-view-b/hcp-assessment-btesting" class="govuk-link">View case</a></p>
 
             <tr class="govuk-table__row" data-category="lot1">
-          <td class="govuk-table__cell"> John Smith</td>
           <td class="govuk-table__cell"> Boris Johnson</td>
-             <td class="govuk-table__cell">Approval</td>
-          <td class="govuk-table__cell">PIP face to face </td>
-             <td class="govuk-table__cell">Not started </td>
+          <td class="govuk-table__cell"> Angela Markel</td>
+             <td class="govuk-table__cell">15 July 2026, 11:18am</td>
+             <td class="govuk-table__cell">14 July 2026, 2:47pm</td>
+             <td class="govuk-table__cell">Review amendments</td>
           <td class="govuk-table__cell"> <p><a href="/hcp-view-b/hcp-assessment-btesting" class="govuk-link">View case</a></p>
 
 
