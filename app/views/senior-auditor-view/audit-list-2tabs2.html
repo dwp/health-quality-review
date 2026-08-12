@@ -21,11 +21,11 @@
 
 
 
-
+        
   <!-- <main class="govuk-main-wrapper " id="main-content" role="main"> -->
 
-
-
+    
+ 
 
 <div class="govuk-width-container ">
 <div class="govuk-grid-row">
@@ -35,15 +35,78 @@
   <div class="govuk-width-container ">
 <div class="govuk-grid-row">
 
-<div class="govuk-grid-column-one-quarter">
+
 <form class="form" action="account_jd-history_filter_tel" method="post">
+  
 </form>
 </div>
 
+<div class="govuk-grid-column-one-quarter">  <h1 class="govuk-label-wrapper">
+    <label class="govuk-label govuk-label--m" for="more-detail">
+      Filters
+    </label>
+  </h1>
+  <div id="more-detail-hint" class="govuk-hint">
+    Select one or more filters to apply to the list
+   </div>
+
+  <div class="govuk-form-group">
+  <h1 class="govuk-label-wrapper">
+    
+
+</div>
+
+
+
+{{ govukCheckboxes({
+  name: "Level_",
+  classes: "govuk-checkboxes--small",
+  fieldset: {
+    legend: {
+      text: "Level",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--s"
+    }
+  },
+  items: [
+    {
+      value: "Approval",
+      text: "Approval"
+    },
+    {
+      value: "Post approval",
+      text: "Post approval"
+    },
+    {
+      value: "Rolling",
+      text: "Rolling"
+
+    },
+    {
+      value: "Targeted support",
+      text: "Targeted support"
+
+    }
+  ]
+}) }}
+
+<button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+ Apply filters
+</button>
+
+<p class="govuk-body">
+<a class="govuk-link" href="#">Clear filters</a>
+</p>
+
+
+<form class="form" action="account_jd-history_filter_tel" method="post">
+</div>
 <div class="govuk-grid-column-three-quarters">
 
 
   <h1 class="govuk-heading-l">Manage quality review amendments</h1>
+
+  
 
 <div class="govuk-form-group govuk-!-margin-bottom-0">
 <div class="govuk-form-group govuk-!-margin-bottom-0">
@@ -71,9 +134,9 @@ Enter auditor or HCP name
 
 
 <div class="govuk-tabs" data-module="govuk-tabs">
-
-
-
+  
+  
+  
     <h2 class="govuk-tabs__title">
       Contents
     </h2>
@@ -94,49 +157,54 @@ Enter auditor or HCP name
 
  <div class="govuk-tabs__panel" id="open-tasks">
       <table class="govuk-table">
-          <th scope="col" class="govuk-table__header app-custom-class"> Auditor name</th>
-          <th scope="col" class="govuk-table__header app-custom-class"> HCP name</th>
+          <th scope="col" class="govuk-table__header app-custom-class">Auditor name</th>
+          <th scope="col" class="govuk-table__header app-custom-class">HCP name</th>
           <th scope="col" class="govuk-table__header app-custom-class">Assessment date</th>
-          <th scope="col" class="govuk-table__header app-custom-class"> Quality review date</th>
+          <th scope="col" class="govuk-table__header app-custom-class">Quality review date</th>
+          <th scope="col" class="govuk-table__header app-custom-class">Level</th>
           <th scope="col" class="govuk-table__header app-custom-class">Action</th>
-
+        
         <tbody class="govuk-table__body">
           <td class="govuk-table__cell"> Peter Parker</td>
            <td class="govuk-table__cell"> John Doh</td>
-             <td class="govuk-table__cell">21 September 2026, 4:40pm</td>
-             <td class="govuk-table__cell">22 September 2026, 11:34am</td>
+             <td class="govuk-table__cell">30 July 2026, 4:40pm</td>
+             <td class="govuk-table__cell">31 July 2026, 11:34am</td>
+             <td class="govuk-table__cell">Approval</td>
           <td class="govuk-table__cell"> <p><a href="/hcp-view-b/hcp-assessment-btesting" class="govuk-link">View case</a></p>
           </td>
-
-
-
+                    
+ 
+ 
           <tr class="govuk-table__row">
            <td class="govuk-table__cell"> John Smith</td>
            <td class="govuk-table__cell"> Tom Cruise</td>
-             <td class="govuk-table__cell">20 September 2026, 9:45am</td>
-             <td class="govuk-table__cell">21 September 2026, 3:20pm</td>
+             <td class="govuk-table__cell">1 August 2026, 9:45am</td>
+             <td class="govuk-table__cell">2 August 2026, 3:20pm</td>
+             <td class="govuk-table__cell">Rolling</td>
           <td class="govuk-table__cell"> <p><a href="/hcp-view-b/hcp-assessment-btesting" class="govuk-link">View case</a></p>
           </tr>
           <tr class="govuk-table__row">
           <td class="govuk-table__cell"> William Shakespere </td>
           <td class="govuk-table__cell"> Jessica Alba </td>
-             <td class="govuk-table__cell">19 September 2026, 1:18pm</td>
-              <td class="govuk-table__cell">20 September 2026, 4:18pm</td>
+             <td class="govuk-table__cell">2 August 2026, 1:18pm</td>
+              <td class="govuk-table__cell">3 August 2026, 4:18pm</td>
+              <td class="govuk-table__cell">Targeted support</td>
           <td class="govuk-table__cell"> <p><a href="/hcp-view-b/hcp-assessment-btesting" class="govuk-link">View case</a></p>
           </tr>
           <tr class="govuk-table__row">
           <td class="govuk-table__cell"> Tom Cruise</td>
           <td class="govuk-table__cell"> Harry Potter</td>
-             <td class="govuk-table__cell">19 September 2026, 12:51pm</td>
-             <td class="govuk-table__cell">20 September 2026, 11:15am</td>
+             <td class="govuk-table__cell">3 August 2026, 12:51pm</td>
+             <td class="govuk-table__cell">4 August 2026, 11:15am</td>
+              <td class="govuk-table__cell">Post approval</td>
           <td class="govuk-table__cell"> <p><a href="/hcp-view-b/hcp-assessment-btesting" class="govuk-link">View case</a></p>
           </tr>
           </tr>
         </tbody>
       </table>
-
+ 
 </div>
-
+ 
     <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="waiting-on">
       <table class="govuk-table">
         <thead class="govuk-table__head">
@@ -157,25 +225,25 @@ Enter auditor or HCP name
              <td class="govuk-table__cell">21 July 2026, 11:34am</td>
           <td class="govuk-table__cell"> <p><a href="/hcp-view-b/hcp-assessment-btesting" class="govuk-link">View case</a></p>
           </tr>
-
+         
         </tbody>
 
-    </div>
-
+    </div> 
+ 
       </table>
 
-
-
+ 
+    
 
 </div>
 </div>
-
-
-
+        
+    
+   
   </main>
 
 
-
+  
 {% endblock %}
 
 
