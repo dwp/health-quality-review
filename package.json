@@ -15,7 +15,7 @@
     "@govuk-prototype-kit/common-templates": "2.0.1",
     "@govuk-prototype-kit/step-by-step": "2.2.4",
     "axios": "1.19.0",
-    "govuk-frontend": "5.8.0",
+    "govuk-frontend": "5.14.0",
     "govuk-prototype-kit": "13.20.3",
     "jquery": "3.7.1",
     "notifications-node-client": "8.4.0",
