@@ -404,5 +404,79 @@ margin-top: 125px;
     max-width: 100%;
     }
 
+  .has-sortable-table {
+  [aria-sort] a,
+  [aria-sort] a:hover {
+    display: inline-block;
+    background-color: transparent;
+    border-width: 0;
+    box-shadow: 0 0 0 0;
+    color: #005ea5;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    padding: 0 10px 0 0;
+    position: relative;
+    text-align: inherit;
+    margin: 0;
+  }
+
+  [aria-sort] a:focus {
+    background-color: #ffdd00;
+    color: #0b0c0c;
+    box-shadow: 0 -2px #ffdd00, 0 4px #0b0c0c;
+    outline: none;
+  }
+
+  [aria-sort] a:before {
+    content: " \25bc";
+    position: absolute;
+    right: -1px;
+    top: 9px;
+    font-size: 0.5em;
+  }
+
+  [aria-sort] a:after {
+    content: " \25b2";
+    position: absolute;
+    right: -1px;
+    top: 1px;
+    font-size: 0.5em;
+  }
+
+  [aria-sort="ascending"] a:before,
+  [aria-sort="descending"] a:before {
+    content: none;
+  }
+
+  [aria-sort="ascending"] a:after {
+    content: " \25b2";
+    font-size: 0.8em;
+    position: absolute;
+    right: -5px;
+    top: 2px;
+  }
+
+  [aria-sort="descending"] a:after {
+    content: " \25bc";
+    font-size: 0.8em;
+    position: absolute;
+    right: -5px;
+    top: 2px;
+  }
+}
       
   
+
+.govuk-table__row--selected {
+  background-color: govuk-colour("mid-grey");
+
+  td {
+    color: govuk-colour("dark-grey");
+  }
+
+  a {
+    color: govuk-colour("dark-grey");
+  }
+}

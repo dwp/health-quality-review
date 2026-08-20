@@ -1,0 +1,166 @@
+{% extends "layouts/main.html" %}
+{% from "govuk/components/pagination/macro.njk" import govukPagination %}
+{% block pageTitle %}
+  Information gathering
+{% endblock %}
+
+
+{% block beforeContent %}
+<a href="main-menu.html" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <!-- Left column: Filters -->
+  <div class="govuk-grid-column-one-quarter">
+
+    <h2 class="govuk-heading-m">Filters</h2>
+    <p class="govuk-hint">Select one or more filters to apply to the list</p>
+
+    <form class="form" action="" method="post" data-filter-column="3">
+
+      {{ govukCheckboxes({
+        name: "assessmentType",
+        classes: "govuk-checkboxes--small",
+        fieldset: {
+          legend: {
+            text: "Assessment type",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        items: [
+          {
+            value: "Paper-based",
+            text: "Paper-based"
+          },
+          {
+            value: "Telephone",
+            text: "Telephone"
+          },
+          {
+            value: "Face to face",
+            text: "Face to face"
+          }
+        ]
+      }) }}
+
+      <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+        Apply filters
+      </button>
+
+    </form>
+
+    <p class="govuk-body">
+      <a class="govuk-link" href="#" data-clear-filters>Clear filters</a>
+    </p>
+
+  </div>
+
+  <!-- Right column: Main content -->
+  <div class="govuk-grid-column-three-quarters">
+
+    <h1 class="govuk-heading-l">Manage quality review amendments</h1>
+
+    <div class="govuk-form-group govuk-!-margin-bottom-0" data-search-table>
+      <label class="govuk-label" for="searchNino">
+        Enter auditor or HCP name
+      </label>
+      <div class="govuk-input__wrapper govuk-!-margin-bottom-0">
+        <input class="govuk-input govuk-input--width-20 govuk-!-margin-right-1" id="searchNino" name="search" type="text" autocomplete="off">
+        <button type="submit" data-prevent-double-click="true" class="govuk-button" data-module="govuk-button" id="nino-search-button">
+          Search
+        </button>
+      </div>
+      <p class="govuk-body govuk-!-margin-top-2" data-search-results hidden></p>
+    </div>
+
+    <div class="govuk-tabs" data-module="govuk-tabs">
+      <h2 class="govuk-tabs__title">
+        Contents
+      </h2>
+      <ul class="govuk-tabs__list">
+        <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+          <a class="govuk-tabs__tab" href="#open-tasks">
+            Review amendments
+          </a>
+        </li>
+        <li class="govuk-tabs__list-item">
+          <a class="govuk-tabs__tab" href="#closed-tasks">
+            Waiting for amendments
+          </a>
+        </li>
+      </ul>
+
+      <div class="govuk-tabs__panel" id="open-tasks">
+        <table class="govuk-table has-sortable-table" data-page-size="10">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">Being reviewed</th>
+              <th scope="col" class="govuk-table__header">Auditor name</th>
+              <th scope="col" class="govuk-table__header">HCP name</th>
+              <th scope="col" class="govuk-table__header" aria-sort="none"><a href="#open-tasks">Assessment type</a></th>
+              <th scope="col" class="govuk-table__header" aria-sort="descending"><a href="#open-tasks">Days since amendments made</a></th>
+              <th scope="col" class="govuk-table__header">Action</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            {% for case in seniorAuditorCases %}
+              {% if case.status == "review" %}
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">
+                  <div class="govuk-checkboxes__item govuk-checkboxes--small">
+                    <input class="govuk-checkboxes__input" id="select-{{ loop.index }}" name="select" type="checkbox" value="{{ loop.index }}">
+                    <label class="govuk-label govuk-checkboxes__label" for="select-{{ loop.index }}"><span class="govuk-visually-hidden">Select {{ case.auditorName }}</span></label>
+                  </div>
+                </td>
+                <td class="govuk-table__cell">{{ case.auditorName }}</td>
+                <td class="govuk-table__cell">{{ case.hcpName }}</td>
+                <td class="govuk-table__cell">{{ case.assessmentType }}</td>
+                <td class="govuk-table__cell">{{ case.daysSinceAmendment }} {{ "day" if case.daysSinceAmendment == 1 else "days" }}</td>
+                <td class="govuk-table__cell"><a href="/hcp-view-b/hcp-assessment-btesting" class="govuk-link">View case</a></td>
+              </tr>
+              {% endif %}
+            {% endfor %}
+          </tbody>
+        </table>
+        <nav class="govuk-pagination" data-pagination aria-label="Pagination"></nav>
+      </div>
+
+      <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="closed-tasks">
+        <table class="govuk-table has-sortable-table" data-page-size="10">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">Auditor name</th>
+              <th scope="col" class="govuk-table__header">HCP name</th>
+              <th scope="col" class="govuk-table__header">Assessment type</th>
+              <th scope="col" class="govuk-table__header" aria-sort="descending"><a href="#closed-tasks">Days since quality review</a></th>
+              <th scope="col" class="govuk-table__header">Action</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            {% for case in seniorAuditorCases %}
+              {% if case.status == "waiting" %}
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">{{ case.auditorName }}</td>
+                <td class="govuk-table__cell">{{ case.hcpName }}</td>
+                <td class="govuk-table__cell">{{ case.assessmentType }}</td>
+                <td class="govuk-table__cell">{{ case.daysSinceReview }} {{ "day" if case.daysSinceReview == 1 else "days" }}</td>
+                <td class="govuk-table__cell"><a href="/hcp-view-b/hcp-assessment-btesting" class="govuk-link">View case</a></td>
+              </tr>
+              {% endif %}
+            {% endfor %}
+          </tbody>
+        </table>
+        <nav class="govuk-pagination" data-pagination aria-label="Pagination"></nav>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+{% endblock %}

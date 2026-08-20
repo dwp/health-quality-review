@@ -94,6 +94,8 @@ const qrtype = {
 const govukPrototypeKit = require('govuk-prototype-kit')
 const router = govukPrototypeKit.requests.setupRouter()
 
+const seniorAuditorCases = require('./data/senior-auditor-cases.js')
+
 
 router.get("*", (req, res, next) => {
   res.locals.query = req.query;
@@ -108,6 +110,7 @@ router.get("*", (req, res, next) => {
   res.locals.reviewSections = reviewSections;
   res.locals.grades = grades;
   res.locals.qrtype = qrtype;
+  res.locals.seniorAuditorCases = seniorAuditorCases;
   const currentGrades = Object.keys(res.locals.data)
                       .filter((x) => x.startsWith("grade-"))
                       .map((key) => res.locals.data[key].split("-")?.[0]?.trim());
